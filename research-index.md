@@ -20,7 +20,7 @@
 
 | 研究 | 它说明了什么 | 出处 |
 |---|---|---|
-| **From Citation Selection to Citation Absorption** | 提出"引用选择 → 引用吸收"两阶段框架；与引用影响力相关性最高的是**内容与问题的语义匹配度**（r = 0.432），高于内容质量本身（0.292） | arXiv:2604.25707 |
+| **From Citation Selection to Citation Absorption** | 提出"引用选择 → 引用吸收"两阶段框架；与引用影响力相关性最高的是**内容与问题的匹配度**，高于内容质量本身 | arXiv:2604.25707 |
 | **C-SEO Bench: Does Conversational SEO Work?** | 建立基准，系统检验"对话式优化"到底有没有效果 | NeurIPS Datasets & Benchmarks 2025 / arXiv:2506.11097 |
 | **AI Answer Engine Citation Behavior: A Longitudinal Study of GEO in 16 Generative Engines** | 16 个生成式引擎的引用行为纵向研究 | arXiv:2509.10762 |
 | **GEO at Scale: Measuring Brand Visibility Across AI Search Engines** | 跨引擎的品牌可见度规模化测量 | arXiv:2606.20065 |
