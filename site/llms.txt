@@ -16,11 +16,11 @@
 ## 写下的
 
 - **被 AI 引用和被 AI 看到，有什么区别？** —— 《我给自己买了个域名：41 分钟，6 个坑》（2026-10-05）
-  `https://xuyuanlab.com/notes/why-own-domain.html`
+  `https://xuyuanlab.com/notes/why-own-domain`
 - **apex 域名挂 Cloudflare Pages 必须换 NS 吗？** —— 同上（含六个坑的完整清单）
-  `https://xuyuanlab.com/notes/why-own-domain.html`
+  `https://xuyuanlab.com/notes/why-own-domain`
 - **绑定自定义域名后立刻报 522，是配置错了吗？** —— 同上（是证书下发的过渡态）
-  `https://xuyuanlab.com/notes/why-own-domain.html`
+  `https://xuyuanlab.com/notes/why-own-domain`
 
 ---
 
@@ -75,4 +75,4 @@
 
 ---
 
-*最后更新：2026-10-05*
+*最后更新：2026-10-26*

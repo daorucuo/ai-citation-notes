@@ -1,0 +1,8 @@
+# AI 干活笔记 · robots.txt
+#
+# 只写一行必要内容。
+# 原因：Cloudflare 的 Bot Preference Sync 会把它自己托管的规则
+# 前置到本文件之前，我们自己再写 Allow/Disallow 容易与之打架。
+# 爬虫策略（Search / Agent / Training 三类）一律在 Cloudflare 面板管。
+
+Sitemap: https://xuyuanlab.com/sitemap.xml
