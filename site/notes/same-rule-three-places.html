@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>同一句“必须”，写在三个地方，只有一个真算数</title>
+<meta name="description" content="你写的“必须”，AI 是当一条聊天记录读的。同一句规矩写在文件里、写在拦截里、写进权限里，效力差三档。">
+<meta name="author" content="AI 干活笔记">
+<link rel="canonical" href="https://xuyuanlab.com/notes/same-rule-three-places">
+<meta property="og:type" content="article">
+<meta property="og:title" content="同一句“必须”，写在三个地方，只有一个真算数">
+<meta property="og:url" content="https://xuyuanlab.com/notes/same-rule-three-places">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  blockquote{
+    margin:0 0 20px;padding:2px 0 2px 18px;
+    border-left:2px solid var(--rule);font-size:16px;font-style:italic;
+  }
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Article",
+      "@id":"https://xuyuanlab.com/notes/same-rule-three-places#article",
+      "headline":"同一句“必须”，写在三个地方，只有一个真算数",
+      "description":"你写的“必须”，AI 是当一条聊天记录读的。同一句规矩写在文件里、写在拦截里、写进权限里，效力差三档。",
+      "datePublished":"2026-10-28",
+      "dateModified":"2026-10-28",
+      "inLanguage":"zh-CN",
+      "author":{"@id":"https://xuyuanlab.com/#person"},
+      "publisher":{"@id":"https://xuyuanlab.com/#person"},
+      "mainEntityOfPage":"https://xuyuanlab.com/notes/same-rule-three-places",
+      "license":"https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://xuyuanlab.com/notes/same-rule-three-places#faq",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"为什么我写在 CLAUDE.md 里的强制规范，AI 会不执行？",
+          "acceptedAnswer":{"@type":"Answer","text":"因为它的送达方式决定的。Anthropic 官方文档写明：CLAUDE.md 的内容是作为一条用户消息、在系统提示之后送达的，不是系统提示的一部分；Claude 把它当上下文，不当强制配置。它读到了，只是那份东西的效力与你在对话里随口说的一句相同。"}
+        },
+        {
+          "@type":"Question",
+          "name":"要让 AI 真的拦住一个动作，该写在哪里？",
+          "acceptedAnswer":{"@type":"Answer","text":"写成 PreToolUse hook。官方文档的说法是：要挡住一个动作、不管模型怎么决定，就用 PreToolUse hook。钩子是程序，在每次用它手上工具之前运行，返回拦截决定后那个动作不执行，模型没有推翻它的手段。"}
+        },
+        {
+          "@type":"Question",
+          "name":"有了 hooks 是不是就够了？",
+          "acceptedAnswer":{"@type":"Answer","text":"不够，有两类漏。一是装上 agent 框架之后，模型的安全行为会变化——arXiv 2610.32045 的对照里，装上框架后连直接提问都更容易得到有害回答，而对裸模型基本无效的对抗性提问在装框架后突然有效。二是每一步都合规、合起来越界——MCPHunt（arXiv 2604.27819）测出跨服务器凭据传播率在 11.5% 到 41.3% 之间，且与路径强相关。"}
+        },
+        {
+          "@type":"Question",
+          "name":"什么叫做让违规“结构上不存在”？",
+          "acceptedAnswer":{"@type":"Answer","text":"指权限与沙箱一类的设置层：permissions.deny、sandbox.enabled。官方文档写明设置层的规则由客户端执行、不管模型怎么决定。写在那里的东西模型读不到也不用读，那个工具、目录、网络出口它够不着——不是被劝住，是没有那条路。"}
+        },
+        {
+          "@type":"Question",
+          "name":"CLAUDE.md 写多长合适？",
+          "acceptedAnswer":{"@type":"Answer","text":"官方建议单个文件 200 行以内，超过会在启动时给警告；硬上限 4 MiB，超过这个数的文件直接跳过、一个字都不加载。记忆索引文件每次对话只读前 200 行或前 25KB，哪个先到算哪个。"}
+        },
+        {
+          "@type":"Question",
+          "name":"这套三层写法在什么情况下不管用？",
+          "acceptedAnswer":{"@type":"Answer","text":"碰上“该不该做”这类判断就不管用。规矩能管怎么做，拦截能管不许这么动，但一个需求本身该不该接，三个地方都写不进去，仍然需要人在它动手之前看。"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← AI 干活笔记</a>
+
+  <h1>同一句“必须”，写在三个地方，只有一个真算数</h1>
+  <p class="date">2026-10-28</p>
+
+  <div class="lead">
+    <p><strong>它读到了，只是那份东西的效力，和你在对话框里随口说的半句话一样。</strong></p>
+  </div>
+
+  <p>2026-10-26，技术论坛 V2EX 上有人发了条帖子，标题是一句气话：</p>
+
+  <blockquote>“Claude 是傻逼吗，我写的强制性规范，它能直接不看的吗”</blockquote>
+
+  <p>我读到这条，去翻了一份官方文档。文档里承认了这件事，写得很直白，直白到有点不像官方该说的话。</p>
+
+  <div class="note">
+    <p>这篇里的事实，一半是我读到的官方文档，一半是我从论文摘要里读到的，<strong>没有一件是我自己跑出来的</strong>。出处都写在句子里，能查的去查。</p>
+  </div>
+
+  <h2>文档里那句话，写得比谁都直白</h2>
+
+  <p>Anthropic 给 Claude Code 写的使用文档里，有一节叫「故障排查」。里面有个小标题，叫「Claude 没有遵守我的 CLAUDE.md」。原文是英文：</p>
+
+  <blockquote>“CLAUDE.md content is delivered as a user message after the system prompt, not as part of the system prompt itself.”</blockquote>
+
+  <p>翻成人话：你写的那份规范，是作为一条用户消息送进去的，排在系统提示后面，不属于系统提示。同一份文档里还有一句更短的：</p>
+
+  <blockquote>“Claude treats them as context, not enforced configuration.”</blockquote>
+
+  <p>它把这份文件当上下文，不当配置。</p>
+
+  <p>这句话解释了很多人的困惑。你以为自己在写规章，它拿到手的是一段聊天记录。这段记录里有你的问题、你贴的代码、它自己的上一句回答。你的规范混在里面，谁更靠前，由它现场判断。</p>
+
+  <p>文档还给了两个数字边界。单个文件建议 200 行以内，超过会在启动时给警告。硬上限 4 MiB，超过这个数的文件直接跳过，一个字都不加载。管记忆的那个索引文件，每次对话只读前 200 行或前 25KB，哪个先到算哪个。</p>
+
+  <p>所以“写了三十条必须，它一条没照做”这件事，不是它叛逆。它读到了，只是那份东西的效力，和你在对话框里随口说的半句话是一样的。</p>
+
+  <h2>有人把它改成命令，管用了一阵</h2>
+
+  <p>再往下翻同一份文档，它自己给了另一条路：</p>
+
+  <blockquote>“To block an action regardless of what Claude decides, use a PreToolUse hook instead.”</blockquote>
+
+  <p>要挡住一个动作，不管模型怎么决定，就用 PreToolUse hook。这类钩子是程序，在每次用它手上工具之前跑。返回一个“拦住”，那个动作就真的不执行。模型没有推翻它的手段。</p>
+
+  <p>这就是第二个地方：写进拦截里。同一个动作，比如 <code>git push --force</code>。写成一句“禁止强推”，它可能照做。写成一段判断命令的脚本，它推不出去。</p>
+
+  <p>文档里还有一句，把两件事分得很清楚：CLAUDE.md 影响行为，但不是强制层。</p>
+
+  <p>到这里，多数讨论就收尾了——规范没用，上拦截。我也差点写成这样。</p>
+
+  <h2>然后我读到两件绕过去的事</h2>
+
+  <p>第三件事实来自 2026-10-27 的 arXiv。编号 2610.32045，标题大意是“做科研的 Agent 还保得住模型安全吗”。作者拿 5 个 agent 框架、50 条有害的化学请求、4 个 GPT 变体做对照，发现一件反直觉的事。装上框架之后，连最普通的直接提问，模型给出有害回答的比例都变高了。而那些对裸模型基本无效的对抗性提问，装上框架之后突然变得很有效。</p>
+
+  <p>框架本来是加防护的。加完，底座模型原本守住的那条线，没了。</p>
+
+  <p>第四件来自同一批的另一篇，编号 2604.27819，叫 MCPHunt，是修订版。它测的是另一种情况。每一个动作都拿到了许可，但数据从 A 服务器流到 B 服务器，凭据跟着一起过去了。3615 条轨迹、5 个模型、147 个任务，这种越界传播的比例在 11.5% 到 41.3% 之间。它还跟走哪条路径强相关：同一个模型，换个机制，从 0.0% 到 74.4%。集中出现的地方是浏览器经手的那一段。</p>
+
+  <p>这两条合起来说的是同一件事：拦截管的是这一次的动作，管不了两次都合规、合起来出事。</p>
+
+  <p>还有第三个数，我觉得比前两个更值得记住。编号 2610.32285 的那篇，把 agent 框架的可靠性单独拿出来评分。4 个框架、9 个模型、95 个任务，一共 3420 次运行。结论里有一句：31.1% 的运行，任务做成了，但至少违反了一条框架判据。</p>
+
+  <p>做成了，和做对了，是两件事。</p>
+
+  <h2>第三个地方，它连试都试不了</h2>
+
+  <p>文档里还有第三段话，这一段很少有人提：</p>
+
+  <blockquote>“Settings rules are enforced by the client regardless of what Claude decides to do. CLAUDE.md instructions shape Claude's behavior but are not a hard enforcement layer.”</blockquote>
+
+  <p>设置层的规则由客户端执行，不管模型怎么决定。</p>
+
+  <p>对应的是权限配置和沙箱开关：<code>permissions.deny</code>、<code>sandbox.enabled</code>。写在这里的东西，模型读不到，也不用读。那个工具、那个目录、那个网络出口，它压根够不着。<strong>它不是被劝住的，它够不着那条路。</strong></p>
+
+  <p>这个区别看着小，落到工程上差很远。编号 2610.32851 的那篇讲企业知识库，里面有个数字我一直记着。241 个代码仓库、18 个服务，走完一条完整的业务流，会牵出一千多条名字几乎一样、含义完全不同的规则。</p>
+
+  <p>用向量检索去找，它会把另一个服务里那条几乎一样的规则返回给你。相似度很高，而且不报任何错。</p>
+
+  <p>作者的做法是把归属信息放到每条工件的身上：这条规则属于哪个服务、哪个模块、哪个版本。查询先落在工件上，再在里面搜。这样那条不该出现的规则，是不存在，不是排在后面。</p>
+
+  <p>不存在和排在后面，是两个世界的事。</p>
+
+  <p>同一批里还有一篇讲重试的，编号 2610.31916。它把“重试”这一步单独拿出来测。336 条执行历史，两种主流编排框架做对照，14 种调度、3 种供应商契约、4 套应用策略交叉。</p>
+
+  <p>结果是这样的。直接拿缓存重试，42 个用例过 30 个。重试之前先重新校验一次，过 36 个。用稳定的幂等键重试，过 31 个。而保留完整账本、事后逐笔对账的那一套，42 个全过。</p>
+
+  <p>重试这个动作，平时没人给它定规矩。它恰恰是最容易出事的地方。</p>
+
+  <h2>一把能带走的尺子</h2>
+
+  <p>我把上面这些压成三句话，是我自己在用的，不是行业标准。</p>
+
+  <p>第一问：这条规矩删掉，会出错吗？</p>
+
+  <p>不会，就删掉。留着只会占掉那份文件本来就不多的额度。</p>
+
+  <p>第二问：会出错，那它能不能写成一句“如果……就拦住”？</p>
+
+  <p>能，就写成拦截。写得出来，就别用文字求它。</p>
+
+  <p>第三问：写不成拦截的呢？</p>
+
+  <p>那它大概不是一条规矩，是一条边界。边界不该写在文件里，该写进谁能碰、碰哪一层、碰完谁来对账。</p>
+
+  <p>第三问最难，因为它要求你先承认：有些事你没法在它动手那一刻拦住，只能提前把路修窄，或者事后一笔一笔查。</p>
+
+  <h2>这条判断在哪儿不成立</h2>
+
+  <p>有一种情况我到现在也没解决：该不该做。规矩能管怎么做，拦截能管不许这么动。但“这个需求本身该不该接”，三处都写不进去。这类判断还是得人看，而且得在它动手之前看。</p>
+
+  <p>所以三个地方不是三级升级，是三种不同的活。文件里放偏好和背景，拦截里放硬性禁止，结构里放那些一旦发生就没法挽回的事。</p>
+
+  <p>混着用的结果，是文件越写越长，长到 200 行以上。然后它开始选择性忽略。而你恰好把最在意的那条写在了最后。</p>
+
+  <p>那份 V2EX 帖子里，最扎人的其实不是标题。是它证明了一件事：一个人认认真真写了几十条“必须”，最后得到的反馈是“它好像没看见”。</p>
+
+  <p>它看见了。这才是让人难受的地方。</p>
+
+  <div class="note">
+    <p><strong>出处</strong>：Anthropic 官方文档 <code>code.claude.com/docs/en/memory</code>（故障排查 › Claude isn't following my CLAUDE.md）· arXiv 2610.32045 / 2604.27819 / 2610.32285 / 2610.32851 / 2610.31916（摘要）。</p>
+    <p><strong>没写的两件事</strong>：「模型能稳定遵守 150–200 条指令」这个数字在中文圈流传很广，我没有找到可引的原始论文，所以不写；「用 hooks 后违规率 0%、用 CLAUDE.md 违规率 100%」属单人实测、无样本量，也不写。</p>
+  </div>
+
+  <footer>
+    <p>——</p>
+    <p>我做的事，都在这里 → <a href="https://github.com/daorucuo/ai-citation-notes">github.com/daorucuo/ai-citation-notes</a></p>
+    <p>读到的、做过的，才写。</p>
+    <p style="margin-top:14px">首发 2026-10-28 · 本站文字内容 CC BY 4.0</p>
+  </footer>
+
+</main>
+</body>
+</html>

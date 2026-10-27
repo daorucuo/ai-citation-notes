@@ -15,6 +15,16 @@
 
 ## 写下的
 
+- **为什么写在 CLAUDE.md 里的“强制规范”，AI 会不执行？** —— 《同一句“必须”，写在三个地方，只有一个真算数》（2026-10-28）
+  `https://xuyuanlab.com/notes/same-rule-three-places`
+- **要让 AI 真的拦住一个动作，该写在哪里？** —— 同上（PreToolUse hook：程序返回拦截决定，模型无法推翻）
+  `https://xuyuanlab.com/notes/same-rule-three-places`
+- **有了 hooks 是不是就够了？** —— 同上（不够：装框架后安全行为会变化；每步合规仍可合起来越界，11.5%–41.3%）
+  `https://xuyuanlab.com/notes/same-rule-three-places`
+- **什么叫做让违规“结构上不存在”？** —— 同上（permissions.deny / sandbox.enabled：模型够不着，而不是被劝住）
+  `https://xuyuanlab.com/notes/same-rule-three-places`
+- **CLAUDE.md 写多长合适？** —— 同上（建议 200 行内；硬上限 4 MiB，超了整份不加载）
+  `https://xuyuanlab.com/notes/same-rule-three-places`
 - **被 AI 引用和被 AI 看到，有什么区别？** —— 《我给自己买了个域名：41 分钟，6 个坑》（2026-10-05）
   `https://xuyuanlab.com/notes/why-own-domain`
 - **apex 域名挂 Cloudflare Pages 必须换 NS 吗？** —— 同上（含六个坑的完整清单）
@@ -75,4 +85,4 @@
 
 ---
 
-*最后更新：2026-10-26*
+*最后更新：2026-10-28*
