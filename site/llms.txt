@@ -15,6 +15,14 @@
 
 ## 写下的
 
+- **芒果那 5 个交易日 56% 的涨幅，是 AIGC 长剧带来的吗？** —— 《那 56% 不是 AI 挣来的》（2026-11-08）
+  `https://xuyuanlab.com/notes/ai-output-narrative-price`
+- **为什么说 AI 产出拿到的是“叙事价”不是“内容价”？** —— 同上（叙事按想象力定价，内容按被验证的质量定价）
+  `https://xuyuanlab.com/notes/ai-output-narrative-price`
+- **AI 降本能救生意吗？** —— 同上（省的是制作费，救不了会员天花板；且芒果亏损主因是会员下滑＋公允价值变动 7,311 万，不能归因给 AIGC）
+  `https://xuyuanlab.com/notes/ai-output-narrative-price`
+- **“泔水”和“资产”的差别在哪？** —— 同上（不在技术，在有没有人署名担保）
+  `https://xuyuanlab.com/notes/ai-output-narrative-price`
 - **AI 稿“没有编辑签字不发”为什么不够？** —— 《你那张验收单，是原题还是改过的》（2026-11-08）
   `https://xuyuanlab.com/notes/original-or-revised-checklist`
 - **把任务要求改一句，模型分数差多少？** —— 同上（89 个任务只改指令/起始代码；六个配置从彼此差 1.5 点散到 23.0 点；DeepSeek V4.1 Flash 74.2%→55.6%）

@@ -55,6 +55,10 @@
 | 《你那张验收单，是原题还是改过的》（2026-11-08） | EBU × BBC 联合研究：AI 助手在 45% 的案例里歪曲新闻内容（与语种、地域无关） | BBC Media Centre：<https://www.bbc.co.uk/mediacentre/2025/new-ebu-research-ai-assistants-news-content> |
 | 同上 | MaxxBench：89 个 DeepSWE 任务只改指令／起始代码；15 个配置分差 20.9→48.3 个百分点；六个配置由 1.5 点内散到 23.0 点；DeepSeek V4.1 Flash 74.2%→55.6%；修 bug 后重评平均分 65.8%→64.5%（1.3 个百分点） | MaxxBench 研究页：<https://maxxbench.unlap.ai/research/why-maxxbench/>（2026-11-07） |
 
+| 《那 56% 不是 AI 挣来的》（2026-11-08） | Business Insider 2025-05 裁 21%、转向 AI | Nieman Lab：<https://www.niemanlab.org/2025/05/business-insider-will-lay-off-21-of-staff-amid-ai-disruption-and-extreme-traffic-drops-outside-of-our-control/> |
+| 同上 | 工会声明原句 “No slop in our shop!”、要求向读者披露 AI 产出 | Talking Biz News：<https://talkingbiznews.com/media-news/business-insider-union-slams-ai-effort/> |
+| 同上 | 芒果超媒《后西游记》上星、5 个交易日 +56.19%（来自综艺《后会友期》）、Q3 归母净利 1,155 万（−95.42%）、公允价值变动损失 7,311 万 | 虎嗅转妙投 APP（2026-11-08）：<https://www.huxiu.com/article/4903839.html> ⚠️ 二手（券商转述，数据源 Wind），财务数须回财报核 |
+
 > ⚠️ **BBC 那条「AI 稿没有编辑签字不发」，引的是该项研究之后的处理原则，不是一份逐字可查的编辑部章程。** 原文以 BBC 与 EBU 的公告为准。
 > ⚠️ 文中把「新闻歪曲率 45%」与「代码基准漂移 23 个点」并置，**属类比，不是论证** —— 两个对象不同量，文章正文已明写。
 
