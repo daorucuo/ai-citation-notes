@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>你那张验收单，是原题还是改过的</title>
+<meta name="description" content="BBC 定下“AI 稿没有编辑签字不发”，可签字的人凭什么签？一份代码评测显示：同一批任务只改一句要求，六个模型从彼此差 1.5 个点散到 23 个点。">
+<meta name="author" content="AI 干活笔记">
+<link rel="canonical" href="https://xuyuanlab.com/notes/original-or-revised-checklist">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你那张验收单，是原题还是改过的">
+<meta property="og:url" content="https://xuyuanlab.com/notes/original-or-revised-checklist">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;text-transform:uppercase;
+  }
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Article",
+      "@id":"https://xuyuanlab.com/notes/original-or-revised-checklist#article",
+      "headline":"你那张验收单，是原题还是改过的",
+      "description":"BBC 定下“AI 稿没有编辑签字不发”，可签字的人凭什么签？一份代码评测显示：同一批任务只改一句要求，六个模型从彼此差 1.5 个点散到 23 个点。",
+      "datePublished":"2026-11-08",
+      "dateModified":"2026-11-08",
+      "inLanguage":"zh-CN",
+      "author":{"@id":"https://xuyuanlab.com/#person"},
+      "publisher":{"@id":"https://xuyuanlab.com/#person"},
+      "mainEntityOfPage":"https://xuyuanlab.com/notes/original-or-revised-checklist",
+      "license":"https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://xuyuanlab.com/notes/original-or-revised-checklist#faq",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"为什么“编辑签字才发”这道闸不可靠？",
+          "acceptedAnswer":{"@type":"Answer","text":"因为它成立的前提是“签字的人验得动”。而签字的人通常凭一句“我们测过了”，测的却是原题卷 —— 题目一改，分数就换一个数，榜单只登第一个数。"}
+        },
+        {
+          "@type":"Question",
+          "name":"把任务要求改一句，模型分数会差多少？",
+          "acceptedAnswer":{"@type":"Answer","text":"MaxxBench 取 89 个 DeepSWE 任务，只改指令或起始代码（参考补丁中位数只增 17 行、3.5%）。15 个配置的最高最低分差从 20.9 个百分点扩大到 48.3 个百分点；原本挤在 74% 附近、彼此差不到 1.5 个点的六个配置，散到 23.0 个点。"}
+        },
+        {
+          "@type":"Question",
+          "name":"这是不是说公开榜单都没有意义？",
+          "acceptedAnswer":{"@type":"Answer","text":"不是。同一份研究修掉了原基准里的参考代码缺陷，再重评原来的提交，平均分只从 65.8% 移到 64.5%，动了 1.3 个百分点 —— 基准本身没那么烂。烂的是把“分数”当成“可靠性”。"}
+        },
+        {
+          "@type":"Question",
+          "name":"那“可靠性”该怎么问？",
+          "acceptedAnswer":{"@type":"Answer","text":"先问条件：在什么任务、什么要求、什么口径下。不问条件的可靠性是一个可以随口说的数；分数是一次成绩，可靠性是一个范围。"}
+        },
+        {
+          "@type":"Question",
+          "name":"验收最脆弱的地方在哪一环？",
+          "acceptedAnswer":{"@type":"Answer","text":"不在最后签字的人，在他手里那张单子是怎么来的。加人盯、加一道签字、加一层复核，都是在签字之后加东西；麻烦出在签字之前。"}
+        },
+        {
+          "@type":"Question",
+          "name":"这篇给的是方法还是问题？",
+          "acceptedAnswer":{"@type":"Answer","text":"是问题。文中两个对象（新闻歪曲率与代码基准漂移）不是同一个量，靠“验收不可靠”相连属类比而非论证。真要回答“该怎么验”，得有自己的实测，这一点我们还没有。"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← AI 干活笔记</a>
+
+  <h1>你那张验收单，是原题还是改过的</h1>
+  <p class="date">2026-11-08</p>
+
+  <div class="lead">
+    <p>一道闸门最后要有人签字，这是对的。但签字的人凭什么签？他手里那张写着“我们测过了”的单子，测的是原题吗？</p>
+  </div>
+
+  <h2>先说那道闸</h2>
+
+  <p>欧洲广播联盟（EBU）和 BBC 做过一次联合研究，结论是：<strong>AI 助手在 45% 的案例里把新闻内容讲错了</strong>，而且与语种、地域无关。这是同类研究里规模最大的一次。</p>
+
+  <p>这项研究之后，BBC 那边立下的一条规矩很干脆：<strong>AI 稿，没有编辑签字，不发。</strong></p>
+
+  <p>这条规矩干净，也正确。它把责任压回到一个具体的人身上 —— 你不签，它就不出去；你签了，出了问题算你的。</p>
+
+  <p>但这道闸要成立，靠的是一个很少有人写出来的前提：<strong>签字的人，看得懂，也验得动。</strong></p>
+
+  <p>前面那个 45%，是怎么测出来的？<strong>是人对着原文一条一条看出来的。</strong>这是唯一一种不依赖“卷子”的验收 —— 它测的就是被验的那件东西本身。</p>
+
+  <p>那平时我们凭什么签字？</p>
+
+  <p><strong>凭一句“我们测过了”。</strong></p>
+
+  <p>问题就在这后半句。</p>
+
+  <h2>把题目改一句，分数就散了</h2>
+
+  <p>有一份公开评测叫 <a href="https://maxxbench.unlap.ai/research/why-maxxbench/">MaxxBench</a>，2026 年 11 月发布。它做的事很简单：<strong>不动题目本身，只改题目的问法。</strong></p>
+
+  <p>它取了 89 个 DeepSWE 的现成任务，<strong>只改指令，或者只改起始代码</strong>。改动的幅度小到什么程度 —— 参考补丁的中位数只增加 <strong>17 行，3.5%</strong>。对任何一个能干的编码 agent 来说，这种量的修订本该是例行公事。</p>
+
+  <p>结果是这样：</p>
+
+  <table>
+    <tr><th>测的是什么</th><th>原来的榜</th><th>要求改过之后</th></tr>
+    <tr><td>15 个配置的最高最低分差</td><td>20.9 个百分点</td><td><strong>48.3 个百分点</strong></td></tr>
+    <tr><td>挤在 74% 附近的那六个配置</td><td>彼此差 <strong>不到 1.5 个点</strong></td><td>散到 <strong>23.0 个点</strong></td></tr>
+    <tr><td>DeepSeek V4.1 Flash</td><td>74.2%</td><td><strong>55.6%</strong></td></tr>
+    <tr><td>Gemini 3.8 Flash</td><td>73.8%</td><td><strong>53.4%</strong></td></tr>
+    <tr><td>Claude Opus 5.5</td><td>74.2%</td><td><strong>76.4%</strong>（涨了）</td></tr>
+  </table>
+
+  <p>这里面最值得看的一行是第三行和第五行的对照。</p>
+
+  <p>Claude Opus 5.5 和 Gemini 3.8 Flash，在原来那张榜上都是 74% 上下 —— <strong>看起来是同一档的两个选手</strong>。要求一改，一个 76.4%，一个 53.4%。<strong>23 个点的差，是换一个选型依据的差。</strong></p>
+
+  <p>而另外两个在原来那张榜上同样是 74.2% 的，掉了 <strong>18.6 到 20.5 个点</strong> —— 注意，这里掉得少的那个也有 18.6。</p>
+
+  <h2>所以这不是说“榜单都是假的”</h2>
+
+  <p>必须在这里收住，因为这一步最容易滑。</p>
+
+  <p>同一份研究还做了另一件事：它发现原基准里有参考代码的 bug，有的强模型反而因为严格照规范写、加了回归测试，撞上了判分器的边角问题。于是研究方<strong>先修掉这些缺陷</strong>，再把原来那批提交<strong>重评了一遍</strong>。</p>
+
+  <p>重评的结果：平均分从 <strong>65.8% 移到 64.5%，只动了 1.3 个百分点</strong>。</p>
+
+  <p><strong>也就是说，原基准没那么烂。它的题是活的。</strong></p>
+
+  <p>那烂在哪儿？</p>
+
+  <p>烂在<strong>“分数”这个东西被当成了“可靠性”</strong>。</p>
+
+  <div class="lead">
+    <p>分数从来不等于可靠。分数等于：在这张卷子上、按这套要求、拿到的一次成绩。</p>
+  </div>
+
+  <p>这句话听起来像废话。但它有一个要命的推论：<strong>你只要把要求换一下，分数就会换一个数。而榜单只登第一个数。</strong></p>
+
+  <h2>于是回到那支笔</h2>
+
+  <p>BBC 那条规矩——“AI 稿没有编辑签字不发”—— 站得住，是因为签字的人在看原文。</p>
+
+  <p>但绝大多数流程里，签字的人不这么做。他看的是分数、是评测报告、是“准确率 92%”。<strong>他在担保内容，其实在担保一张卷子。而那张卷子的题目，随时可以被改一句。</strong></p>
+
+  <p>这不是说签字没用。是说：<strong>把验收放在签字这一刻，就已经晚了。</strong></p>
+
+  <h2>能带走的三句</h2>
+
+  <ol>
+    <li><strong>问“可靠性”之前，先问“在什么条件下”。</strong>不问条件的可靠性是一个可以随口说的数 —— 45 可以，74 可以，55.6 也可以。</li>
+    <li><strong>“分数”不是“可靠性”。</strong>分数是一次成绩，可靠性是一个范围。把成绩当范围用，你在不知情的时候，已经把自己的判断外包给了一张卷子。</li>
+    <li><strong>验收最脆弱的地方，不在最后那个签字的人，在他手里那张单子怎么来的。</strong>加人盯、加一道签字、加一层复核 —— 这些都是在签字之后加东西。麻烦出在签字之前。</li>
+  </ol>
+
+  <h2>我们还没做到什么</h2>
+
+  <div class="note">
+    <p>写完这篇，我自己有三处没做到的，写在这里，免得以后有人当它做到了。</p>
+    <p><strong>一、45% 和 23 个点，不是同一个对象。</strong>一个是新闻内容被讲错的比例，一个是代码基准上分数的漂移。这里靠“验收都不可靠”这个共同点相连 —— <strong>这是类比，不是论证。</strong>我把它明写出来，不藏。</p>
+    <p><strong>二、MaxxBench 我核的是它的公开研究页全文，不是论文。</strong>89 个任务的具体构成、15 个配置的完整名单，我没有逐个核。</p>
+    <p><strong>三、BBC 那条“无编辑签字不发”，我引的是这项研究之后的处理原则，不是一份逐字可查的编辑部章程。</strong>原文请以 BBC 与 EBU 的公告为准。</p>
+    <p>所以这篇能给的是一个问句，不是一个方法。那个问句是：<strong>你那张验收单，是原题还是改过的？</strong></p>
+  </div>
+
+  <h2>来源</h2>
+
+  <ul>
+    <li>BBC Media Centre · <a href="https://www.bbc.co.uk/mediacentre/2025/new-ebu-research-ai-assistants-news-content">Largest study of its kind shows AI assistants misrepresent news content 45% of the time – regardless of language or territory</a>（EBU 与 BBC 联合研究）</li>
+    <li>MaxxBench · <a href="https://maxxbench.unlap.ai/research/why-maxxbench/">Introducing MaxxBench: Benchmarking Task Adaptation and Generalization in Frontier Coding Agents</a>（2026-11-07）</li>
+  </ul>
+
+  <footer>
+    <p>——</p>
+    <p>我做的事，都在这里 → <a href="https://github.com/daorucuo/ai-citation-notes">github.com/daorucuo/ai-citation-notes</a></p>
+    <p>读到的、做过的，才写。</p>
+    <p style="margin-top:14px">首发 2026-11-08 · 联翩实验室 · 本站文字内容 CC BY 4.0</p>
+  </footer>
+
+</main>
+</body>
+</html>

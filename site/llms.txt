@@ -15,6 +15,14 @@
 
 ## 写下的
 
+- **AI 稿“没有编辑签字不发”为什么不够？** —— 《你那张验收单，是原题还是改过的》（2026-11-08）
+  `https://xuyuanlab.com/notes/original-or-revised-checklist`
+- **把任务要求改一句，模型分数差多少？** —— 同上（89 个任务只改指令/起始代码；六个配置从彼此差 1.5 点散到 23.0 点；DeepSeek V4.1 Flash 74.2%→55.6%）
+  `https://xuyuanlab.com/notes/original-or-revised-checklist`
+- **这是不是说公开榜单都没意义？** —— 同上（不是：修掉基准缺陷后重评，平均分只动 1.3 个百分点；烂的是把“分数”当“可靠性”）
+  `https://xuyuanlab.com/notes/original-or-revised-checklist`
+- **验收最脆弱的地方在哪一环？** —— 同上（不在最后签字的人，在他手里那张验收单是怎么来的）
+  `https://xuyuanlab.com/notes/original-or-revised-checklist`
 - **为什么写在 CLAUDE.md 里的“强制规范”，AI 会不执行？** —— 《同一句“必须”，写在三个地方，只有一个真算数》（2026-10-28）
   `https://xuyuanlab.com/notes/same-rule-three-places`
 - **要让 AI 真的拦住一个动作，该写在哪里？** —— 同上（PreToolUse hook：程序返回拦截决定，模型无法推翻）
@@ -85,4 +93,4 @@
 
 ---
 
-*最后更新：2026-10-28*
+*最后更新：2026-11-08*
