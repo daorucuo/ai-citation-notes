@@ -175,7 +175,7 @@ def build(date):
   "description":"{html.escape(summary)}",
   "datePublished":"{date}","dateModified":"{date}","inLanguage":"zh-CN",
   "isPartOf":{{"@id":"https://xuyuanlab.com/watch/#collection"}},
-  "author":{{"@id":"https://xuyuanlab.com/#person"}},
+  "author":{{"@id":"https://xuyuanlab.com/#org"}},
   "publisher":{{"@id":"https://xuyuanlab.com/#org"}},
   "mainEntityOfPage":"https://xuyuanlab.com/watch/{date}",
   "license":"https://creativecommons.org/licenses/by/4.0/"

@@ -1,4 +1,4 @@
-# AI 干活笔记 · robots.txt
+# 联翩实验室 Lianpian Lab · robots.txt
 #
 # 只写一行必要内容。
 # 原因：Cloudflare 的 Bot Preference Sync 会把它自己托管的规则
