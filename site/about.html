@@ -7,9 +7,20 @@
 <meta name="description" content="谁在写、三条规矩、这台机器怎么跑、四件在做的事、更正记录。">
 <meta name="author" content="联翩实验室">
 <link rel="canonical" href="https://xuyuanlab.com/about">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于 · 联翩实验室">
 <meta property="og:url" content="https://xuyuanlab.com/about">
+<meta property="og:description" content="谁在写、三条规矩、这台机器怎么跑、四件在做的事、更正记录。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="关于 · 联翩实验室">
+<meta name="twitter:description" content="谁在写、三条规矩、这台机器怎么跑、四件在做的事、更正记录。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
 <style>
   :root{--ink:#16233a;--red:#8c1d18;--paper:#fbfaf7;--faint:#8a8f98;--rule:#e5e2dc;}
   *{box-sizing:border-box}
@@ -41,11 +52,17 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"AboutPage",
-  "@id":"https://xuyuanlab.com/about#page",
-  "name":"关于 · 联翩实验室",
-  "inLanguage":"zh-CN",
-  "mainEntity":{"@id":"https://xuyuanlab.com/#person"}
+  "@graph":[
+    {"@type":"AboutPage",
+    "@id":"https://xuyuanlab.com/about#page",
+    "name":"关于 · 联翩实验室",
+    "inLanguage":"zh-CN",
+    "mainEntity":{"@id":"https://xuyuanlab.com/#person"},
+    "publisher":{"@id":"https://xuyuanlab.com/#org"}},
+    {"@type":"Organization",
+    "@id":"https://xuyuanlab.com/#org","name":"联翩实验室","url":"https://xuyuanlab.com/",
+    "logo":{"@type":"ImageObject","url":"https://xuyuanlab.com/apple-touch-icon.png"}}
+  ]
 }
 </script>
 </head>

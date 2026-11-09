@@ -119,6 +119,40 @@ def shell(slug, title, desc, body):
 <meta property="og:type" content="website">
 <meta property="og:title" content="{html.escape(title)} · 联翩实验室">
 <meta property="og:url" content="https://xuyuanlab.com/index/{slug}">
+<meta property="og:description" content="{html.escape(desc)}">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{html.escape(title)} · 联翩实验室">
+<meta name="twitter:description" content="{html.escape(desc)}">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{{
+  "@context":"https://schema.org","@graph":[
+    {{"@type":"CollectionPage",
+    "@id":"https://xuyuanlab.com/index/{slug}",
+    "url":"https://xuyuanlab.com/index/{slug}",
+    "name":"{title} · 联翩实验室",
+    "description":"{desc}",
+    "inLanguage":"zh-CN",
+    "isPartOf":{{"@id":"https://xuyuanlab.com/#website"}},
+    "publisher":{{"@id":"https://xuyuanlab.com/#org"}},
+    "license":"https://creativecommons.org/licenses/by/4.0/"}},
+    {{"@type":"Organization",
+    "@id":"https://xuyuanlab.com/#org","name":"联翩实验室","url":"https://xuyuanlab.com/",
+    "logo":{{"@type":"ImageObject","url":"https://xuyuanlab.com/apple-touch-icon.png"}}}},
+    {{"@type":"BreadcrumbList","itemListElement":[
+      {{"@type":"ListItem","position":1,"name":"联翩实验室","item":"https://xuyuanlab.com/"}},
+      {{"@type":"ListItem","position":2,"name":"索引","item":"https://xuyuanlab.com/index/"}},
+      {{"@type":"ListItem","position":3,"name":"{title}","item":"https://xuyuanlab.com/index/{slug}"}}
+    ]}}
+  ]
+}}
+</script>
 <style>{CSS}</style>
 </head>
 <body>

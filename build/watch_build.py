@@ -106,7 +106,7 @@ def render_block(b):
         out.append("</div>")
         return "\n".join(out)
     out = ['<div class="item">',
-           f'<p class="verdict"><span class="tag">{inline(b["tag"])}</span>{inline(b["verdict"])}</p>']
+           f'<h2 class="verdict"><span class="tag">{inline(b["tag"])}</span>{inline(b["verdict"])}</h2>']
     for para in re.split(r"\n\s*\n", b["body"]):
         para = para.strip()
         if not para: continue
@@ -139,6 +139,8 @@ def build(date):
     r = readings(date)
     items = [b for b in blocks if b["tag"]]
     unknowns = [b for b in blocks if b["tag"] is None]
+    # 页面主标题：优先用 front-matter 的摘要（一句话说清这期讲什么），缺了退回首条判词
+    headline = summary or (items[0]["verdict"] if items else f"观察 No.{no}")
     body = "\n".join(render_block(b) for b in items + unknowns)
     page = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -146,26 +148,41 @@ def build(date):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>观察 No.{no} · {date} · 联翩实验室</title>
-<meta name="description" content="{html.escape(summary or items[0]['verdict'] if items else '')}">
+<meta name="description" content="{html.escape(summary)}">
 <meta name="author" content="联翩实验室">
 <link rel="canonical" href="https://xuyuanlab.com/watch/{date}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="观察 No.{no} · {date}">
+<meta property="og:title" content="{html.escape(headline)}">
 <meta property="og:url" content="https://xuyuanlab.com/watch/{date}">
+<meta property="og:description" content="{html.escape(summary)}">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{html.escape(headline)}">
+<meta name="twitter:description" content="{html.escape(summary)}">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>{CSS}</style>
 <script type="application/ld+json">
 {{
   "@context":"https://schema.org","@graph":[
   {{"@type":"Article",
   "@id":"https://xuyuanlab.com/watch/{date}#article",
-  "headline":"观察 No.{no}：{items[0]['verdict'] if items else ''}",
+  "headline":"{html.escape(headline)}",
   "description":"{html.escape(summary)}",
   "datePublished":"{date}","dateModified":"{date}","inLanguage":"zh-CN",
   "isPartOf":{{"@id":"https://xuyuanlab.com/watch/#collection"}},
   "author":{{"@id":"https://xuyuanlab.com/#person"}},
-  "publisher":{{"@id":"https://xuyuanlab.com/#person"}},
+  "publisher":{{"@id":"https://xuyuanlab.com/#org"}},
   "mainEntityOfPage":"https://xuyuanlab.com/watch/{date}",
   "license":"https://creativecommons.org/licenses/by/4.0/"
+}},
+  {{"@type":"Organization",
+  "@id":"https://xuyuanlab.com/#org","name":"联翩实验室","url":"https://xuyuanlab.com/",
+  "logo":{{"@type":"ImageObject","url":"https://xuyuanlab.com/apple-touch-icon.png"}}
 }},
   {{"@type":"BreadcrumbList",
   "itemListElement":[
@@ -185,7 +202,8 @@ def build(date):
     <b>{date}</b>　｜　<b>{len(items)}</b> 条　｜　标签：<b>{html.escape(tags)}</b><br>
     {readings_html(r)}
   </p>
-  <h1>本期{len(items)}条</h1>
+  <p class="kicker">本期 {len(items)} 条</p>
+  <h1>{html.escape(headline)}</h1>
 {body}
   <div class="colophon">
     <p><strong>这个栏目怎么运作</strong><br>
