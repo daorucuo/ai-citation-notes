@@ -116,6 +116,9 @@ def shell(slug, title, desc, body):
 <meta name="description" content="{html.escape(desc)}">
 <meta name="author" content="联翩实验室">
 <link rel="canonical" href="https://xuyuanlab.com/index/{slug}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{html.escape(title)} · 联翩实验室">
+<meta property="og:url" content="https://xuyuanlab.com/index/{slug}">
 <style>{CSS}</style>
 </head>
 <body>

@@ -37,10 +37,17 @@
   .colophon{border-top:2px solid var(--ink);margin-top:52px;padding-top:16px;color:var(--faint);font-size:13.5px;line-height:2}
   a{color:var(--ink)} strong{font-weight:600}
   @media (max-width:600px){main{padding:8vh 20px}.verdict{font-size:20px}body{font-size:16px}}
+
+  .citable{border-top:2px solid var(--ink);margin-top:44px;padding-top:22px}
+  .citable h2{font-size:16px;letter-spacing:.1em;color:var(--red);margin:0 0 8px}
+  .citable .cn{color:var(--faint);font-size:13.5px;margin:0 0 14px}
+  .citable ul{padding-left:20px;margin:0}
+  .citable li{margin:0 0 10px;font-size:15.5px;line-height:1.75}
 </style>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org","@type":"Article",
+  "@context":"https://schema.org","@graph":[
+  {"@type":"Article",
   "@id":"https://xuyuanlab.com/watch/2026-11-09#article",
   "headline":"观察 No.2：建数据中心的钱，一半花在配电上",
   "description":"建数据中心的钱一半花在配电上；能被预测的，才可被生成。",
@@ -50,6 +57,14 @@
   "publisher":{"@id":"https://xuyuanlab.com/#person"},
   "mainEntityOfPage":"https://xuyuanlab.com/watch/2026-11-09",
   "license":"https://creativecommons.org/licenses/by/4.0/"
+},
+  {"@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"联翩实验室","item":"https://xuyuanlab.com/"},
+    {"@type":"ListItem","position":2,"name":"观察","item":"https://xuyuanlab.com/watch/"},
+    {"@type":"ListItem","position":3,"name":"No.2 · 2026-11-09","item":"https://xuyuanlab.com/watch/2026-11-09"}
+  ]}
+  ]
 }
 </script>
 </head>
@@ -83,6 +98,16 @@
 <p>同一件事，只有一半国土的数 —— <strong>看见了缺口，判断不了中国这侧是更松还是更紧。</strong></p>
 <p class="src">来源：<code>组合_媒体线_20261109</code> 需求表第 1、2 条 〔单侧样本〕</p>
 </div>
+<div class="citable">
+<h2>★ 本期可引用</h2>
+<p class="cn">下面每一句都能脱离上下文单独成立，带日期与出处，供直接引用。</p>
+<ul>
+<li>电气系统占数据中心建设成本 45–70%，建筑外壳只占 10–15%（钛媒体 2026-11-09，转引官方数据）。</li>
+<li>熟练电工培养需 4–5 年；变压器交货平均 128 周（同上）。</li>
+<li>美国公用事业已暂停或延后的燃气项目自 2025 年初增长 420%，达 159 GW（Global Energy Monitor，经钛媒体转引，2026-11-09）。</li>
+<li>这个人力缺口是退休替换型，不是需求暴增 —— 所以它不会因为 AI 退潮而消失（同上）。</li>
+<li>判断一项活会不会被 AI 替代，判据是"能不能被预测"，不是"难不难"（The Marginalian 2026-11-06）。</li>
+</ul></div>
   <div class="colophon">
     <p><strong>这个栏目怎么运作</strong><br>
     每天扫公开源，挑 3–5 条值得重点看的，一条一条单独写，不做配对。<br>

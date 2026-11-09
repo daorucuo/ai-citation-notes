@@ -82,6 +82,15 @@ def inline(s):
 BEATS = [("· 发生了什么", "· 发生了什么"), ("· 这意味着什么", "· 这意味着什么"), ("· 所以要关注什么", "· 所以要关注什么")]
 
 def render_block(b):
+    if b["tag"] is None and "可引用" in b["verdict"]:
+        out = ['<div class="citable">', f'<h2>{inline(b["verdict"])}</h2>',
+               '<p class="cn">下面每一句都能脱离上下文单独成立，带日期与出处，供直接引用。</p>', "<ul>"]
+        for ln in b["body"].splitlines():
+            ln = ln.strip()
+            if ln.startswith("- "):
+                out.append(f"<li>{inline(ln[2:].strip())}</li>")
+        out.append("</ul></div>")
+        return "\n".join(out)
     if b["tag"] is None:            # 「今天没搞懂的」
         out = [f'<div class="unknown">', f'<h2>{inline(b["verdict"])}</h2>']
         for para in re.split(r"\n\s*\n", b["body"]):
@@ -111,7 +120,13 @@ def render_block(b):
     out.append("</div>")
     return "\n".join(out)
 
-CSS = open(ROOT / "build" / "watch.css", encoding="utf-8").read()
+CSS = open(ROOT / "build" / "watch.css", encoding="utf-8").read() + """
+  .citable{border-top:2px solid var(--ink);margin-top:44px;padding-top:22px}
+  .citable h2{font-size:16px;letter-spacing:.1em;color:var(--red);margin:0 0 8px}
+  .citable .cn{color:var(--faint);font-size:13.5px;margin:0 0 14px}
+  .citable ul{padding-left:20px;margin:0}
+  .citable li{margin:0 0 10px;font-size:15.5px;line-height:1.75}
+"""
 
 def build(date):
     src = CONTENT / f"{date}.md"
@@ -140,7 +155,8 @@ def build(date):
 <style>{CSS}</style>
 <script type="application/ld+json">
 {{
-  "@context":"https://schema.org","@type":"Article",
+  "@context":"https://schema.org","@graph":[
+  {{"@type":"Article",
   "@id":"https://xuyuanlab.com/watch/{date}#article",
   "headline":"观察 No.{no}：{items[0]['verdict'] if items else ''}",
   "description":"{html.escape(summary)}",
@@ -150,6 +166,14 @@ def build(date):
   "publisher":{{"@id":"https://xuyuanlab.com/#person"}},
   "mainEntityOfPage":"https://xuyuanlab.com/watch/{date}",
   "license":"https://creativecommons.org/licenses/by/4.0/"
+}},
+  {{"@type":"BreadcrumbList",
+  "itemListElement":[
+    {{"@type":"ListItem","position":1,"name":"联翩实验室","item":"https://xuyuanlab.com/"}},
+    {{"@type":"ListItem","position":2,"name":"观察","item":"https://xuyuanlab.com/watch/"}},
+    {{"@type":"ListItem","position":3,"name":"No.{no} · {date}","item":"https://xuyuanlab.com/watch/{date}"}}
+  ]}}
+  ]
 }}
 </script>
 </head>
@@ -180,7 +204,8 @@ def build(date):
     out = SITE / "watch" / f"{date}.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page, encoding="utf-8")
-    print(f"✅ {out.relative_to(ROOT)}  （{len(items)} 条 ＋ {len(unknowns)} 条没搞懂的）｜读数：{readings_html(r)[:60]}")
+    n_cit = sum(1 for b in unknowns if "可引用" in b["verdict"]); n_unk = len(unknowns) - n_cit
+    print(f"✅ {out.relative_to(ROOT)}  （{len(items)} 条 ＋ {n_unk} 没搞懂的 ＋ {n_cit} 可引用）｜读数：{readings_html(r)[:60]}")
     return {"date": date, "no": int(no) if str(no).isdigit() else 0,
             "lead": items[0]["verdict"] if items else "", "tags": tags,
             "summary": summary, "n": len(items)}
