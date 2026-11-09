@@ -1,0 +1,27 @@
+  :root{--ink:#16233a;--red:#8c1d18;--paper:#fbfaf7;--faint:#8a8f98;--rule:#e5e2dc;}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;line-height:1.85;font-size:17px}
+  main{max-width:660px;margin:0 auto;padding:11vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:34px}
+  .back:hover{color:var(--red)}
+  .masthead{border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:8px}
+  .masthead .no{font-size:13px;letter-spacing:.22em;color:var(--red);font-weight:600}
+  .meta{color:var(--faint);font-size:13.5px;margin:10px 0 40px;line-height:1.95}
+  .meta b{color:var(--ink);font-weight:600}
+  h1{font-size:15px;font-weight:600;letter-spacing:.14em;color:var(--faint);margin:0 0 16px;text-transform:uppercase}
+  .item{border-top:1px solid var(--rule);padding-top:26px;margin-top:34px}
+  .tag{display:inline-block;font-size:12px;letter-spacing:.1em;color:var(--red);border:1px solid var(--red);
+    padding:1px 7px;border-radius:2px;vertical-align:3px;margin-right:10px}
+  .verdict{font-size:23px;font-weight:600;line-height:1.55;margin:0 0 22px}
+  .beat{margin:0 0 15px;font-size:16.5px}
+  .beat .lbl{color:var(--faint);font-size:13.5px;letter-spacing:.06em;display:block;margin-bottom:2px}
+  .src{color:var(--faint);font-size:13.5px;margin:16px 0 0;padding-top:10px;border-top:1px dotted var(--rule);word-break:break-all}
+  .src a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .src a:hover{color:var(--red);border-bottom-color:var(--red)}
+  .unknown{border-top:1px solid var(--rule);margin-top:44px;padding-top:26px}
+  .unknown h2{font-size:19px;margin:0 0 14px;font-weight:600;letter-spacing:0}
+  .colophon{border-top:2px solid var(--ink);margin-top:52px;padding-top:16px;color:var(--faint);font-size:13.5px;line-height:2}
+  a{color:var(--ink)} strong{font-weight:600}
+  @media (max-width:600px){main{padding:8vh 20px}.verdict{font-size:20px}body{font-size:16px}}
