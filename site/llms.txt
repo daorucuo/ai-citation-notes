@@ -46,6 +46,12 @@
 
 ## 写下的
 
+- **人格是一个有方向的缺陷，这是什么意思？** —— 《人物能不能被判卷，取决于你把他放进哪个世界》（2026-11-08·实践·InkStory）
+  `https://xuyuanlab.com/notes/lottery-to-character-conflict`
+- **人物怎么才会动起来？** —— 同上（不一定是他变了，常常是别人来结他开的单：下一幕有三种来源——秤变／人变／局面动）
+  `https://xuyuanlab.com/notes/lottery-to-character-conflict`
+- **怎么判断人物写对了？** —— 同上（需要一个能判卷的世界：快、不可争辩、无人计票。训练只在彩票这类世界里跑，循环才进婚姻与宫廷）
+  `https://xuyuanlab.com/notes/lottery-to-character-conflict`
 - **芒果那 5 个交易日 56% 的涨幅，是 AIGC 长剧带来的吗？** —— 《那 56% 不是 AI 挣来的》（2026-11-08）
   `https://xuyuanlab.com/notes/ai-output-narrative-price`
 - **为什么说 AI 产出拿到的是“叙事价”不是“内容价”？** —— 同上（叙事按想象力定价，内容按被验证的质量定价）
