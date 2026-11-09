@@ -3,211 +3,129 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI 观察线 · 2026-11-02–11-08 · 第 0 期</title>
-<meta name="description" content="这一周 AI 内容的四个环节——供料、验收、定价、担责——同时松了手，松的方式一模一样。每周一期的公开观察。">
+<title>观察 No.1 · 2026-11-08 · 联翩实验室</title>
+<meta name="description" content="监管从管品类改成管生成方式；改一句要求，模型差 23 个点；56% 的涨幅记在综艺账上。每天从 21 类公开源里挑出值得重点看的几条。">
 <meta name="author" content="联翩实验室">
 <link rel="canonical" href="https://xuyuanlab.com/watch/2026-11-08">
+<link rel="alternate" hreflang="zh-CN" href="https://xuyuanlab.com/watch/2026-11-08">
+<link rel="alternate" hreflang="en" href="https://xuyuanlab.com/en/watch/2026-11-08">
+<link rel="alternate" hreflang="x-default" href="https://xuyuanlab.com/watch/2026-11-08">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AI 观察线 · 2026-11-02–11-08">
+<meta property="og:title" content="观察 No.1 · 2026-11-08">
 <meta property="og:url" content="https://xuyuanlab.com/watch/2026-11-08">
 <style>
-  :root{
-    --ink:#16233a;      /* 墨蓝 · 正文 */
-    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
-    --paper:#fbfaf7;    /* 纸白 */
-    --faint:#8a8f98;    /* 次级文字 */
-    --rule:#e5e2dc;     /* 分隔线 */
-  }
+  :root{--ink:#16233a;--red:#8c1d18;--paper:#fbfaf7;--faint:#8a8f98;--rule:#e5e2dc;}
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
-    line-height:1.85;
-    font-size:17px;
-  }
-  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
-  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;line-height:1.85;font-size:17px}
+  main{max-width:660px;margin:0 auto;padding:11vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:34px}
   .back:hover{color:var(--red)}
-  .kicker{color:var(--faint);font-size:14px;letter-spacing:.08em;margin:0 0 10px}
-  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
-  .date{color:var(--faint);font-size:14px;margin:0 0 44px}
-  h2{
-    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
-    margin:52px 0 18px;text-transform:uppercase;
-  }
-  p{margin:0 0 18px}
-  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
-  .lead p{margin:0;font-size:18px}
-  ul,ol{padding-left:22px;margin:0 0 18px}
-  li{margin:0 0 8px}
-  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
-  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
-  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
-  tr:last-child td{border-bottom:1px solid var(--rule)}
-  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
-  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
-  .note p{margin:0 0 10px}
-  .note p:last-child{margin:0}
-  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
-  a:hover{border-bottom-color:var(--red);color:var(--red)}
-  strong{font-weight:600}
-  .clue{border-top:1px solid var(--rule);padding-top:18px;margin-bottom:26px}
-  .clue h3{font-size:19px;font-weight:600;margin:0 0 10px;line-height:1.55}
-  .clue .what{color:var(--faint);font-size:15.5px;margin:0 0 10px}
-  .clue .now,.clue .say{font-size:16px;margin:0 0 10px}
-  .clue .say{border-left:2px solid var(--red);padding-left:14px}
-  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
-  footer p{margin:0 0 6px}
-  @media (max-width:600px){
-    main{padding:8vh 20px 8vh}
-    body{font-size:16px}
-    table{font-size:14.5px}
-    th,td{padding:8px 8px}
-    .clue h3{font-size:18px}
-  }
+  .masthead{border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:8px}
+  .masthead .no{font-size:13px;letter-spacing:.22em;color:var(--red);font-weight:600}
+  .meta{color:var(--faint);font-size:13.5px;margin:10px 0 40px;line-height:1.95}
+  .meta b{color:var(--ink);font-weight:600}
+  h1{font-size:15px;font-weight:600;letter-spacing:.14em;color:var(--faint);margin:0 0 16px;text-transform:uppercase}
+  .item{border-top:1px solid var(--rule);padding-top:26px;margin-top:34px}
+  .tag{display:inline-block;font-size:12px;letter-spacing:.1em;color:var(--red);border:1px solid var(--red);
+    padding:1px 7px;border-radius:2px;vertical-align:3px;margin-right:10px}
+  .verdict{font-size:23px;font-weight:600;line-height:1.55;margin:0 0 22px}
+  .beat{margin:0 0 15px;font-size:16.5px}
+  .beat .lbl{color:var(--faint);font-size:13.5px;letter-spacing:.06em;display:block;margin-bottom:2px}
+  .src{color:var(--faint);font-size:13.5px;margin:16px 0 0;padding-top:10px;border-top:1px dotted var(--rule)}
+  .src a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .src a:hover{color:var(--red);border-bottom-color:var(--red)}
+  .flag{color:var(--red)}
+  .unknown{border-top:1px solid var(--rule);margin-top:44px;padding-top:26px}
+  .unknown h2{font-size:19px;margin:0 0 14px;font-weight:600}
+  .colophon{border-top:2px solid var(--ink);margin-top:52px;padding-top:16px;color:var(--faint);font-size:13.5px;line-height:2}
+  a{color:var(--ink)} strong{font-weight:600}
+  @media (max-width:600px){main{padding:8vh 20px}.verdict{font-size:20px}body{font-size:16px}}
 </style>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Article",
-      "@id":"https://xuyuanlab.com/watch/2026-11-08#article",
-      "headline":"AI 观察线 · 2026-11-02–11-08（第 0 期）：四环同时松手",
-      "description":"这一周 AI 内容的四个环节——供料、验收、定价、担责——同时松了手，松的方式一模一样：都没有一个人，在某个时刻，为某一条具体的产出签字。",
-      "datePublished":"2026-11-08",
-      "dateModified":"2026-11-08",
-      "inLanguage":"zh-CN",
-      "isPartOf":{"@id":"https://xuyuanlab.com/watch/#collection"},
-      "author":{"@id":"https://xuyuanlab.com/#person"},
-      "publisher":{"@id":"https://xuyuanlab.com/#person"},
-      "mainEntityOfPage":"https://xuyuanlab.com/watch/2026-11-08",
-      "license":"https://creativecommons.org/licenses/by/4.0/"
-    },
-    {
-      "@type":"FAQPage",
-      "@id":"https://xuyuanlab.com/watch/2026-11-08#faq",
-      "mainEntity":[
-        {
-          "@type":"Question",
-          "name":"AI 观察线是什么？",
-          "acceptedAnswer":{"@type":"Answer","text":"一条每周更新的公开观察：我们每天扫 21 类公开信源，把这一周看见的线索挑出三条，每条给一句判断。它不是新闻摘要，一期只发一个能立住三周的判断。"}
-        },
-        {
-          "@type":"Question",
-          "name":"这一周的主要判断是什么？",
-          "acceptedAnswer":{"@type":"Answer","text":"AI 内容的供料、验收、定价、担责四个环节在同一周里同时松了手，而且松的方式一模一样：都没有一个具体的人，在某个时刻，为某一条具体的产出签字。"}
-        },
-        {
-          "@type":"Question",
-          "name":"“供料”这一环松在哪里？",
-          "acceptedAnswer":{"@type":"Answer","text":"一次 24 小时跟进观察：30 条评论类报道里，复述 19、解读 9、推演 2、落地建议 1、批判 0；加新事实 5 条，一手 0 条。唯一推动第二轮传播的，是事实又变了一次，不是谁的解读。"}
-        },
-        {
-          "@type":"Question",
-          "name":"“验收”这一环松在哪里？",
-          "acceptedAnswer":{"@type":"Answer","text":"一份公开评测显示，同一批 89 个任务只改指令或起始代码，六个原本彼此差不到 1.5 个点的配置散到 23.0 个点。这不是说榜单没意义——修掉基准缺陷后重评，平均分只动 1.3 个百分点。松的是“把分数当成可靠性”。"}
-        },
-        {
-          "@type":"Question",
-          "name":"“定价”这一环松在哪里？",
-          "acceptedAnswer":{"@type":"Answer","text":"一部国内首部上星的 AIGC 长剧之后，股价 5 个交易日涨 56.19%，可那 56% 是同期的综艺挣来的——报道原文写“上一次交易的还是 AI 叙事的未来”。AI 拿到的是叙事价，不是内容价。"}
-        },
-        {
-          "@type":"Question",
-          "name":"“担责”这一环松在哪里？",
-          "acceptedAnswer":{"@type":"Answer","text":"监管第一次把治理对象从“内容品类”换成“生成方式”：广电总局专项整治把 AI 生成的低俗微短剧列入重点。此前管平台、管品类，这次按生成方式划红线。"}
-        },
-        {
-          "@type":"Question",
-          "name":"这一期我们没搞懂的是什么？",
-          "acceptedAnswer":{"@type":"Answer","text":"美国数据中心在建产能里，约 45% 落在想限制数据中心的州；同期 10 个州的选民把数据中心变成了选举议题。这两句放在一起我们还判断不了——表里没有一条料能跟它互相反驳。"}
-        }
-      ]
-    }
-  ]
+  "@type":"Article",
+  "@id":"https://xuyuanlab.com/watch/2026-11-08#article",
+  "headline":"观察 No.1：监管从管品类，改成管生成方式",
+  "description":"每天从 21 类公开源里挑出值得重点看的几条。本期三条：监管从管品类改成管生成方式；改一句要求模型差 23 个点；56% 的涨幅记在综艺账上。",
+  "datePublished":"2026-11-08","dateModified":"2026-11-08","inLanguage":"zh-CN",
+  "isPartOf":{"@id":"https://xuyuanlab.com/watch/#collection"},
+  "author":{"@id":"https://xuyuanlab.com/#person"},
+  "publisher":{"@id":"https://xuyuanlab.com/#person"},
+  "mainEntityOfPage":"https://xuyuanlab.com/watch/2026-11-08",
+  "license":"https://creativecommons.org/licenses/by/4.0/"
 }
 </script>
 </head>
 <body>
 <main>
 
-  <a class="back" href="/watch/">← AI 观察线</a>
+  <a class="back" href="/watch/">← 观察 · 各期</a>
 
-  <p class="kicker">AI 观察线 · 第 0 期</p>
-  <h1>四环同时松手</h1>
-  <p class="date">2026-11-02 – 11-08</p>
+  <div class="masthead"><span class="no">观 察　No.1</span></div>
+  <p class="meta">
+    <b>2026-11-08</b>　｜　<b>3</b> 条　｜　标签：<b>监管 · 技术 · 商业</b><br>
+    今日扫 <b>554</b> 条 ／ 新增 432（78.0%）／ 21 类源全通、0 失败 ／ 立住 <b>6</b> 条原子
+  </p>
 
-  <div class="lead">
-    <p>这一周，AI 内容的四个环节——供料、验收、定价、担责——同时松了手。而松的方式一模一样：都没有一个具体的人，在某个时刻，为某一条具体的产出签字。</p>
+  <h1>本期三条</h1>
+
+  <div class="item">
+    <p class="verdict"><span class="tag">监管与政策</span>监管从管品类，改成管生成方式</p>
+    <p class="beat"><span class="lbl">· 发生了什么</span>
+      同一天，两个互不转述的源各报一次：广电总局的专项治理把「AI 生成的低俗微短剧」列入重点（联合早报 11-07／Solidot 11-07）。同一周，一部 AI 短剧播放量破 120 亿。</p>
+    <p class="beat"><span class="lbl">· 这意味着什么</span>
+      过去两年，治理对象是「平台」和「内容品类」；这次换成了<strong>怎么生成的</strong>。监管收紧和播放量破百亿发生在同一周——说明这条赛道的量已经大到必须被点名。</p>
+    <p class="beat"><span class="lbl">· 所以要关注什么</span>
+      AI 内容的合规分界线，从「内容长什么样」前移到「内容怎么来的」。审查点因此落进生产环节：<strong>谁生成的、用什么生成的，以后要被问。</strong></p>
+    <p class="src">来源：<a href="https://www.zaochenbao.com/news/china/202611/0785000.html">联合早报 2026-11-07</a> ／ <a href="https://www.solidot.org/story?sid=85821">Solidot 2026-11-07</a>　〔双源〕〔一手·中文〕</p>
   </div>
 
-  <h2>① 本周读数</h2>
-
-  <table>
-    <tr><th>看什么</th><th>本周</th></tr>
-    <tr><td>信源</td><td>21 类公开源，<strong>全通、0 失败</strong>（3 个源周一探活）</td></tr>
-    <tr><td>扫到</td><td>三轮新增 <strong>440 / 431 / 432</strong> 条（新增率 80.7% / 78.8% / 78.0%）；最后一轮盘中 554 条</td></tr>
-    <tr><td>立住</td><td>原子条目 <strong>6 条</strong>（三条自测口径、三条行业事实），候选组合 <strong>8 行</strong></td></tr>
-    <tr><td>成稿</td><td><strong>2 篇</strong>（都在这一周的最后一天写成并上线）</td></tr>
-    <tr><td>一手</td><td><strong>0 条</strong> —— 见线索一</td></tr>
-  </table>
-
-  <p class="what" style="color:var(--faint);font-size:15px">读数由脚本产出，不由人来写。判断由人写，写完标日期。</p>
-
-  <h2>② 三条线索</h2>
-
-  <div class="clue">
-    <h3>一 · 三十条跟进，一手零条</h3>
-    <p class="what">是什么：一次 24 小时跟进观察，覆盖四条候选事实，数到 30 条评论类报道。</p>
-    <p class="now">为什么此刻：因为这是「媒体在做什么」第一次被量化，而不是被评论。分类结果：复述 19、解读 9、推演 2、落地建议 1、批判 0；<strong>加新事实 5 条，一手 0 条</strong>。唯一推动第二轮传播的，是事实又变了一次——不是谁的解读。对照组（没主体、没价格、没受害者的那条）24 小时零跟进。</p>
-    <p class="say"><strong>判断：换的是配件，不是料。</strong>供给这一环松掉，不是因为没人写，是因为没有人在产新事实。</p>
+  <div class="item">
+    <p class="verdict"><span class="tag">技术供给</span>改一句要求，模型差 23 个点</p>
+    <p class="beat"><span class="lbl">· 发生了什么</span>
+      一份公开评测取了 89 个现成任务，<strong>只改指令，或只改起始代码</strong>（参考补丁中位数只多 17 行、3.5%）。15 个配置的最高最低分差从 20.9 个百分点扩到 48.3；<strong>六个原本挤在 74% 附近、彼此差不到 1.5 个点的配置，散到 23.0 个点</strong>。DeepSeek V4.1 Flash 74.2%→55.6%，Gemini 3.8 Flash 73.8%→53.4%。</p>
+    <p class="beat"><span class="lbl">· 这意味着什么</span>
+      分数不是稳定性指标，它只是「在这张卷子上的一次成绩」。而验收靠的正是分数。要收住一句：<strong>这并不等于榜单没有意义</strong>——同一份研究修掉基准缺陷后重评原提交，平均分只从 65.8% 移到 64.5%，动了 1.3 个百分点。基准没那么烂，烂的是<strong>把分数当成可靠性</strong>。</p>
+    <p class="beat"><span class="lbl">· 所以要关注什么</span>
+      凡拿「我们测过了」当签字依据的地方，那张单子测的是原题卷。要问的不是「准不准」，是<strong>「在什么条件下准」</strong>。</p>
+    <p class="src">来源：<a href="https://maxxbench.unlap.ai/research/why-maxxbench/">MaxxBench 研究页 2026-11-07</a>　〔有数〕〔一手·英文〕</p>
   </div>
 
-  <div class="clue">
-    <h3>二 · 改一句话要求，分数就散了</h3>
-    <p class="what">是什么：一份公开评测取了 89 个现成任务，只改指令或起始代码（参考补丁中位数只多 17 行、3.5%）。</p>
-    <p class="now">为什么此刻：因为「我们测过了」是眼下所有签字动作的前提。结果：15 个配置的最高最低分差从 20.9 个百分点扩到 48.3 个百分点；六个原本挤在 74% 附近、彼此差不到 1.5 个点的配置，散到 <strong>23.0 个点</strong>。</p>
-    <p class="say"><strong>判断：分数不等于可靠，分数等于“在这张卷子上的一次成绩”。</strong>要收住一句：这不是说榜单没意义——同一份研究修掉基准缺陷后重评原提交，平均分只从 65.8% 移到 64.5%，动了 1.3 个百分点。基准没那么烂，烂的是把分数当可靠性。</p>
+  <div class="item">
+    <p class="verdict"><span class="tag">商业模式</span>56% 的涨幅记在综艺账上</p>
+    <p class="beat"><span class="lbl">· 发生了什么</span>
+      国内首部上星的 AIGC 长剧之后，芒果超媒股价 <strong>5 个交易日涨 56.19%</strong>。但报道原文写：「上次 AIGC 长剧交易的还是 <strong>AI 叙事的未来</strong>，这次爆款综艺带来的是实打实的会员和广告收入」。涨幅来自同期的综艺《后会友期》——市占率破 70%、冠名方直播间单场破 20 万人次。</p>
+    <p class="beat"><span class="lbl">· 这意味着什么</span>
+      那 56% 是人做的综艺挣的，跟 AI 无关。AI 长剧那一轮，市场买的是<strong>叙事</strong>，不是内容。</p>
+    <p class="beat"><span class="lbl">· 所以要关注什么</span>
+      判断「AI 内容能不能卖钱」，不能看股价，要看<strong>谁在为质量定价</strong>。叙事价按想象力定，一天能定；内容价按被验证的质量定，要一季一季攒。</p>
+    <p class="src">来源：<a href="https://www.huxiu.com/article/4903839.html">虎嗅转妙投 APP 2026-11-08</a>　〔冲突〕<span class="flag">〔二手〕⚠️ 股价与 Q3 利润待回芒果超媒公告核</span></p>
   </div>
 
-  <div class="clue">
-    <h3>三 · 那 56% 不是 AI 挣来的</h3>
-    <p class="what">是什么：国内首部上星的 AIGC 长剧之后，一家传媒公司股价 5 个交易日涨 56.19%。</p>
-    <p class="now">为什么此刻：因为这是「AI 内容能否被定价」最干净的一个样本。而报道原文写得很直白——「上一次 AIGC 长剧交易的还是 <strong>AI 叙事的未来</strong>，这次爆款综艺带来的是实打实的会员和广告收入」。那 56% 来自同期的综艺，那档综艺跟 AI 没有关系。</p>
-    <p class="say"><strong>判断：截至 2026-11，AI 产出拿到的是叙事价，不是内容价。</strong>叙事按想象力定价，一天能定；内容按被验证的质量定价，要一季一季攒。</p>
+  <div class="unknown">
+    <h2>★ 今天没搞懂的</h2>
+    <p>两组数放在一起，我们<strong>判断不了</strong>：</p>
+    <ul>
+      <li>美国数据中心<strong>在建</strong>产能约 <strong>75%</strong> 在共和党主导州；</li>
+      <li>而<strong>计划</strong>产能里，民主党州占 <strong>45%</strong>；</li>
+      <li>同一周，<strong>10 个州的选民</strong>把数据中心变成了选举议题，出口民调 <strong>56%</strong> 支持限制。</li>
+    </ul>
+    <p>钱要往哪去、票往哪投，方向是拧的。但今天我们只有一组样本，没有第二条独立时间线能跟它互相反驳——<strong>看见了，判断不了。</strong></p>
+    <p class="src">来源：收割机原子 #1910 ／ `组合_媒体线_20261108` 第 8 行　〔单源样本〕</p>
   </div>
 
-  <p>还有第四环——<strong>担责</strong>。这一周监管第一次把治理对象从「内容品类」换成「生成方式」：专项整治把 AI 生成的低俗微短剧列入重点。此前管平台、管品类，这次按生成方式划红线。它不是线索，因为还不构成判断，先记在这里。</p>
-
-  <h2>③ 我们没搞懂的</h2>
-
-  <div class="note">
-    <p>美国数据中心在建产能里，<strong>约 45% 落在想限制数据中心的州</strong>；而同一周，<strong>10 个州的选民把数据中心变成了选举议题</strong>，出口民调里 56% 支持限制。</p>
-    <p>这两句放在一起应该是件大事——钱正往反对它的地方去。但<strong>我们还判断不了</strong>：表里没有一条材料能跟它互相反驳，也没有第二条独立的时间线。这是这一周最像「明天的事」、也最看不懂的一条。</p>
+  <div class="colophon">
+    <p><strong>这个栏目怎么运作</strong><br>
+    每天扫 21 类公开源，挑 3–5 条值得重点看的，一条一条单独写，不做配对。<br>
+    每条三段：发生了什么 ／ 这意味着什么 ／ 所以要关注什么。<strong>缺一段就不发。</strong><br>
+    收料标准：〔双源〕互不转述的源同时报 ／〔有数〕有可核的数 ／〔第一次〕首次某种做法 ／〔冲突〕撞已知判断 ／〔落位〕一直等的零件出现了。<br>
+    来源分层：〔一手·英文〕〔一手·中文〕〔二手〕—— <strong>只有中文二手源的料，本期不选。</strong></p>
+    <p style="margin-top:14px">English: <a href="/en/watch/2026-11-08">Observation No.1</a>　｜　<a href="/watch/">全部各期</a>　｜　<a href="/llms.txt">llms.txt</a></p>
+    <p style="margin-top:14px">2026-11-08 · 联翩实验室 · 本站文字内容 CC BY 4.0</p>
   </div>
-
-  <h2>④ 本期更正</h2>
-
-  <p><strong>一条。</strong>芒果那 56.19% 的归属：素材层最初写作「AIGC 长剧带动股价」，与报道原文不符，实为同期综艺《后会友期》。已在 <a href="/notes/ai-output-narrative-price">《那 56% 不是 AI 挣来的》</a> 里按原文纠回。</p>
-
-  <p style="color:var(--faint);font-size:15.5px">更正常设。没有更正的一期会写「本期无」——不省这一栏，因为它比判断更能说明这套东西在不在运转。</p>
-
-  <h2>⑤ 这一期为什么算一期</h2>
-
-  <p>判据只有一句：<strong>有没有一句话是三周后还立得住的。</strong></p>
-
-  <p>这一期的那句是：<strong>四个环节同时松手，而且松的方式一模一样。</strong>三个环节（供料、验收、定价）各有一个可核的数撑着，第四个（担责）只有定性——所以它进了「先记在这里」，没有进线索。</p>
-
-  <footer>
-    <p>——</p>
-    <p>下一期：<strong>2026-11-15</strong>（每周一期）· 没有值得说的就写「本期无新判断」</p>
-    <p>本栏目读数由脚本产出，判断由人写；方法见 <a href="/">首页「方法上的三条坚持」</a>。</p>
-    <p style="margin-top:14px">首发 2026-11-08 · 联翩实验室 · 本站文字内容 CC BY 4.0</p>
-  </footer>
 
 </main>
 </body>
