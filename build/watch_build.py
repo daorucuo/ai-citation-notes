@@ -26,10 +26,17 @@ def readings(date):
     if cands:
         try:
             d = json.loads(cands[0].read_text(encoding="utf-8"))
-            nn = (d.get("fetch") or {}).get("newsnow") or {}
-            r["scan"] = nn.get("total"); r["new"] = nn.get("new")
-            r["rate"] = nn.get("rate");  r["sources"] = nn.get("sources")
-            r["atoms"] = (d.get("store") or {}).get("atoms")
+            # 收割机报告有两种键名（英文 2026-11-08 版 / 中文 2026-11-09 起），两种都要认
+            fetch = d.get("fetch") or d.get("源") or {}
+            store = d.get("store") or d.get("存段") or {}
+            nn = fetch.get("newsnow") or {}
+            r["scan"] = nn.get("total", nn.get("抓回"))
+            r["new"]  = nn.get("new",   nn.get("新增"))
+            rate = nn.get("rate", nn.get("新增率"))
+            if isinstance(rate, float): rate = f"{rate*100:.1f}%"
+            r["rate"] = rate
+            r["sources"] = nn.get("sources", nn.get("子源"))
+            r["atoms"] = store.get("atoms", store.get("原子"))
         except Exception as e:
             print(f"  ⚠️ 读数解析失败：{e}")
     return r
@@ -192,6 +199,8 @@ def replace_region(path, marker, new_html):
 def collect():
     rows = []
     for f in sorted(CONTENT.glob("*.md")):
+        if f.name.startswith("_") or f.name.lower() == "readme.md":
+            continue
         meta, blocks = parse(f)
         items = [b for b in blocks if b["tag"]]
         rows.append({"date": f.stem, "no": int(meta.get("期号", 0)),
@@ -203,6 +212,8 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     if not args or args[0] == "--all":
         for f in sorted(CONTENT.glob("*.md")):
+            if f.name.startswith("_") or f.name.lower() == "readme.md":
+                continue
             build(f.stem)
     else:
         for d in args: build(d)
@@ -226,4 +237,5 @@ if __name__ == "__main__":
   </a>
 """ for r in rows)
         replace_region("watch/index.html", "LIST", wl)
-    print(f"\n共 {len(list(CONTENT.glob('*.md')))} 期；列表上限 {LIMIT_INDEX}")
+    n_real = len([f for f in CONTENT.glob("*.md") if not f.name.startswith("_") and f.name.lower() != "readme.md"])
+    print(f"\n共 {n_real} 期；列表上限 {LIMIT_INDEX}")
