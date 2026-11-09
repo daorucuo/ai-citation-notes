@@ -44,6 +44,21 @@
 
 ---
 
+## 索引（三份编目）
+
+> 只做指向：题名、出处、链接。⛔ 不转载原文。页面由 `build/md2page.py` 从仓库 markdown 生成。
+
+- **GEO / AI Search 有哪些公开研究？** —— 研究索引：54 篇（2023–2026），按八个问题分组的精选 ＋ 按十个主题的完整清单。
+  `https://xuyuanlab.com/index/research`
+- **这领域有哪些开源工具？** —— 工具生态：30+ 个项目，分端到端平台／Agent Skill 与 MCP／内容就绪度／研究配套／出版基础设施。
+  `https://xuyuanlab.com/index/tools`
+- **llms.txt 是什么，和它配套的还有哪几层？** —— 技术标准与 AI 可读性。
+  `https://xuyuanlab.com/index/standards`
+- **这个站是谁在做、凭什么信？** —— 关于：三条规矩、这台机器怎么跑、四件在做的事、更正与出处。
+  `https://xuyuanlab.com/about`
+
+---
+
 ## 写下的
 
 - **人格是一个有方向的缺陷，这是什么意思？** —— 《人物能不能被判卷，取决于你把他放进哪个世界》（2026-11-08·实践·InkStory）
