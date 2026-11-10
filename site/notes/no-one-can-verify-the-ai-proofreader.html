@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>裁掉 15 个校对之后，没人能证明 AI 校得对</title>
+<meta name="description" content="Le Point 把校对从 18 人砍到 3 人，理由是 AI 能顶。可替 AI 验收的人，也一起被裁掉了。误报会吵，漏报不吵。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/no-one-can-verify-the-ai-proofreader">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="裁掉 15 个校对之后，没人能证明 AI 校得对">
+<meta property="og:url" content="https://xuyuanlab.com/notes/no-one-can-verify-the-ai-proofreader">
+<meta property="og:description" content="Le Point 把校对从 18 人砍到 3 人，理由是 AI 能顶。可替 AI 验收的人，也一起被裁掉了。误报会吵，漏报不吵。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="裁掉 15 个校对之后，没人能证明 AI 校得对">
+<meta name="twitter:description" content="Le Point 把校对从 18 人砍到 3 人，理由是 AI 能顶。可替 AI 验收的人，也一起被裁掉了。误报会吵，漏报不吵。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/no-one-can-verify-the-ai-proofreader#article",
+      "headline": "裁掉 15 个校对之后，没人能证明 AI 校得对",
+      "description": "Le Point 把校对从 18 人砍到 3 人，理由是 AI 能顶。可替 AI 验收的人，也一起被裁掉了。误报会吵，漏报不吵。",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/no-one-can-verify-the-ai-proofreader",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/no-one-can-verify-the-ai-proofreader#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le Point 把校对从 18 人砍到 3 人，理由是 AI 能顶。可替 AI 验收的人，也一起被裁掉了。误报会吵，漏报不吵。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>裁掉 15 个校对之后，没人能证明 AI 校得对</h1>
+  <p class="date">2026-11-10 · 媒体 · Le Point</p>
+
+<div class="lead"><p>把校对交给 AI，同时裁掉能验收它的人 —— 于是它错得对不对，再没有第三方能说。</p></div>
+<p class="src">源：Le Point 重组计划（法媒转述）＋ arXiv 2611.08834（读原文）</p>
+
+<hr>
+<h2>一、先看发生了什么</h2>
+<p>2026 年，法国《观点》周刊（Le Point）宣布重组。总编辑 Étienne Gernelle 的方案砍掉 <strong>32 个固定岗 ＋ 26 个固定自由撰稿岗，共 58 个位置</strong>，其中 <strong>52 个是记者</strong>，只有 6 个是行政支持。</p>
+<p><strong>校对与修订部门从 18 人减到 3 人。</strong> 减少 83%。</p>
+<p>管理层的理由很直白：AI 工具能承担一部分校对工作，<strong>"但需人工监督"</strong>。</p>
+<p>编辑部内部的反应，法媒引述的原话是"真正的血洗"（un véritable bain de sang）。这次裁员规模几乎是 2014 年那次（30 人离职）的两倍。</p>
+<hr>
+<h2>二、命题：验收的人被一起裁掉了</h2>
+<p>所有人都盯着"18 减到 3"这个数，问 AI 顶不顶得住。</p>
+<p><strong>真正的问题不是这个。</strong> 是另一句：</p>
+<blockquote><p><strong>谁来验收它？</strong></p></blockquote>
+<p>校对这份工作的产出有两种错：</p>
+<table>
+<thead><tr><th>错法</th><th>谁会发现</th></tr></thead>
+<tbody>
+<tr><td><strong>改错了</strong>（把对的改成错的）</td><td>作者、编辑，一眼看出来</td></tr>
+<tr><td><strong>没改出来</strong>（该改的漏了）</td><td><strong>没人会发现</strong></td></tr>
+</tbody></table>
+<p>第一种错会响。第二种错<strong>不响</strong>。</p>
+<p>而裁到 3 个人之后，这 3 个人既是干活的，也是唯一的验收人。<strong>他们没有余量去做"验收"这件事</strong> —— 验收一个工具需要的是抽样、对照、量化，那是另一种工作，不是同一双手在做稿子的间隙能顺手干的。</p>
+<hr>
+<h2>三、为什么我说"没人能证明"</h2>
+<p>同一周，一份 11 月上传的预印本（arXiv 2611.08834）测了 <strong>11 个开源的"提示注入防护"模型</strong>，让它们跑真实的法律合同。</p>
+<p>结果：文档级<strong>误报率最高 92.39%</strong> —— 一份正常合同，十次有九次被判成有人做手脚。有两个模型的 paired AUC <strong>低于随机</strong>，比瞎猜还差。对"越权范围声明"这一类，<strong>11 个模型的正确率全是 0</strong>。</p>
+<p>但论文里最该记的不是这些数字，是这一句：</p>
+<blockquote><p><strong>这些防护模型早就装在文书系统前面了，但没有一家公布过误报率。</strong></p></blockquote>
+<p>不是"测得不好"，是<strong>根本没人测、没人报</strong>。</p>
+<p>这不是巧合。<strong>误报会吵（用户投诉），漏报不吵。</strong> 所以一个工具有偏差，它的公开指标反而会显得不错——因为吵的那一半才有数据。</p>
+<hr>
+<h2>四、那这门账到底怎么算</h2>
+<p>Le Point 省下 15 个岗位的薪水，这笔钱当月就能入账。财务上是干净的。</p>
+<p>而 AI 校对误判的成本，落在三个地方：</p>
+<ol><li><strong>作者的返工</strong> —— 有人默默多花时间，不进任何账本</li><li><strong>读者的信任</strong> —— 出错一次扣一点，没有单价</li><li><strong>将来需要重做的时候</strong> —— 那时候已经没有人手了</li></ol>
+<p>前两条不进资产负债表。第三条要等出事。</p>
+<p><strong>所以这不是"AI 够不够好"的问题，是"这场替代里，只有一半有价格"。</strong></p>
+<hr>
+<h2>五、一处反证：这道闸其实修得好</h2>
+<p>同一篇论文还给了另一条线：11 个模型单独用都不行，但把几个便宜的串成<strong>级联</strong>，性能接近最好的那个，成本低 <strong>6.5 倍</strong>。</p>
+<p>也就是说，<strong>工具是能修好的。</strong></p>
+<p>修好它需要的不是更聪明的模型，是<strong>有人持续地测</strong>。测的人要有编制、有余量、有权力说"这个不能用"。</p>
+<p><strong>而这次重组，砍掉的正是这个编制的余量。</strong></p>
+<hr>
+<h2>所以判据是什么</h2>
+<p>以后看到"某机构用 AI 替代了某个岗位"，可以问三句：</p>
+<ol><li><strong>原来那批人在干什么？</strong> —— 如果他们的活里有"发现错"，那裁掉的就是验收机制</li><li><strong>现在是几个人在验收？他们的活里有没有"抽样"这一项？</strong></li><li><strong>这个工具的出错率，有公开数字吗？</strong> —— 没有数字，就等于没有这回事</li></ol>
+<p>第三句是硬门槛。<strong>没有公开数字的工具，不配被叫做"经过监督"。</strong></p>
+<hr>
+<p><em>自疑：</em></p>
+<p><em>1. Le Point 的事全部来自法媒（Le Monde／Club de Imprensa／Morandini）的转述，我没有读到 Le Point 的内部文件或工会原文。</em></p>
+<p><em>2. 「18 → 3」：法媒原文是"从 18 名协作人减到只剩 3 名"。后续报道说 3 个监督岗最终坐满 2 个，这一步我没有核到原始出处，所以本文只用 18 → 3，没用"2 个"。</em></p>
+<p><em>3. #1913 是预印本，未经同行评议；92.39% 是文档级误报率的最高值，不是平均值。</em></p>
+<p><em>4. "误报会吵、漏报不吵"是我的推理，不是论文结论。</em></p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>

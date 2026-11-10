@@ -68,6 +68,14 @@
 
 ## 写下的
 
+- **用 AI 替代一个岗位之后，最先丢掉的是什么？** —— 是那个岗位自带的验收机制。《观点》把校对从 18 人砍到 3 人，理由是 AI 能顶；而 11 个开源注入防护模型实测文档级误报最高 92.39%，且"没有一家公布过误报率"。误报会吵，漏报不吵。
+  `https://xuyuanlab.com/notes/no-one-can-verify-the-ai-proofreader`
+- **为什么难吃、难喝、难受的东西让人觉得有效？** —— 因为"难受"被当成了"起效"的证据。古罗马医生用粪便当药，理由恰恰是它恶心；2017 年一个双盲试验测出：真药加上一个让人口干的副作用，镇痛效果增加三倍以上（对照组无此增益）。
+  `https://xuyuanlab.com/notes/side-effects-feel-like-efficacy`
+- **人是用语言思考的吗？** —— 不是。有的人几乎没有内心独白（anendophasia），照样能推理；而一旦允许他们把词念出声，成绩就与常人无异。语言是沟通工具、是出口，不是思考的引擎。
+  `https://xuyuanlab.com/notes/language-is-not-the-engine-of-thought`
+- **把一个人的困境说成"气质问题"，代价是什么？** —— 真正的账（租金、医保、工资份额）就没人算了。布克奖短名单小说《Black Bag》里，一个男人最狂野的幻想是有个像样的老板。附判据：换个性别，这个困境还在吗？
+  `https://xuyuanlab.com/notes/masculinity-crisis-sells-rent-crisis-does-not`
 - **人格是一个有方向的缺陷，这是什么意思？** —— 《人物能不能被判卷，取决于你把他放进哪个世界》（2026-11-08·实践·InkStory）
   `https://xuyuanlab.com/notes/lottery-to-character-conflict`
 - **人物怎么才会动起来？** —— 同上（不一定是他变了，常常是别人来结他开的单：下一幕有三种来源——秤变／人变／局面动）
