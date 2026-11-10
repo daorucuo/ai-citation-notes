@@ -6,7 +6,7 @@
 只处理这几件：h2/h3 / 引用块 / 表格 / 列表 / 段落 / **粗** / *斜* / ---
 ⛔ 不引第三方库。⛔ 不改已有页面，只新增 + 在 notes/index.html 顶部插入条目。
 """
-import html, json, re
+import html, json, re, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -300,10 +300,13 @@ def build(slug, src, title, desc, tag):
 
 
 def insert_index(entries):
+    """把新条目插到 notes/index.html 顶部。★ 幂等：已在页面里的 slug 跳过。"""
     p = SITE / "notes" / "index.html"
     s = p.read_text(encoding="utf-8")
     block = ""
     for slug, title, desc, tag in entries:
+        if f'href="/notes/{slug}"' in s:
+            continue
         block += f"""  <a class="entry" href="/notes/{slug}">
     <p class="date">{DATE} · {html.escape(tag)}</p>
     <p class="title">{html.escape(title)}</p>
@@ -311,9 +314,10 @@ def insert_index(entries):
   </a>
 
 """
-    anchor = s.index('<a class="entry"')
-    s = s[:anchor] + block + s[anchor:]
-    p.write_text(s, encoding="utf-8")
+    if block:
+        anchor = s.index('<a class="entry"')
+        s = s[:anchor] + block + s[anchor:]
+        p.write_text(s, encoding="utf-8")
     return p
 
 
@@ -339,6 +343,8 @@ def main():
         built.append((slug, t, d, g, u))
         print(f"  ✅ {path.relative_to(ROOT)}")
     insert_index([(b[0], b[1], b[2], b[3]) for b in built])
+    import subprocess
+    subprocess.run([sys.executable, str(ROOT / "build" / "notes_build.py")], check=True)
     print("  ✅ site/notes/index.html 顶部插入 4 条")
     update_sitemap(built)
     print("  ✅ site/sitemap.xml")
