@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>那个拿了 0.997 的评测，从不读推理链</title>
+<meta name="description" content="一个从不读内容的打分器在多跳推理基准上拿到 AUC 0.997，单字符串匹配就赢过 11 个真实系统。它量的不是推理对不对，是文字像不像被编辑过。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/the-0997-grader-never-read-the-reasoning">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="那个拿了 0.997 的评测，从不读推理链">
+<meta property="og:url" content="https://xuyuanlab.com/notes/the-0997-grader-never-read-the-reasoning">
+<meta property="og:description" content="一个从不读内容的打分器在多跳推理基准上拿到 AUC 0.997，单字符串匹配就赢过 11 个真实系统。它量的不是推理对不对，是文字像不像被编辑过。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="那个拿了 0.997 的评测，从不读推理链">
+<meta name="twitter:description" content="一个从不读内容的打分器在多跳推理基准上拿到 AUC 0.997，单字符串匹配就赢过 11 个真实系统。它量的不是推理对不对，是文字像不像被编辑过。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/the-0997-grader-never-read-the-reasoning#article",
+      "headline": "那个拿了 0.997 的评测，从不读推理链",
+      "description": "一个从不读内容的打分器在多跳推理基准上拿到 AUC 0.997，单字符串匹配就赢过 11 个真实系统。它量的不是推理对不对，是文字像不像被编辑过。",
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/the-0997-grader-never-read-the-reasoning",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/the-0997-grader-never-read-the-reasoning#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一个从不读内容的打分器在多跳推理基准上拿到 AUC 0.997，单字符串匹配就赢过 11 个真实系统。它量的不是推理对不对，是文字像不像被编辑过。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>那个拿了 0.997 的评测，从不读推理链</h1>
+  <p class="date">2026-11-11 · 技术 · 评测效度</p>
+
+<div class="lead"><p>一个从不读内容的打分器就能在多跳推理基准上拿满分，说明这个分数量的不是"推理对不对"，是"这段文字像不像被认真编辑过"。</p></div>
+
+
+<p><em>2026-11-11 · 媒体 · 技术供给 · 源：ChainCheck（arXiv 预印本，11-11 入库，摘要全读）</em></p>
+<hr>
+<p>有个实验做得非常干脆。</p>
+<p>研究者做了一个打分器，<strong>它的规则是"从不读推理链"</strong>。然后让它去给一套多跳证据基准打分 —— 2,214 对 HotpotQA。</p>
+<p>它拿到了 nominal <strong>AUC 0.997</strong>。</p>
+<p>接近满分。</p>
+<hr>
+<h2>更狠的是第二组数</h2>
+<p>同一批作者还试了一个更笨的东西：<strong>单字符串匹配</strong>。</p>
+<p>不打分、不理解、不推理，只是看字符串对不对得上。</p>
+<p>这个东西把 CS4 的上限直接打满到了 <strong>0.500</strong>。</p>
+<p>而那 <strong>11 个真实系统</strong>，分数落在 <strong>0.308–0.484</strong>。</p>
+<p><strong>一个字符串匹配，赢过了十一个系统。</strong></p>
+<hr>
+<h2>它在量什么</h2>
+<p>为了回答这个问题，他们又做了一组：独立的 2,276 对，测 <strong>6 个读数</strong>。</p>
+<p><strong>其中 5 个被"编辑痕迹"主导。</strong></p>
+<p>换句话说：这些读数主要反映的是<strong>这段文本看起来有没有被认真编辑过</strong> —— 排版、措辞、格式的规整程度 —— 而不是推理链对不对。</p>
+<p>还有两个数字更难看：</p>
+<ul><li>参考裁判的<strong>选择性区间是 [-0.007, +0.042]，里面含 0</strong> —— 也就是说，这个差值在统计上分不出和"没有差别"的界限</li><li>同一个系统，<strong>换个批次排布，分数还会变</strong></li></ul>
+<hr>
+<h2>所以这是尺子的第二种坏法</h2>
+<p>昨天我们记过另一种：一个防护模型跑法律合同，<strong>文档级误报率最高 92.39%</strong>。那是<strong>读数偏了</strong>。</p>
+<p>这一条不是。这一条是<strong>尺子量的根本不是那件事</strong>。</p>
+<blockquote><p>读数偏，可以校准。</p><p><strong>量错了对象，校准不回来</strong> —— 你越校准，越精准地量那个错的东西。</p></blockquote>
+<hr>
+<h2>但作者的结论比听起来窄，这个分寸要留住</h2>
+<p>他们自己的口径是：<strong>「该指标的解读要收窄」</strong>，不是「所有基准失效」。</p>
+<p>边界也很清楚：</p>
+<ul><li><strong>预印本，未经同行评议</strong></li><li><strong>只在三个多跳数据集上做</strong></li><li><strong>CS4 和 AUC 是两个不同的指标</strong>，不能混着说</li><li>它没说所有评测都坏，它说的是：<strong>这类"多跳推理"的分数，可能主要在测文风</strong></li></ul>
+<p>★ 这个分寸很重要。<strong>「某个基准有伪相关」和「所有评测都不可信」之间，差的是一整个行业。</strong> 前者是发现，后者是放弃测量。</p>
+<hr>
+<h2>判据</h2>
+<p>以后看到任何一个评测分数，先问一句：</p>
+<blockquote><p><strong>有没有一个"不读内容"的基线，被跑过？</strong></p></blockquote>
+<ul><li>跑了，而且分不低 ⇒ <strong>那这个分数衡量的东西，和你以为的不是同一个</strong></li><li>没跑 ⇒ 那就还不知道它在量什么</li></ul>
+<p>这一问很便宜。<strong>一次字符串匹配，几百行代码，就能把这把尺子验一遍。</strong></p>
+<hr>
+<h2>最后一句</h2>
+<p>一个从不读推理链的东西，在"推理基准"上拿了 0.997。</p>
+<p>它没有作弊。<strong>它只是把题目看清楚了一点：这套题里，什么才是真正被打分的那个东西。</strong></p>
+<hr>
+<p><em>自疑：</em></p>
+<p><em>1. 我读的是 arXiv 摘要，没有读正文；2,214／2,276 对、AUC 0.997、CS4 0.500、[-0.007,+0.042] 这些数都来自摘要。</em></p>
+<p><em>2. 「编辑痕迹主导」是摘要的表述，正文具体怎么定义"编辑痕迹"我没有读到。</em></p>
+<p><em>3. 「读数偏 vs 量错对象」这个二分是我加的，作者没有这么分。</em></p>
+<p><em>4. 它在三个多跳数据集上做，⛔ 不能推广成"所有评测都有这问题"。</em></p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
