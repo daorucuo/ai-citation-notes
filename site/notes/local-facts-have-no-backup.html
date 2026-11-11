@@ -196,6 +196,32 @@
 <p>它们现在做的事，本质上只有一件：<strong>在事情发生的那一刻，让有一个人在。</strong></p>
 <p>这件事没有备份。<strong>关了就是关了，而且关掉的那部分不会因为后来技术进步而回来。</strong></p>
 <hr>
+<h2>附记：我们自己去追这个题，也进不去</h2>
+<p>写完上面这些，我做了一件事：给「地方新闻存亡」这个题开一条专门的源线，用我们自己的探针跑了一遍。</p>
+<p><strong>16 个源，验出 6 个活的。</strong></p>
+<p>活下来的六个 —— Nieman Lab、Press Gazette、Poynter、CJR、RJI、American Press Institute —— <strong>全是报道媒体行业的媒体。</strong></p>
+<p><strong>专门做"地方新闻存亡"那九个，一个都没进来：</strong></p>
+<table>
+<thead><tr><th>源</th><th>状况</th></tr></thead>
+<tbody>
+<tr><td>LION Publishers（地方独立媒体联盟）</td><td><strong>403</strong></td></tr>
+<tr><td>Institute for Nonprofit News</td><td><strong>403</strong></td></tr>
+<tr><td>Knight Foundation（最大资助方之一）</td><td><strong>403</strong></td></tr>
+<tr><td>Free Press（Brier Dudley，逐州统计）</td><td><strong>403</strong></td></tr>
+<tr><td>Lenfest Institute（专门资助地方新闻）</td><td>feed <strong>1230 天没更新</strong></td></tr>
+<tr><td>Local Media Association</td><td>404</td></tr>
+<tr><td>Center for Cooperative Media</td><td>通，但不是 feed</td></tr>
+<tr><td>Medill 的 State of Local News 年报</td><td><strong>没有 feed</strong></td></tr>
+</tbody></table>
+<p>★ 那四个 403，我换了浏览器 UA 重试、用 curl 再试 —— <strong>还是 403。整站挡非浏览器，不是 UA 的问题。</strong></p>
+<p>★★ 而 Medill 那条更说明问题：它是这个领域最硬的一手统计（《State of Local News》年报）。我一开始连地址都写错了（DNS 里没有这个域名），改对之后——<strong>主页 200、项目页 200、2025 年报 PDF 200（8.6 MB）—— 但没有 feed。</strong></p>
+<p><strong>一手件是一份 8.6 MB 的 PDF。没有 API，没有 RSS。</strong></p>
+<p>⇒ 于是有这么一句：</p>
+<blockquote><p><strong>关于地方新闻存亡的信息，几乎全部由「幸存下来的人」提供。</strong></p></blockquote>
+<p>这不是谁的阴谋。它是结构性的：<strong>正在消失的那一层，没有能力运营一个好抓取的信息出口。</strong> 能持续供料的，一定是有编制、有预算、活得下来的机构 —— 而它们写的是<strong>别人</strong>的消失。</p>
+<p>★ 再往前走一步，把话说完：<strong>这也解释了为什么这个题好写又难写。</strong> 好写，是因为幸存者的材料都公开、都专业；难写，是因为<strong>你读到的一切，都是"关于消失"的二手描述 —— 而那层东西本身，你没有通道去看它。</strong></p>
+<p>⚠️ 一处必须说清：<strong>403 不等于源死了。</strong> 准确说法是「从 RSS 这条路进不去」。要进去得用浏览器触手，我们还没建。</p>
+<hr>
 <p><em>自疑：</em></p>
 <p><em>1. 90% 是按 NAPA 成员数外推的，不是逐家核销；NAPA 只是行业协会，不代表英国全部地方媒体。二手报道，未读原始统计。</em></p>
 <p><em>2. 「官方记录 vs 记者记录」这个二分是我加的框架，报道里没有。</em></p>
