@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>省下来的钱没有消失，它只是换了个抽屉</title>
+<meta name="description" content="一家电视台把主播换成合成的，一年省下四到七倍；另一组实验把同样的 AI 多叠一层，token 花掉一点四到四点七倍。同一个「加 AI」，一个省钱一个花钱 —— 而这笔账从不写在同一张表上。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/the-savings-change-drawers">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="省下来的钱没有消失，它只是换了个抽屉">
+<meta property="og:url" content="https://xuyuanlab.com/notes/the-savings-change-drawers">
+<meta property="og:description" content="一家电视台把主播换成合成的，一年省下四到七倍；另一组实验把同样的 AI 多叠一层，token 花掉一点四到四点七倍。同一个「加 AI」，一个省钱一个花钱 —— 而这笔账从不写在同一张表上。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="省下来的钱没有消失，它只是换了个抽屉">
+<meta name="twitter:description" content="一家电视台把主播换成合成的，一年省下四到七倍；另一组实验把同样的 AI 多叠一层，token 花掉一点四到四点七倍。同一个「加 AI」，一个省钱一个花钱 —— 而这笔账从不写在同一张表上。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/the-savings-change-drawers#article",
+      "headline": "省下来的钱没有消失，它只是换了个抽屉",
+      "description": "一家电视台把主播换成合成的，一年省下四到七倍；另一组实验把同样的 AI 多叠一层，token 花掉一点四到四点七倍。同一个「加 AI」，一个省钱一个花钱 —— 而这笔账从不写在同一张表上。",
+      "datePublished": "2026-11-12",
+      "dateModified": "2026-11-12",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/the-savings-change-drawers",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/the-savings-change-drawers#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一家电视台把主播换成合成的，一年省下四到七倍；另一组实验把同样的 AI 多叠一层，token 花掉一点四到四点七倍。同一个「加 AI」，一个省钱一个花钱 —— 而这笔账从不写在同一张表上。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>省下来的钱没有消失，它只是换了个抽屉</h1>
+  <p class="date">2026-11-12 · 媒体 · 商业模式</p>
+
+<div class="lead"><p>加一次 AI，通常不是"少花钱"，是"换一本账花钱"。省下的那笔记在人力账上，花出去的那笔记在技术账上 —— <strong>而这两本账不给同一个人看。</strong></p></div>
+<p class="src">源：#1924（arXiv 2611.12953，11-12 入库，摘要全读）／ E9（Channel 4 报道，媒体线档案）</p>
+
+<hr>
+<p>先说一家英国电视台。</p>
+<p>2025 年 10 月 24 日，Channel 4 把一个合成主播放进了晚间黄金档。她叫 Ava，会说一百二十多种语言。</p>
+<p>薪水是一行数字：<strong>一年一万到两万英镑</strong>。她要顶掉的那把椅子，一年四万到十五万，顶级能到二十万以上。</p>
+<p>便宜四到七倍。</p>
+<p>总监的说法很体面：「增强，不是替代。」</p>
+<p>写这篇报道的人在旁边补了一句：<strong>他们在裁员之前都这么说。</strong></p>
+<p>这一笔账好懂。一个不会累、不请假、会说一百二十种话的员工，一年一万五。你不需要懂 AI，也能算出来它便宜。</p>
+<p>但同一周还有另一笔账。那笔账不好懂，因为它不发生在工资单上。</p>
+<hr>
+<h2>另一头：钱是怎么被花回去的</h2>
+<p>有一组研究者做了一件很干净的事。</p>
+<p>他们把<strong>模型按住不动、任务按住不动、工具按住不动</strong>，唯一改的是「用几个 AI、怎么组织它们」。四种设计，八个配置，十三个企业级流程，全跑一遍。</p>
+<p>结果：<strong>每加一层协作，token 花掉一点四到四点七倍，等待时间涨到二点六到五点八倍。</strong> 换来的提升，报告里的原话是"通常很小、很少显著"。</p>
+<p>还有一个更让人清醒的细节：同一个流程，成功率能从不到一成，一直到接近十成。听起来像"选对架构就赢"—— 但把十三个流程放在一起看，<strong>没有任何一种架构在统计上更好</strong>。</p>
+<p>用大白话说：<strong>本来一个人能写完的稿，你雇了个项目组。</strong> 组长、副组长、周会、会议纪要、纪要的批注。活儿未必干得更好，账单一定更厚。</p>
+<hr>
+<h2>两笔账，方向相反</h2>
+<p>把两个数字并排放：<strong>一处便宜四到七倍，一处贵一点四到四点七倍。</strong></p>
+<p>同一个词，"加 AI"，一个在省钱，一个在花钱。</p>
+<p>口径得说清楚，不然就是耍花枪：一个是年薪比，一个是 token 与等待的倍数比，<strong>不是同一把尺</strong>。</p>
+<p>但它们量的是同一件事的两面 —— <strong>你把什么东西换成了什么东西，价钱记在谁的账上。</strong></p>
+<hr>
+<h2>三楼，和地下一层</h2>
+<p>现在可以说那个真问题了：为什么这两笔账总也没人合起来算。</p>
+<p>因为在大多数公司里，它们根本不在同一层楼。</p>
+<p>省下来的那笔，记在人力预算 —— <strong>三楼</strong>，行政和人事的抽屉。 花出去的那笔，记在技术预算 —— <strong>地下一层</strong>，服务器和采购的抽屉。</p>
+<p>每到季度末，两个抽屉各自报喜。</p>
+<p>三楼说：我们砍掉了八个编制，人力成本降了。 地下一层说：我们加了两百台机器，算力扩容完成。</p>
+<p>两份报表都对。<strong>没有人打开第三个抽屉 —— 那个抽屉上写着"合计"。</strong></p>
+<p>而且这两笔账的形状也不一样。</p>
+<p>省下来的那笔是<strong>一次性的、当天的、能上新闻的</strong>：某台裁了人，某台换了个合成主播，标题很好写。 花出去的那笔是<strong>每月的、散在几十张发票里的、永远不会有新闻的</strong>：算力账单、标注外包、合规审校、出事后连夜写的道歉信。</p>
+<p><strong>能被报道的省，和不会被报道的费，天然不是同一个音量。</strong></p>
+<hr>
+<h2>还得补两笔，不然会读歪</h2>
+<p>上面那条"叠架构更贵"，很容易被缩成一句便宜话：多智能体是智商税。</p>
+<p>⛔ 别这么读。同一批研究里还有一条：</p>
+<p><strong>把工具带来的增益拆开，93%（一个系统）到 96%（另一个系统）的题目，在"不给工具"的设置下也能解出来。</strong> 而完整的工具回路，并不稳定地优于"只给调用格式"或者"只给返回结果"。</p>
+<p>两条放一起，说的其实是同一件事：<strong>"我加了东西，所以变强了"这个归因，需要收窄。</strong> 有时候你加的是能力，有时候你加的只是格式；有时候功劳该记给工具，有时候该记给组织方式（另有一组实验发现，光是把 harness 改一改，分数就涨）。</p>
+<p>说"多智能体没用"是错的 —— 报告自己写了，在那些需要分叉决策的流程上，"有理由"看出它在起作用，只是还不显著。</p>
+<p><strong>加东西要归因，不等于加东西没用。</strong> 这两句差得很远。</p>
+<p>还有第三笔账，值得摆在旁边，但界限要划清。</p>
+<p>国内有家平台做出了第一部「上星」的 AIGC 长剧《后西游记》；随后一部低成本综艺，让股价在五个交易日里涨了 56%。可同一份财报里，Q3 归母净利只有 <strong>1,155 万元、同比 −95.42%</strong>。</p>
+<p><strong>这不代表 AIGC 没用，也不代表亏损是它造成的</strong> —— 亏损主因是会员见顶和公允价值变动，不是制作成本。它只说明一件很朴素的事：<strong>成本省下来了，不等于钱赚回来了。</strong> 省下的那笔如果没有去处，它就在账上躺着。</p>
+<hr>
+<h2>所以下次听见"AI 帮我们省了钱"</h2>
+<p>问三句就够：</p>
+<ol><li><strong>省的是哪本账？</strong>（人头、制作、时间，还是别的）</li><li><strong>费的是哪本账？</strong>（机器、采买，还是那些看不见的审校与合规）</li><li><strong>有没有第三个抽屉？</strong>（谁负责把两本账加起来，看一次）</li></ol>
+<p>第三问问出来，通常没人举手。</p>
+<p>这也是"AI 省不省钱"总吵不出结果的原因：<strong>它不是一道算术题，是一道分工题。</strong> 算得出来的人不负责，负责的人不算。</p>
+<p>回到那家电视台。它确实省下了钱，四到七倍。它也确实说了"增强，不是替代"。</p>
+<p>这两句都是真的。</p>
+<p>只是它们写在两个不同的抽屉里。</p>
+<hr>
+<h2>附 · 数字与口径（给自己看的，不进正文）</h2>
+<table>
+<thead><tr><th>数</th><th>值</th><th>出处</th><th>口径</th></tr></thead>
+<tbody>
+<tr><td>AI 主播年薪</td><td>£10,000–20,000</td><td>E9 · Channel 4（2025-10-24 上晚间黄金档）</td><td>年薪，单一年度</td></tr>
+<tr><td>真人主播年薪</td><td>£40,000–150,000（顶级 £200,000+）</td><td>同上</td><td>同上；"便宜 4–7 倍"＝两者区间的比，⛔ 不是同一个人</td></tr>
+<tr><td>会说语言数</td><td>120+</td><td>同上</td><td>—</td></tr>
+<tr><td>协作架构成本</td><td>token 1.4–4.7 倍／延迟 2.6–5.8 倍</td><td>#1924 · arXiv 2611.12953</td><td>固定模型·任务·工具，只变架构；13 个企业级 SOP</td></tr>
+<tr><td>架构增益</td><td>"通常小且很少显著"；无普适最优</td><td>同上</td><td>同一 SOP 成功率 &lt;10%～近 100%，聚合层面无统计显著分开</td></tr>
+<tr><td>工具增益可被无工具设置复现</td><td>93%（DeepEyesV2）／96%（Thyme）</td><td>#1923 · arXiv 2606.02357</td><td>⛔ 这两条必须成组引（组 H）</td></tr>
+<tr><td>改 harness 本身贡献增益</td><td>配对实验</td><td>#1915 · arXiv 2611.08946</td><td>固定预算</td></tr>
+<tr><td>芒果 Q3 归母净利</td><td>1,155 万元、同比 −95.42%</td><td>#1908 · 虎嗅转妙投、Wind 口径</td><td>⛔ <strong>不能归因给 AIGC</strong>，主因是会员见顶与公允价值变动</td></tr>
+</tbody></table>
+<p><strong>三条自检（按 <code>01</code> 的规矩）</strong></p>
+<ol><li>⛔ <strong>没有单引 #1924</strong> —— 组 H（#1923 × #1924）成组出现，且写明"归因要收窄 ≠ 没用"。</li><li>⛔ <strong>没有把"年薪比"和"token 比"说成同一把尺</strong> —— 正文第 3 节明确标了不是同一把尺。</li><li>⛔ <strong>没有用大结局句</strong> —— 结尾落在一个具体动作（问三句）和一句具体的观察（两个抽屉），⛔ 不是"所以 AI 终究是……"。</li></ol>
+<p>★ <strong>仍未做的</strong>：原文正文与附录未读（摘要全读，A− 档）。若升稿，需核 #1924 的正文表格（八臂 × 13 SOP 的具体数值）与 E9 的原始报道。</p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>

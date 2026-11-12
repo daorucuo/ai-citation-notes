@@ -45,6 +45,11 @@ PAGES = [
      "那个拿了 0.997 的评测，从不读推理链",
      "一个从不读内容的打分器在多跳推理基准上拿到 AUC 0.997，单字符串匹配就赢过 11 个真实系统。它量的不是推理对不对，是文字像不像被编辑过。",
      "技术 · 评测效度"),
+    ("the-savings-change-drawers",
+     "草稿_省下来的钱换了个抽屉_20261112.md",
+     "省下来的钱没有消失，它只是换了个抽屉",
+     "一家电视台把主播换成合成的，一年省下四到七倍；另一组实验把同样的 AI 多叠一层，token 花掉一点四到四点七倍。同一个「加 AI」，一个省钱一个花钱 —— 而这笔账从不写在同一张表上。",
+     "媒体 · 商业模式"),
     ("masculinity-crisis-sells-rent-crisis-does-not",
      "草稿_男性气质危机好卖租金危机不好卖_20261110.md",
      "「男性气质危机」好卖，「租金危机」不好卖",
@@ -52,7 +57,16 @@ PAGES = [
      "人文 · 文学"),
 ]
 
-DATE = "2026-11-12"
+DATE = "2026-11-12"          # 兜底值：只在草稿文件名里读不出日期时才用
+
+
+def page_date(src):
+    """🔴 2026-11-12 修：原来所有页面共用 DATE 常量 ⇒ 一重跑，7 篇旧页的发布日期全被刷成"今天"。
+    实测：11-08～11-11 写的四篇在站点上全显示 2026-11-12 —— 页面上的日期是假的，比旧还坏。
+    ⇒ 日期以**草稿文件名里的 _YYYYMMDD** 为准（那是稿子自己的出生日），读不出才退 DATE。
+    """
+    m = re.search(r"_(\d{4})(\d{2})(\d{2})\.md$", src)
+    return f"{m.group(1)}-{m.group(2)}-{m.group(3)}" if m else DATE
 
 CSS = """
   :root{
@@ -197,6 +211,7 @@ def render(md):
 
 
 def build(slug, src, title, desc, tag):
+    day = page_date(src)
     raw = (DRAFT / src).read_text(encoding="utf-8")
     lines = raw.split("\n")
     # 剥掉 h1
@@ -237,8 +252,8 @@ def build(slug, src, title, desc, tag):
                 "@id": f"{url}#article",
                 "headline": title,
                 "description": desc,
-                "datePublished": DATE,
-                "dateModified": DATE,
+                "datePublished": day,
+                "dateModified": day,
                 "inLanguage": "zh-CN",
                 "author": {"@id": "https://xuyuanlab.com/#org"},
                 "publisher": {"@id": "https://xuyuanlab.com/#org"},
@@ -293,7 +308,7 @@ def build(slug, src, title, desc, tag):
   <a class="back" href="/">← 联翩实验室</a>
 
   <h1>{html.escape(title)}</h1>
-  <p class="date">{DATE} · {html.escape(tag)}</p>
+  <p class="date">{day} · {html.escape(tag)}</p>
 
 {lead_html}
 {src_html}
@@ -311,7 +326,7 @@ def build(slug, src, title, desc, tag):
 """
     out = SITE / "notes" / f"{slug}.html"
     out.write_text(doc, encoding="utf-8")
-    return out, title, desc, tag, url
+    return out, title, desc, tag, url, day
 
 
 def insert_index(entries):
@@ -319,11 +334,11 @@ def insert_index(entries):
     p = SITE / "notes" / "index.html"
     s = p.read_text(encoding="utf-8")
     block = ""
-    for slug, title, desc, tag in entries:
+    for slug, title, desc, tag, day in entries:
         if f'href="/notes/{slug}"' in s:
             continue
         block += f"""  <a class="entry" href="/notes/{slug}">
-    <p class="date">{DATE} · {html.escape(tag)}</p>
+    <p class="date">{day} · {html.escape(tag)}</p>
     <p class="title">{html.escape(title)}</p>
     <p class="desc">{html.escape(desc)}</p>
   </a>
@@ -354,10 +369,10 @@ def update_sitemap(entries):
 def main():
     built = []
     for slug, src, title, desc, tag in PAGES:
-        path, t, d, g, u = build(slug, src, title, desc, tag)
-        built.append((slug, t, d, g, u))
+        path, t, d, g, u, day = build(slug, src, title, desc, tag)
+        built.append((slug, t, d, g, u, day))
         print(f"  ✅ {path.relative_to(ROOT)}")
-    insert_index([(b[0], b[1], b[2], b[3]) for b in built])
+    insert_index([(b[0], b[1], b[2], b[3], b[5]) for b in built])
     import subprocess
     subprocess.run([sys.executable, str(ROOT / "build" / "notes_build.py")], check=True)
     print("  ✅ site/notes/index.html 顶部插入 4 条")
