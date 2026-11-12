@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>一个分差比误差还小的排行榜，排的是噪声的顺序</title>
-<meta name="description" content="SWE-bench Verified 前十名的差距小于测试自身的误差；ALE-Bench 换「中位人类」评分后前十全并列。多数「基准饱和」出在测量里，不在任务里。">
+<title>全班都及格了，然后老师要排名次</title>
+<meta name="description" content="很多「这个基准已经饱和」的说法，毛病出在卷子上不在题目上：前十名之间的差距，比这把尺子自己的抖动还小。附两句谁都能问的判据。">
 <meta name="author" content="联翩实验室">
 <link rel="canonical" href="https://xuyuanlab.com/notes/leaderboard-noise-not-signal">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一个分差比误差还小的排行榜，排的是噪声的顺序">
+<meta property="og:title" content="全班都及格了，然后老师要排名次">
 <meta property="og:url" content="https://xuyuanlab.com/notes/leaderboard-noise-not-signal">
-<meta property="og:description" content="SWE-bench Verified 前十名的差距小于测试自身的误差；ALE-Bench 换「中位人类」评分后前十全并列。多数「基准饱和」出在测量里，不在任务里。">
+<meta property="og:description" content="很多「这个基准已经饱和」的说法，毛病出在卷子上不在题目上：前十名之间的差距，比这把尺子自己的抖动还小。附两句谁都能问的判据。">
 <meta property="og:site_name" content="联翩实验室">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://xuyuanlab.com/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="一个分差比误差还小的排行榜，排的是噪声的顺序">
-<meta name="twitter:description" content="SWE-bench Verified 前十名的差距小于测试自身的误差；ALE-Bench 换「中位人类」评分后前十全并列。多数「基准饱和」出在测量里，不在任务里。">
+<meta name="twitter:title" content="全班都及格了，然后老师要排名次">
+<meta name="twitter:description" content="很多「这个基准已经饱和」的说法，毛病出在卷子上不在题目上：前十名之间的差距，比这把尺子自己的抖动还小。附两句谁都能问的判据。">
 <meta name="twitter:image" content="https://xuyuanlab.com/og.png">
 <style>
   :root{
@@ -85,8 +85,8 @@
     {
       "@type": "Article",
       "@id": "https://xuyuanlab.com/notes/leaderboard-noise-not-signal#article",
-      "headline": "一个分差比误差还小的排行榜，排的是噪声的顺序",
-      "description": "SWE-bench Verified 前十名的差距小于测试自身的误差；ALE-Bench 换「中位人类」评分后前十全并列。多数「基准饱和」出在测量里，不在任务里。",
+      "headline": "全班都及格了，然后老师要排名次",
+      "description": "很多「这个基准已经饱和」的说法，毛病出在卷子上不在题目上：前十名之间的差距，比这把尺子自己的抖动还小。附两句谁都能问的判据。",
       "datePublished": "2026-11-12",
       "dateModified": "2026-11-12",
       "inLanguage": "zh-CN",
@@ -108,7 +108,7 @@
           "name": "这篇的一句话结论是什么？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SWE-bench Verified 前十名的差距小于测试自身的误差；ALE-Bench 换「中位人类」评分后前十全并列。多数「基准饱和」出在测量里，不在任务里。"
+            "text": "很多「这个基准已经饱和」的说法，毛病出在卷子上不在题目上：前十名之间的差距，比这把尺子自己的抖动还小。附两句谁都能问的判据。"
           }
         }
       ]
@@ -122,67 +122,89 @@
 
   <a class="back" href="/">← 联翩实验室</a>
 
-  <h1>一个分差比误差还小的排行榜，排的是噪声的顺序</h1>
+  <h1>全班都及格了，然后老师要排名次</h1>
   <p class="date">2026-11-12 · 技术 · 评测效度</p>
 
-<div class="lead"><p>多数「基准饱和」是测量造成的，不是任务太简单 —— 当第十名和第一名的差距小于重跑波动，这个榜单排的是噪声。</p></div>
+<div class="lead"><p>很多「这个考试太简单了、大家都顶到天花板了」的说法，毛病出在卷子上，不在题目上。</p></div>
 
 
 <p><em>2026-11-12 · 技术 · 技术供给 · 源：arXiv 2611.13541（11-12 入库，摘要全读）</em></p>
 <hr>
-<p>有件事我们一直记错了方向。</p>
-<p>看到「某基准已经饱和、模型都顶到天花板了」，第一反应是：<strong>任务太简单了，得换更难的题。</strong></p>
-<p>研究者重打了 8 个基准的已发布运行，结论是反的：<strong>多数「饱和」出在测量里，不在任务里。</strong></p>
+<p>假设有个班，六十个人考试。</p>
+<p>这份卷子的判分方式特别省事 —— <strong>只有一个勾，一个叉。</strong> 及格，或者不及格。</p>
+<p>结果全班都及格了。</p>
+<p>然后老师说：那我们排个名次吧。</p>
+<p><strong>你拿什么排？</strong></p>
 <hr>
-<h2>第一个证据：前十名的差距，小于测试本身的误差</h2>
-<p><strong>SWE-bench Verified，前十名的分差小于这个测试自身的误差。</strong></p>
-<p>他们把每次运行拆开重算：校正之后，相邻名次之间的重排幅度，<strong>不比"随机删掉每个 agent 六分之一的通过"更大。</strong></p>
-<p>翻译一下：<strong>你把某支队伍六分之一的成绩随机抹掉，排名变化和真实排名的抖动差不多。</strong></p>
-<p>那这个榜在排什么。</p>
-<hr>
-<h2>第二个证据：天花板在参照物上，不在模型上</h2>
-<p><strong>ALE-Bench 前十按竞赛分能分开。换成「中位人类」这个参照，全部并列。</strong></p>
-<p>而更尴尬的是：<strong>近一半运行其实赢了那个人类。</strong></p>
-<p>也就是说 —— 前十名都打得过那个人类，但"人类中位"这条线画得太低，所有人在它上面挤成一团。<strong>参照物一旦失去分辨力，上面挤多少人都不再是信息。</strong></p>
-<hr>
-<h2>第三个证据：被丢掉的那个量，差十倍</h2>
-<p><strong>Terminal-Bench 重跑：pass/fail 打平的模型，在被测试丢弃的那个量上差十倍。</strong></p>
-<p>同一个模型、同一个分数，藏在被压掉的那部分数据里的差距是<strong>十倍</strong>。</p>
-<hr>
-<h2>所以病灶是一件事：把连续的运行压成一个二值位</h2>
-<p>坏在两处：</p>
+<p>这不是脑筋急转弯。今天这篇论文说的就是这件事，只不过发生在 AI 身上，而且用的是真数据。</p>
+<h2>一、一把会晃的秤</h2>
+<p>十个人跳远。</p>
+<p>第一名 6 米 21。第十名 6 米 18。</p>
+<p><strong>差三厘米。</strong></p>
+<p>问题是，那根量尺自己每次量都会晃 —— <strong>上下晃十厘米。</strong></p>
+<p>现在你告诉我：这十个人的名次，有意义吗。</p>
+<p><strong>SWE-bench Verified</strong> 这个很有名的 AI 编程跑分，前十名的情况就是这样：<strong>他们之间的差距，小于这个测试自己重跑一次的波动。</strong></p>
+<p>论文里还有一句更狠的：</p>
+<blockquote><p>你把其中一支队伍的成绩随便抹掉六分之一，<strong>名次的变化，和真实排名的抖动差不多。</strong></p></blockquote>
+<p>抹掉六分之一还能差不多 —— 那说明这个榜排的不是本事，是抖动。</p>
+<h2>二、标准线画得太低了</h2>
+<p>还是十个人跳远。这次换个说法。</p>
+<p>有个比赛叫 <strong>ALE-Bench</strong>。用竞赛裁判的眼光看，这十个人的成绩<strong>是分得开的</strong>，有高有低。</p>
+<p>但换成另一个参照 —— <strong>「一个普通人的水平」</strong>。</p>
+<p>结果：<strong>十个人全在线的上面，看起来一样高。</strong></p>
+<p>而实际上呢？<strong>这十个人里，有将近一半，比那个普通人高得多。</strong></p>
+<p>线画得太低，所有人都在线上面挤成一团，高矮就没法看了。</p>
+<p><strong>不是他们变得一样强了，是那把尺子的零刻度画错了地方。</strong></p>
+<h2>三、只记过没过，丢掉的那个才要命</h2>
+<p>有个测试叫 <strong>Terminal-Bench</strong>。</p>
+<p>两个模型，成绩一样 —— 同样的「过」和「不过」。</p>
+<p>但论文重跑了一遍：<strong>在被丢掉的那部分数据里，这两个模型差十倍。</strong></p>
+<p>十倍。</p>
+<p>因为卷子只记了「过没过」，所以看起来它们一模一样。<strong>真正能分开它们的东西，被那张卷子扔掉了。</strong></p>
+<h2>四、所以病根就一个</h2>
+<p><strong>把一次连续的运行，压成了一个开关。</strong></p>
+<p>开关有两个毛病：</p>
 <table>
-<thead><tr><th>坏法</th><th>表现</th></tr></thead>
+<thead><tr><th>毛病</th><th>长什么样</th></tr></thead>
 <tbody>
-<tr><td><strong>太粗</strong></td><td>前十的差距，淹进测试误差</td></tr>
-<tr><td><strong>参照物失效</strong></td><td>换个人类锚点，前十全并列</td></tr>
+<tr><td><strong>太粗</strong></td><td>前面几个人的差距，比秤的抖动还小</td></tr>
+<tr><td><strong>零点画错</strong></td><td>标准线太低，所有人都挤在线上面</td></tr>
 </tbody></table>
-<p>而作者的解法也很干净：<strong>固定任务上抬高难度标准，只是把问题挪走。给部分分才修得掉。</strong></p>
-<p>★ 这句话值得记：<strong>「换更难的题」是逃避，「别把结果压成一个位」才是修。</strong></p>
 <hr>
-<h2>但作者的结论比听起来窄</h2>
-<p>边界要留住：</p>
-<ul><li>它打的是<strong>「把连续量压成二值」这一类做法</strong> —— ⛔ 不是「所有基准都无效」</li><li><strong>本来就二值的任务不适用</strong>（做没做成，本来就是二值的）</li><li>自建的那套分数<strong>只在 Terminal-Bench 上重跑验证过</strong></li><li><strong>预印本</strong>，未同行评议</li></ul>
-<p>★ 这个分寸很要紧。<strong>「某个基准的分辨力不够」和「所有评测都不可信」之间，差的是一整个行业。</strong> 前者是可修的工程问题，后者是放弃测量。</p>
+<h2>五、作者给的药，很实在</h2>
+<p>很多人遇到「天花板」的第一反应是：<strong>换更难的题。</strong></p>
+<p>论文说，这是白费力气。</p>
+<blockquote><p><strong>在固定的题目上抬高难度标准，只是把问题挪到别处。</strong></p><p><strong>给部分分，才修得掉。</strong></p></blockquote>
+<p>翻译成大白话：</p>
+<ul><li>换更难的题 ＝ <strong>把体重秤换成更精细的秤，但你还是只记「胖不胖」</strong></li><li>给部分分 ＝ <strong>终于开始记「多少斤」</strong></li></ul>
+<p>★ 这句我觉得是全文最值钱的一句：<strong>「换更难的题」是逃避，「别把结果压成一个位」才是修。</strong></p>
 <hr>
-<h2>判据</h2>
-<p>以后看到任何排行榜、任何跑分表，先问两句：</p>
-<ol><li><strong>它的分差，比它自己的重跑波动大吗？</strong></li><li><strong>它把一次运行压成了几个位？</strong> 一个 pass/fail，还是带部分分？</li></ol>
-<p>第一问过不了 ⇒ <strong>这个榜单排的是噪声的顺序</strong>，名次没有意义。 第二问答案是「一个位」 ⇒ 那它天然丢失了分辨力，<strong>再高的分也说明不了差距</strong>。</p>
-<p>★ 两问都很便宜，而且不需要你复现 —— <strong>看它有没有报误差范围、有没有给部分分，就够了。</strong></p>
+<h2>六、但也别把话说满</h2>
+<p>作者的分寸很硬，我照抄：</p>
+<ul><li>它打的是 <strong>「把连续的分数压成一个勾叉」这一类做法</strong> —— ⛔ <strong>不是「所有考试都不可信」</strong></li><li><strong>本来就是勾叉的任务，它管不着</strong>（做没做成，本来就只有两种结果）</li><li>作者自己新做的那套分数，<strong>只在一个测试上重跑验证过</strong></li><li>而且这是<strong>预印本</strong>，还没被同行挑过错</li></ul>
+<p>★ 这个分寸特别要紧。<strong>「某张卷子的分辨力不够」和「所有考试都不算数」之间，差着一整个行业。</strong> 前者是修得好的工程问题，后者是干脆不考了。</p>
+<hr>
+<h2>七、以后怎么看排行榜</h2>
+<p>两句大白话，谁都能问：</p>
+<p><strong>第一句：它的分差，比它自己的抖动大吗？</strong></p>
+<p>不大 ⇒ <strong>那它排的是抖动的顺序。</strong> 第一名和第十名，可能只是今天谁运气好。</p>
+<p><strong>第二句：它把一次成绩，记成了几个档？</strong></p>
+<p>只有一个勾叉 ⇒ <strong>那它天生就分不出细的差别。</strong> 分数再高，也说明不了差距。</p>
+<p>★ 这两句都不用你去复现 —— <strong>看它有没有报误差范围、有没有给部分分，就够了。</strong></p>
 <hr>
 <h2>最后</h2>
-<p>这和昨天那条是同一族。</p>
-<p>昨天：<strong>一个从不读推理链的打分器，在推理基准上拿了 0.997</strong> —— 它量的不是推理，是「文本像不像被认真编辑过」。</p>
-<p>今天：<strong>前十名的差距小于测试自身的误差</strong> —— 它量不出差别，但它照样给出名次。</p>
-<p><strong>前一种是量错了对象；后一种是量得太粗。</strong> 两种都不是靠换更难的题能修的。</p>
+<p>昨天我们记过一条：<strong>一个从不读推理的打分器，在推理考试上拿了 0.997。</strong></p>
+<p>那是<strong>量错了东西</strong>。</p>
+<p>今天这条是<strong>量得太粗</strong> —— 它量不出差别，但它照样给你排名次。</p>
+<p><strong>一个是拿卷子量身高，一个是拿秤量体重却只记「胖不胖」。</strong></p>
+<p>两种毛病，都不是靠换更难的题能修的。</p>
 <hr>
 <p><em>自疑：</em></p>
-<p><em>1. 我读的是 arXiv 摘要，没有读正文附录；SWE-bench Verified／ALE-Bench／Terminal-Bench 三组数都来自摘要。</em></p>
-<p><em>2. 「前十差距小于测试自身误差」的具体口径（误差怎么算的）摘要没展开，我按字面理解。</em></p>
-<p><em>3. 「给部分分才修得掉」是作者的结论，不是我的；我能核到的是它在 Terminal-Bench 上重跑验证过。</em></p>
-<p><em>4. 预印本，未经同行评议。</em></p>
-<p><em>5. ⛔ 不能推广成「所有基准都无效」—— 它打的是把连续量压成二值这一类做法。</em></p>
+<p><em>1. 我读的是 arXiv 摘要，没读正文附录；跳远、体重秤、全班及格这些比方都是我加的，论文里没有。</em></p>
+<p><em>2. 三个测试的数据都来自摘要：SWE-bench Verified 前十差距小于测试误差、ALE-Bench 换「人」作参照后全并列、Terminal-Bench 打平的模型在被丢弃量上差十倍。</em></p>
+<p><em>3. 「误差怎么算的」摘要没展开，我按字面理解成「重跑波动」。</em></p>
+<p><em>4. 「给部分分才修得掉」是作者的结论，不是我的。</em></p>
+<p><em>5. 预印本，未经同行评议。⛔ 不能推广成「所有基准都无效」。</em></p>
 
   <footer>
     <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
