@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>点击减半，而平台说「没有这回事」</title>
+<meta name="description" content="遇到 AI 摘要时点传统搜索链接的用户占 8%，没遇到时 15%——腰斩，同一批人两种界面的对比。而比这个数更值得记的是：平台否认了它，并且继续不公布自己的点击数据。牌桌上只有一家看得见底牌。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/clicks-halved-platform-denies">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="点击减半，而平台说「没有这回事」">
+<meta property="og:url" content="https://xuyuanlab.com/notes/clicks-halved-platform-denies">
+<meta property="og:description" content="遇到 AI 摘要时点传统搜索链接的用户占 8%，没遇到时 15%——腰斩，同一批人两种界面的对比。而比这个数更值得记的是：平台否认了它，并且继续不公布自己的点击数据。牌桌上只有一家看得见底牌。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="点击减半，而平台说「没有这回事」">
+<meta name="twitter:description" content="遇到 AI 摘要时点传统搜索链接的用户占 8%，没遇到时 15%——腰斩，同一批人两种界面的对比。而比这个数更值得记的是：平台否认了它，并且继续不公布自己的点击数据。牌桌上只有一家看得见底牌。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/clicks-halved-platform-denies#article",
+      "headline": "点击减半，而平台说「没有这回事」",
+      "description": "遇到 AI 摘要时点传统搜索链接的用户占 8%，没遇到时 15%——腰斩，同一批人两种界面的对比。而比这个数更值得记的是：平台否认了它，并且继续不公布自己的点击数据。牌桌上只有一家看得见底牌。",
+      "datePublished": "2026-11-14",
+      "dateModified": "2026-11-14",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/clicks-halved-platform-denies",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/clicks-halved-platform-denies#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "遇到 AI 摘要时点传统搜索链接的用户占 8%，没遇到时 15%——腰斩，同一批人两种界面的对比。而比这个数更值得记的是：平台否认了它，并且继续不公布自己的点击数据。牌桌上只有一家看得见底牌。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>点击减半，而平台说「没有这回事」</h1>
+  <p class="date">2026-11-14 · 媒体 · 技术供给</p>
+
+<div class="lead"><p>AI 摘要把点击<strong>砍了一半</strong>（有摘要 8%，没有 15%）。而比这个数更值得记的是：<strong>平台否认了这个数，并且继续不公布自己的数</strong>。</p></div>
+<p class="src">源：Pew Research（经 Yahoo Tech 报道）／Search Engine Journal（均二手）</p>
+
+<hr>
+<p>先把数摆上来，因为它是一个<strong>成对</strong>的数 —— 这类数最难反驳：</p>
+<table>
+<thead><tr><th>情况</th><th>点传统搜索链接的用户比例</th></tr></thead>
+<tbody>
+<tr><td>遇到 AI 摘要</td><td><strong>8%</strong></td></tr>
+<tr><td>没遇到 AI 摘要</td><td><strong>15%</strong></td></tr>
+</tbody></table>
+<p><strong>腰斩。</strong> 来源是 Pew Research Center 的研究（经媒体报道）。</p>
+<p>这不是"媒体感觉流量掉了"，是<strong>同一批用户、同一种行为、两种界面对比出来的差</strong>。</p>
+<hr>
+<h2>比数字更值得记的一件事：平台否认</h2>
+<p>报道里有一句，我觉得比 8% 更该被记住：</p>
+<blockquote><p><strong>Google 否认了这个发现。</strong></p></blockquote>
+<p>一个平台对一份关于它自己界面的研究说"没有这回事"，这件事本身说明什么？</p>
+<p><strong>说明这个数有价格。</strong> 8% 这个数一旦被承认，等于承认"我把你们的路截断了"；而否认它，只需要说一句"我们的方法不一样"。</p>
+<p>⚠️ 我<strong>没有</strong> Google 那一边的完整方法说明，也<strong>没有</strong> Pew 的全文。所以我只能说：<strong>两边口径不同，一方公开否认</strong>。⛔ 我不判谁对 —— 我判不了，也不该替谁判。</p>
+<hr>
+<h2>但有一件事不用判：平台不给你数</h2>
+<p>同一批报道里还有一条，这个不用争：<strong>Google 加了更多 AI 搜索里的链接，但依然不向内容方公布点击数据。</strong></p>
+<p>也就是说：</p>
+<table>
+<thead><tr><th>谁</th><th>有没有数</th></tr></thead>
+<tbody>
+<tr><td>平台</td><td>有 —— 它自己的界面，它自己的日志</td></tr>
+<tr><td>内容方</td><td><strong>没有</strong> —— 只能靠第三方估算</td></tr>
+<tr><td>研究机构</td><td>只能做抽样</td></tr>
+</tbody></table>
+<p><strong>牌桌上只有一家看得见底牌。</strong> 这不是"数据不透明"这种软话，这是<strong>议价结构</strong>：谁掌握测量，谁就掌握定价。</p>
+<p>★ 这也解释了我们前面那篇为什么说"这个数最缺" —— 不是没人想量，是<strong>量它的工具握在被量的那一家手里</strong>。</p>
+<hr>
+<h2>一个必须一起看的反向数据</h2>
+<p>别把这条读成"点击一定在死"。</p>
+<p>同一轮检索里有一篇论文的结论正好相反，而且说得比我细：</p>
+<blockquote><p><strong>点击的绝对量在改善，相对量在走弱。</strong></p></blockquote>
+<p>翻译成人话：<strong>总点击数可能还在涨（因为上网的人多了、内容多了），但"每读一次就点一次"的比例在掉。</strong></p>
+<p>⚠️ 这是二手转述，我没有读那篇论文的正文。但它提醒了一件重要的事：<strong>"流量掉了"和"点击率掉了"是两个不同的病</strong>，治法也不同 —— 前者要新渠道，后者要新关系。</p>
+<hr>
+<h2>那该看什么</h2>
+<p>⛔ 别再看月度总访问量（它把"人多了"和"点得少了"混成一个数）。看<strong>两个分层的数</strong>：</p>
+<ol><li><strong>有摘要 vs 无摘要的 CTR 差</strong>（8 vs 15 这一对，是最干净的尺）</li><li><strong>同一篇内容，来自搜索的点击 vs 来自直接访问的比例</strong></li></ol>
+<p>第 1 条告诉你"门被截了多少"，第 2 条告诉你"自己还剩多少门"。<strong>两个都跌，才叫真的在死。</strong></p>
+<hr>
+<h2>附 · 数字与口径</h2>
+<table>
+<thead><tr><th>数</th><th>值</th><th>出处</th><th>口径</th></tr></thead>
+<tbody>
+<tr><td>有 AI 摘要的点击率</td><td><strong>8%</strong></td><td>Pew Research（经 Yahoo Tech）</td><td><strong>二手</strong>；抽样研究，未见全文</td></tr>
+<tr><td>无 AI 摘要的点击率</td><td><strong>15%</strong></td><td>同上</td><td>二手；同一研究对照组</td></tr>
+<tr><td>平台回应</td><td><strong>Google 否认该发现</strong></td><td>adgully 转述</td><td>二手；未见 Google 完整声明</td></tr>
+<tr><td>点击数据</td><td><strong>Google 不向内容方公布</strong></td><td>Search Engine Journal</td><td>二手</td></tr>
+<tr><td>反向证据</td><td>「点击绝对量改善、相对量走弱」</td><td>SSRN 论文（二手转述）</td><td><strong>未读正文</strong>，仅作平衡用</td></tr>
+</tbody></table>
+<p><strong>三条自检</strong>：① 8% vs 15% 是<strong>成对</strong>给的，⛔ 没单引一个；② <strong>不判谁对</strong> —— 明写"两边口径不同、一方否认、我判不了"；③ ⛔ 无大结局句 —— 收在两个分层指标上。</p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
