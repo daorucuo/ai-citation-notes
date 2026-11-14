@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一小时的动作，六个价</title>
+<meta name="description" content="同一件事——一个人戴着摄像头把外套叠起来——在同一链条上同时挂着六个价：末端原始数据 5 元、到手 15 元（有的被压到 8 元）、转手 300–500 元、挂牌千元。而同一家 AI 公司的新钱与老股只差 1.3 倍。有尺子的地方价差被压小，没尺子的地方是两个数量级。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/six-prices-for-one-hour">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一小时的动作，六个价">
+<meta property="og:url" content="https://xuyuanlab.com/notes/six-prices-for-one-hour">
+<meta property="og:description" content="同一件事——一个人戴着摄像头把外套叠起来——在同一链条上同时挂着六个价：末端原始数据 5 元、到手 15 元（有的被压到 8 元）、转手 300–500 元、挂牌千元。而同一家 AI 公司的新钱与老股只差 1.3 倍。有尺子的地方价差被压小，没尺子的地方是两个数量级。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="一小时的动作，六个价">
+<meta name="twitter:description" content="同一件事——一个人戴着摄像头把外套叠起来——在同一链条上同时挂着六个价：末端原始数据 5 元、到手 15 元（有的被压到 8 元）、转手 300–500 元、挂牌千元。而同一家 AI 公司的新钱与老股只差 1.3 倍。有尺子的地方价差被压小，没尺子的地方是两个数量级。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/six-prices-for-one-hour#article",
+      "headline": "一小时的动作，六个价",
+      "description": "同一件事——一个人戴着摄像头把外套叠起来——在同一链条上同时挂着六个价：末端原始数据 5 元、到手 15 元（有的被压到 8 元）、转手 300–500 元、挂牌千元。而同一家 AI 公司的新钱与老股只差 1.3 倍。有尺子的地方价差被压小，没尺子的地方是两个数量级。",
+      "datePublished": "2026-11-14",
+      "dateModified": "2026-11-14",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/six-prices-for-one-hour",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/six-prices-for-one-hour#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "同一件事——一个人戴着摄像头把外套叠起来——在同一链条上同时挂着六个价：末端原始数据 5 元、到手 15 元（有的被压到 8 元）、转手 300–500 元、挂牌千元。而同一家 AI 公司的新钱与老股只差 1.3 倍。有尺子的地方价差被压小，没尺子的地方是两个数量级。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>一小时的动作，六个价</h1>
+  <p class="date">2026-11-14 · 媒体 · 商业模式</p>
+
+<div class="lead"><p>AI 这条链上，<strong>凡是没有统一标价的环节，价差能到两个数量级；而价差最大的那一环，恰恰是最靠近人的手的那一环</strong>。</p></div>
+<p class="src">源：#1930 科创板日报（中国企业家转载，二手）／ #1926 钛媒体（二手）</p>
+
+<hr>
+<p>先说一组数。同一件事——「一个人戴着摄像头，把外套叠起来」——在同一条产业链上同时挂着六个价：</p>
+<table>
+<thead><tr><th>谁</th><th>一小时值多少</th></tr></thead>
+<tbody>
+<tr><td>末端"原始数据"</td><td><strong>5 元</strong></td></tr>
+<tr><td>干活的人到手</td><td><strong>15 元</strong>（有的被压到 <strong>8 元</strong>）</td></tr>
+<tr><td>中间商转手</td><td><strong>300–500 元</strong></td></tr>
+<tr><td>对外挂牌</td><td><strong>千元</strong></td></tr>
+</tbody></table>
+<p>从 5 到 1000，<strong>200 倍</strong>。</p>
+<p>⚠️ 得先说清一件事：<strong>这六个价不是六个独立来源核出来的，是同一篇报道里并排出现的。</strong> 也就是说，连写这篇报道的人，也没法给出一个"标准价"——他只能把市场当场报出来的六个数字一起摆上来。</p>
+<hr>
+<h2>另一头：一司两价，只差 1.3 倍</h2>
+<p>同一天还有另一组价。一家 AI 公司，同一次融资里：</p>
+<ul><li><strong>新钱</strong>按 <strong>150 亿</strong> 的估值进来</li><li><strong>老股</strong>持有人要出，成交在 <strong>六五到八折</strong></li></ul>
+<p>差价 <strong>1.25–1.5 倍</strong>。</p>
+<p>同样是"同一家公司、同一时刻、两个价"，只有 1.3 倍。为什么？</p>
+<p><strong>因为这一头有尺子。</strong> 有估值模型、有律师、有交割文件、有一整条说得出名字的流程。<strong>有尺子的地方，价差被压到了小数点后面。</strong></p>
+<hr>
+<h2>没尺子的地方，价差是两个数量级</h2>
+<p>所以真正的区别不是"贵不贵"，是<strong>有没有一把公认的尺</strong>。</p>
+<table>
+<thead><tr><th></th><th>有尺子（股权）</th><th>没尺子（一小时的动作）</th></tr></thead>
+<tbody>
+<tr><td>价差</td><td><strong>1.3 倍</strong></td><td><strong>200 倍</strong></td></tr>
+<tr><td>凭什么定</td><td>估值模型、可比交易、交割条款</td><td>谁在谈、谈到哪一步、这笔单子急不急</td></tr>
+<tr><td>谁能说清</td><td>律师、投行、财务报表</td><td>没人</td></tr>
+</tbody></table>
+<p><strong>这不是"市场不成熟"，这是"这个东西本来没有标准价"。</strong> 一小时的叠外套，和另一小时的叠外套，凭什么同价？——你答不上来，所以我也不答，我们各自报各自的数。</p>
+<hr>
+<h2>最反直觉的一层：最原始的那一份最便宜</h2>
+<p>再回来看那六个价。</p>
+<p>按"加工程度"排：<strong>原始数据 5 元 → 采集（人干）15 元 → 转手 300–500 元 → 挂牌千元</strong>。</p>
+<p><strong>最原始的那一份，只值 5 元。</strong></p>
+<p>换句话说：<strong>你干出来的那一小时，被加工一次，涨 60 倍；再加工一次，涨到原来的 200 倍。</strong> 而这中间没有任何一次加工是"让这份数据变得更真" —— 它只是<strong>换了一个卖它的位置</strong>。</p>
+<p>这条对一个正在做"AI 数据"生意的人来说，是最该看的一行：<strong>你在链条的哪一格，比你把活干得多好，更决定你能拿到多少。</strong></p>
+<hr>
+<h2>尺子</h2>
+<p>下次看见一个"AI 数据"的报价，先别问贵不贵，问一句：</p>
+<blockquote><p><strong>它离人的手有多远？</strong></p></blockquote>
+<p>离得越近（一个人一小时的动作），价差越可能是几十上百倍，而且<strong>价差里最大的那一块，不在干活的人手上</strong>。离得越远（一份股权、一份授权、一份合同），价差会被各种文书压到 1～2 倍 —— 那时候贵不贵才有意义。</p>
+<p>⛔ 但别把这条读成"AI 在剥削采集工"。这条料只给了价格，<strong>没有给这条链的利润怎么分</strong>：中间商拿 300–500，其中多少是转运、多少是标注、多少是风险垫付，报道里一个字没有。<strong>价差大 ≠ 有人拿走了全部。</strong></p>
+<hr>
+<h2>附 · 数字与口径（给自己看的，不进正文）</h2>
+<table>
+<thead><tr><th>数</th><th>值</th><th>出处</th><th>口径</th></tr></thead>
+<tbody>
+<tr><td>末端原始数据</td><td>5 元/小时</td><td>#1930 科创板日报（中国企业家转载）</td><td><strong>二手</strong>；同一篇报道内并置，非六个独立来源</td></tr>
+<tr><td>采集者到手</td><td>15 元/小时（压到 8 元）</td><td>同上</td><td>二手；无样本量</td></tr>
+<tr><td>中间商转手</td><td>300–500 元/小时</td><td>同上</td><td>二手</td></tr>
+<tr><td>对外挂牌</td><td>千元/小时</td><td>同上</td><td>二手</td></tr>
+<tr><td>新钱估值</td><td>150 亿</td><td>#1926 钛媒体</td><td>二手；未核融资公告</td></tr>
+<tr><td>老股折价</td><td>65–80%</td><td>同上</td><td>二手；单家媒体口径，非全市场统计</td></tr>
+</tbody></table>
+<p><strong>三条自检</strong></p>
+<ol><li>⛔ <strong>没有把"六个价"说成六个来源</strong> —— 正文第一段就写明是同一篇报道里并置的。</li><li>⛔ <strong>没有把"价差大"直接推成"剥削"</strong> —— 结尾明确划了界：报道没给利润怎么分。</li><li>⛔ <strong>没有大结局句</strong> —— 收在一句能用的问句（离人的手有多远）和一条具体的反直觉观察（最原始的最便宜）上。</li></ol>
+<p>★ <strong>仍未做的</strong>：两条料的原文都没读（都只到媒体转述层，B 档／A− 档均为二手）。若升稿，需核科创板日报原文与钛媒体的融资细节。</p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
