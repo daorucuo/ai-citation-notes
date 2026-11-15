@@ -37,6 +37,19 @@ def readings(date):
             r["rate"] = rate
             r["sources"] = nn.get("sources", nn.get("子源"))
             r["atoms"] = store.get("atoms", store.get("原子"))
+            # ★ 2026-11-15 补：报告 schema 又换了一版 —— NewsNow 那组数搬进了 `逐源.NewsNow`
+            #   （抓回／新增／新增率／成功／失败／暂停），原来只认 `fetch.newsnow` ⇒ 11-15 起
+            #   读数恒为「未取」，而数据其实在报告里。**只映射真实字段，⛔ 一个数都不编。**
+            #   ⚠️ 不把 `料仓.今日条目`(60) 塞进 atoms —— 那是**条目**不是**原子**（今天原子 6 条），
+            #      塞进去会印成「立住 60 条原子」，是假数。
+            if r["scan"] is None:
+                nn2 = ((d.get("逐源") or {}).get("NewsNow") or {})
+                r["scan"] = nn2.get("抓回")
+                r["new"] = nn2.get("新增")
+                r["rate"] = nn2.get("新增率")
+                ok, bad, pause = nn2.get("成功"), nn2.get("失败"), nn2.get("暂停")
+                if ok is not None:
+                    r["sources"] = f"{ok} 通 / {bad} 失败 / {pause} 暂停"
         except Exception as e:
             print(f"  ⚠️ 读数解析失败：{e}")
     return r
@@ -222,7 +235,12 @@ def build(date):
     out = SITE / "watch" / f"{date}.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page, encoding="utf-8")
-    n_cit = sum(1 for b in unknowns if "可引用" in b["verdict"]); n_unk = len(unknowns) - n_cit
+    # ★ 2026-11-15 修：页脚「本期用到的数与出处」没有主标签，会被当成一条「没搞懂的」，
+    #   于是构建日志印出"2 没搞懂的"而正文只有 1 条 —— **报了个假数**。
+    #   渲染保持原样（与 11-13 一致，`.unknown` 只是条分隔线），这里只把**计数**算对。
+    FOOTER = "本期用到的数与出处"
+    真未知 = [b for b in unknowns if b["verdict"] != FOOTER]
+    n_cit = sum(1 for b in 真未知 if "可引用" in b["verdict"]); n_unk = len(真未知) - n_cit
     print(f"✅ {out.relative_to(ROOT)}  （{len(items)} 条 ＋ {n_unk} 没搞懂的 ＋ {n_cit} 可引用）｜读数：{readings_html(r)[:60]}")
     return {"date": date, "no": int(no) if str(no).isdigit() else 0,
             "lead": items[0]["verdict"] if items else "", "tags": tags,

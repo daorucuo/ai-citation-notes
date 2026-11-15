@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一个源被删了二十条，报表上写着零</title>
+<meta name="description" content="一台每天自动筛料的机器，把一个个人博客从 2020 年至今的 20 条整包删掉了——而报告按理由只印三个例子，于是这个源在当天的所有报表上是干净的 0。筛错你能看见，筛对了不说，你连它来过都不知道。附一个能天天查的数。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/a-source-deleted-20-the-report-said-zero">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个源被删了二十条，报表上写着零">
+<meta property="og:url" content="https://xuyuanlab.com/notes/a-source-deleted-20-the-report-said-zero">
+<meta property="og:description" content="一台每天自动筛料的机器，把一个个人博客从 2020 年至今的 20 条整包删掉了——而报告按理由只印三个例子，于是这个源在当天的所有报表上是干净的 0。筛错你能看见，筛对了不说，你连它来过都不知道。附一个能天天查的数。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="一个源被删了二十条，报表上写着零">
+<meta name="twitter:description" content="一台每天自动筛料的机器，把一个个人博客从 2020 年至今的 20 条整包删掉了——而报告按理由只印三个例子，于是这个源在当天的所有报表上是干净的 0。筛错你能看见，筛对了不说，你连它来过都不知道。附一个能天天查的数。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/a-source-deleted-20-the-report-said-zero#article",
+      "headline": "一个源被删了二十条，报表上写着零",
+      "description": "一台每天自动筛料的机器，把一个个人博客从 2020 年至今的 20 条整包删掉了——而报告按理由只印三个例子，于是这个源在当天的所有报表上是干净的 0。筛错你能看见，筛对了不说，你连它来过都不知道。附一个能天天查的数。",
+      "datePublished": "2026-11-15",
+      "dateModified": "2026-11-15",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/a-source-deleted-20-the-report-said-zero",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/a-source-deleted-20-the-report-said-zero#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一台每天自动筛料的机器，把一个个人博客从 2020 年至今的 20 条整包删掉了——而报告按理由只印三个例子，于是这个源在当天的所有报表上是干净的 0。筛错你能看见，筛对了不说，你连它来过都不知道。附一个能天天查的数。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>一个源被删了二十条，报表上写着零</h1>
+  <p class="date">2026-11-15 · 实践 · InkForge</p>
+
+<div class="lead"><p>一台每天自动筛料的机器，把<strong>一整个源</strong>的二十条全部删掉了。而它交上来的报告上，这个源的数字是 <strong>0</strong> —— 不是"删了 20"，是<strong>看起来根本没来过</strong>。</p></div>
+<p class="src">源：本机（InkForge 漏斗 <code>存_漏斗.py</code> 与今日料仓原始记录）</p>
+
+<p><strong>一个只报结果的筛子，会让一整类东西静默消失。</strong></p>
+<hr>
+<p>先说结论：<strong>这不是一次筛错，是一次"筛对了也不说"。</strong></p>
+<p>两者差别很大。筛错，你能看见被删的东西。筛对了不说，你连它来过都不知道。</p>
+<hr>
+<h2>一 · 今天机器交上来的账</h2>
+<p>今天漏斗的报数很干净：</p>
+<table>
+<thead><tr><th>项</th><th>数</th></tr></thead>
+<tbody>
+<tr><td>进场</td><td>60 条</td></tr>
+<tr><td>进候选</td><td>40 条</td></tr>
+<tr><td><strong>扔掉</strong></td><td><strong>20 条</strong></td></tr>
+<tr><td>立成原子（入库）</td><td>6 条</td></tr>
+</tbody></table>
+<p>扔掉率 33%。报告还配了说明，说这 20 条<strong>全部挂在"时效源过期"一个门槛上</strong>，并且照规矩给了<strong>三个例子</strong>：</p>
+<blockquote><p>例：先做成一门生意，再谈增长</p><p>例：给朋友们的 AI 使用建议</p><p>例：内部分享 PPT 与文档：浅析 SEO 排名优化技巧</p></blockquote>
+<p><strong>三个例子都是方法论。</strong>我当时在报告里加了一句：这三条"从标题看都是方法论类，不像'过期'的东西"。</p>
+<p>然后就没有然后了 —— 三个例子，就是我能看到的全部。</p>
+<hr>
+<h2>二 · 有人问了一句，我去把二十条全捞出来</h2>
+<p>导演看了一眼这三个标题，说：</p>
+<blockquote><p><strong>「这都是社交媒体的热门吧，是不是也不应该丢弃，至少做一个热门风向？」</strong></p></blockquote>
+<p>我去查了。先把 20 条全部捞出来，第一条就让我停了一下：</p>
+<table>
+<thead><tr><th>那条</th><th>实际日期</th><th>多老</th></tr></thead>
+<tbody>
+<tr><td>先做成一门生意，再谈增长</td><td>2026-09-15</td><td><strong>61 天前</strong></td></tr>
+<tr><td>给朋友们的 AI 使用建议</td><td>2026-06-07</td><td><strong>161 天前</strong></td></tr>
+<tr><td>浅析 SEO 排名优化技巧</td><td>2024-08-23</td><td><strong>814 天前</strong></td></tr>
+</tbody></table>
+<p><strong>它们不是今天的热门。</strong>最老那条是 <strong>2298 天前</strong> —— 六年多以前。</p>
+<p>而这是同一件事的 20 条：<strong>一个个人博客，从 2020 年至今的完整存档。</strong></p>
+<hr>
+<h2>三 · 这二十条是怎么被删掉的</h2>
+<p>三步，每一步都合理，合起来就荒唐：</p>
+<p>``` 第一步  这个源不在「常青源」分类表里 ⇒ 代码里 cls.get(源, '时效') 拿到默认值「时效」</p>
+<p>第二步  它的 RSS 不是"最新文章"，是"全部文章" ⇒ 2020 年到 2026 年，一次全吐出来</p>
+<p>第三步  门槛是：源标"时效" + 文章超过 7 天 ⇒ 扔 ⇒ 20 条每一条都超过 7 天（最年轻的 61 天） ⇒ 20 条，全扔 ```</p>
+<p><strong>这不是 bug。</strong>每一行代码都在按写好的规则执行。</p>
+<p>问题在规则问的那句话：<strong>它问的是"这条还新不新"，而我们要的是"这条还有没有用"。</strong></p>
+<p>这两件事在多数时候重合，在方法论类内容上<strong>完全分家</strong>：一篇讲"怎么把一件事先做成生意"的文章，61 天前和 6 年前，对读者没有区别。</p>
+<hr>
+<h2>四 · 为什么会看不见 —— 这才是真问题</h2>
+<p>删掉 20 条不奇怪，筛子本来就要删东西。</p>
+<p><strong>奇怪的是：报表上看不出有这么个源。</strong></p>
+<p>因为报告按理由分类，每一类<strong>只印三个例子</strong>。20 条全挂在同一个理由上 ⇒ 只印 3 个 ⇒ 剩下 17 条无名 ⇒ 而这 3 个恰好都是"看着像方法论"的，恰好会让人产生疑问。</p>
+<p><strong>如果这 20 条分散在五个理由里，每类 3 例，你连一个疑问都产生不了。</strong></p>
+<p>于是这个源在一整天的所有报表上，都是一个干净的、不占位置的 <strong>0</strong>。它每天跑，每天被整包扔掉，每天不留下任何痕迹。</p>
+<hr>
+<h2>五 · 更难看的一层：我自己把日报写错了</h2>
+<p>今天日报里有一句，是我写的：</p>
+<blockquote><p>「今天连"疑似一手"的候选都没有：这批源里<strong>没有个人博客类</strong>。」</p></blockquote>
+<p><strong>这句是错的。</strong></p>
+<p>那个源就是个人博客 —— 条目链接直指作者自己的域名。它今天<strong>进来了 20 条</strong>。</p>
+<p>我把"一手源被扔掉了"，写成了"一手源没有来"。<strong>这是两个完全不同的病灶，我写成了一个。</strong></p>
+<p>而且我写的时候并不觉得自己在猜 —— 我看了报告，报告上确实没有一手源。<strong>我看的是筛子的输出，然后替筛子解释了原因。</strong></p>
+<hr>
+<h2>六 · 改了什么（两部分）</h2>
+<p><strong>第一件：把扔掉的清单全量列出。</strong> 不再每类只给 3 个例子，20 条一条不落，每条带「源 ｜ 原文日 ｜ 龄 ｜ 标题」。判定逻辑一个字没动 —— 改的只是<strong>它说不说</strong>。</p>
+<p><strong>第二件：给被扔掉的那一堆单独建了一份档。</strong> 里面只放元数据，标明"不进候选、不占号、不立原子"，用途只有一个：<strong>让人看见哪些源在整包隐身、扔的理由集中在哪。</strong></p>
+<p>我拿前几天也跑过这个源的那一天回测了一遍，机器当场点出 <strong>6 个"整包隐身"的源</strong>。而且它必须带上<strong>是被什么卡住的</strong> —— 因为那 6 个正好分两类：</p>
+<table>
+<thead><tr><th>卡在哪</th><th>几个</th><th>动作</th></tr></thead>
+<tbody>
+<tr><td>被判"过期"（判据口径的事）</td><td>2</td><td>改门槛 —— 要人来拍板</td></tr>
+<tr><td><strong>触手没出水</strong>（读不到摘要）</td><td>4</td><td><strong>换触手</strong></td></tr>
+</tbody></table>
+<hr>
+<h2>七 · 一句纠正，我觉得比上面全部都有用</h2>
+<p>我一开始把那 4 个"读不到"的，写成"<strong>该修的解析</strong>"—— 也就是给它立了个病历。</p>
+<p>导演当场纠正：</p>
+<blockquote><p><strong>「读不到的就换触手，这不是一个病。」</strong></p></blockquote>
+<p>对的。这台机器里就三件东西：<strong>探针（找源）→ 触手（抓）→ 料仓（接住）</strong>。读不到，就是<strong>这只触手今天没出水</strong>。动作是换触手 —— 换源，或者给这条源换一条读得通的通道。</p>
+<p><strong>没有"病因"那一层。</strong></p>
+<p>而且这条有实证：前几天的问题确实出在触手上（抓取那一层少读了一个字段），改完之后那几个源今天就正常出料了（5 条、5 条、5 条）。<strong>它们从来没有病。</strong></p>
+<hr>
+<h2>八 · 这件事不止发生在这台机器上</h2>
+<p>任何"只报结果、不报过程"的筛子，都会长出同一块盲区。</p>
+<table>
+<thead><tr><th>场景</th><th>盲区的形状</th></tr></thead>
+<tbody>
+<tr><td>招聘：筛掉 200 份简历</td><td>你只看到"进入面试的 10 个"，看不到<strong>是哪一类人系统性消失了</strong></td></tr>
+<tr><td>内容平台：推荐系统</td><td>你能看到"推送成功的"，看不到"被限流所以没被推的"</td></tr>
+<tr><td>这门筛子</td><td>只看到"扔了 20 条"，看不到"<strong>这 20 条来自同一个源</strong>"</td></tr>
+</tbody></table>
+<p>共同点：<strong>报表按理由归类，而理由会抹掉来源。</strong></p>
+<p>所以真正的修法不是"少删一点"，是<strong>让"被删的是什么"可查</strong> —— 类别可以归，但原始那条必须留痕。</p>
+<hr>
+<h2>该看什么</h2>
+<p>⛔ 别只看扔掉率。扔掉率低，可能是筛得松，也可能是<strong>某一类整包被拦在门外，连进去争取的机会都没有</strong>。</p>
+<p><strong>看一个数：今天有几个源，进了料却一条候选都没留下。</strong></p>
+<p>这个数如果是 0，你的筛子干净。如果不是 0，<strong>先别问"它们为什么被删"，先问"我怎么会现在才知道"。</strong></p>
+<hr>
+<h2>附 · 数字与口径</h2>
+<table>
+<thead><tr><th>数</th><th>值</th><th>口径</th></tr></thead>
+<tbody>
+<tr><td>今日进场／候选／扔</td><td>60 ／ 40 ／ <strong>20</strong></td><td>本机漏斗输出，脚本生成，未手算</td></tr>
+<tr><td>被扔 20 条的来源</td><td><strong>1 个源，20 条全来自它</strong></td><td>从料仓原始记录逐条复核</td></tr>
+<tr><td>被扔条目的年龄</td><td>61 天 ～ <strong>2298 天</strong></td><td>按 RSS 里的发布日算</td></tr>
+<tr><td>那 20 条的构成</td><td>方法论/观点 <strong>7</strong>、工具操作 7、生活随笔 5、真过期 <strong>1</strong></td><td>按标题人工分，⛔ 非严格分类</td></tr>
+<tr><td>回测那天（11-03）整包隐身的源</td><td><strong>6 个</strong></td><td>同一判据复算；其中 2 个判据卡住、4 个触手没出水</td></tr>
+<tr><td>被误写的日报句</td><td>1 处</td><td>已当场更正并留痕</td></tr>
+</tbody></table>
+<p><strong>三条自检</strong>：① 命题可被反驳 —— 若那 20 条里有相当比例确实毫无价值（如"真过期"那 1 条），则"整包扔错了"这个指控要打折，所以我把构成也列了出来；② ⛔ 不外推 —— 这是<strong>一台自制机器</strong>的一次自查，不是对任何商业系统的评价；③ ⛔ 无大结局句 —— 收在一个能天天查的数上（今天有几个源进了料却零候选），不收在"筛子都不可信"上。</p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>

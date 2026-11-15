@@ -95,9 +95,19 @@ PAGES = [
      "「男性气质危机」好卖，「租金危机」不好卖",
      "布克奖短名单小说《Black Bag》里，一个男人最狂野的幻想是有个像样的老板。把这些说成气质问题，正好帮了寡头。附一个能用的判据。",
      "人文 · 文学"),
+    ("two-enfields-look-the-same",
+     "草稿_两个Enfield在它眼里是同一个_20261115.md",
+     "两个 Enfield，在它眼里是同一个 Enfield",
+     "AI 生成的地方新闻被查出六处地名错，其中一处把美国康涅狄格州的 Enfield 写成了北伦敦的 Enfield。它没有编造——它只是按名字相认。而「错在哪一道工序」比「错得多不多」值钱得多：前者给你修理位置，后者只给你一个体温计。",
+     "媒体 · 技术供给"),
+    ("a-source-deleted-20-the-report-said-zero",
+     "草稿_一个源被删了二十条报表上写着零_20261115.md",
+     "一个源被删了二十条，报表上写着零",
+     "一台每天自动筛料的机器，把一个个人博客从 2020 年至今的 20 条整包删掉了——而报告按理由只印三个例子，于是这个源在当天的所有报表上是干净的 0。筛错你能看见，筛对了不说，你连它来过都不知道。附一个能天天查的数。",
+     "实践 · InkForge"),
 ]
 
-DATE = "2026-11-14"          # 兜底值：只在草稿文件名里读不出日期时才用
+DATE = "2026-11-15"          # 兜底值：只在草稿文件名里读不出日期时才用
 
 
 def page_date(src):
@@ -370,10 +380,14 @@ def build(slug, src, title, desc, tag):
 
 
 def insert_index(entries):
-    """把新条目插到 notes/index.html 顶部。★ 幂等：已在页面里的 slug 跳过。"""
+    """把新条目插到 notes/index.html 顶部。★ 幂等：已在页面里的 slug 跳过。
+    ★ 2026-11-15：改成**返回真实插入条数** —— 原来 main() 里印的是写死的
+    「顶部插入 4 条」，不管实际插了几条。那是日志里的假数：虽不影响页面，
+    但一个会印假数的地方，下一次就可能印到别处去。"""
     p = SITE / "notes" / "index.html"
     s = p.read_text(encoding="utf-8")
     block = ""
+    n = 0
     for slug, title, desc, tag, day in entries:
         if f'href="/notes/{slug}"' in s:
             continue
@@ -384,11 +398,12 @@ def insert_index(entries):
   </a>
 
 """
+        n += 1
     if block:
         anchor = s.index('<a class="entry"')
         s = s[:anchor] + block + s[anchor:]
         p.write_text(s, encoding="utf-8")
-    return p
+    return p, n
 
 
 def update_sitemap(entries):
@@ -412,10 +427,10 @@ def main():
         path, t, d, g, u, day = build(slug, src, title, desc, tag)
         built.append((slug, t, d, g, u, day))
         print(f"  ✅ {path.relative_to(ROOT)}")
-    insert_index([(b[0], b[1], b[2], b[3], b[5]) for b in built])
+    _p, _n = insert_index([(b[0], b[1], b[2], b[3], b[5]) for b in built])
     import subprocess
     subprocess.run([sys.executable, str(ROOT / "build" / "notes_build.py")], check=True)
-    print("  ✅ site/notes/index.html 顶部插入 4 条")
+    print(f"  ✅ site/notes/index.html 顶部插入 {_n} 条（幂等：已存在的不重复插）")
     update_sitemap(built)
     print("  ✅ site/sitemap.xml")
 
