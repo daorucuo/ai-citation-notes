@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>成本降下来了，账单从另一栏来了</title>
+<meta name="description" content="AI 确实能降成本 —— 降的是工资那一栏，而且立刻见效，所以它总是第一个被砍。它也是唯一一栏砍掉以后不能用钱买回来的：核对不是开销，是保险，而保险只在出事那天结账。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/the-bill-arrives-from-another-column">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="成本降下来了，账单从另一栏来了">
+<meta property="og:url" content="https://xuyuanlab.com/notes/the-bill-arrives-from-another-column">
+<meta property="og:description" content="AI 确实能降成本 —— 降的是工资那一栏，而且立刻见效，所以它总是第一个被砍。它也是唯一一栏砍掉以后不能用钱买回来的：核对不是开销，是保险，而保险只在出事那天结账。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="成本降下来了，账单从另一栏来了">
+<meta name="twitter:description" content="AI 确实能降成本 —— 降的是工资那一栏，而且立刻见效，所以它总是第一个被砍。它也是唯一一栏砍掉以后不能用钱买回来的：核对不是开销，是保险，而保险只在出事那天结账。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/the-bill-arrives-from-another-column#article",
+      "headline": "成本降下来了，账单从另一栏来了",
+      "description": "AI 确实能降成本 —— 降的是工资那一栏，而且立刻见效，所以它总是第一个被砍。它也是唯一一栏砍掉以后不能用钱买回来的：核对不是开销，是保险，而保险只在出事那天结账。",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/the-bill-arrives-from-another-column",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/the-bill-arrives-from-another-column#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI 确实能降成本 —— 降的是工资那一栏，而且立刻见效，所以它总是第一个被砍。它也是唯一一栏砍掉以后不能用钱买回来的：核对不是开销，是保险，而保险只在出事那天结账。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>成本降下来了，账单从另一栏来了</h1>
+  <p class="date">2026-11-16 · 媒体 · 商业模式</p>
+
+<div class="lead"><p>AI 确实能降成本 —— 降的是工资那一栏，而且立刻见效，所以它总是第一个被砍。它也是唯一一栏砍掉以后不能用钱买回来的：核对不是开销，是保险，而保险只在出事那天结账。</p></div>
+<p class="src">源：Mediapart·二手 ／ CJR·二手 ／ Futurism·二手 ／ WSJ（TechSpot 转）·二手</p>
+
+<hr>
+<p>你上一次被要求"用 AI 提效"，是为了什么？</p>
+<p>大概不是为了让活干得更好。是为了<strong>同一笔钱办更多事</strong>，或者更直接：<strong>同样的活，少花点钱。</strong></p>
+<p>这不丢人，这就是生意。</p>
+<p>所以这篇只回答一个问题：</p>
+<blockquote><p><strong>AI 到底能不能降成本？</strong></p></blockquote>
+<p>答案不是"能"或"不能"。是：<strong>能，但它降的是某一栏，而账单会从另一栏来 —— 那一栏通常不会立刻到，所以你在报表上看不见它。</strong></p>
+<hr>
+<h2>先说一家报社为什么动这个手</h2>
+<p>法国东部有一家报业集团叫 <strong>Ebra</strong>（Crédit Mutuel 银行旗下，管着一批地方报纸）。</p>
+<p><strong>2023 年</strong>，管理层把 GPT-4 <strong>自愿</strong>开放给复审编辑用 —— 那些"重读稿子、核对信息、准备发布"的编辑。理由是「<strong>减轻重复劳动的负担</strong>」。</p>
+<p>它提标题、提导语，还能改地方通讯员稿子里的语病。</p>
+<p>听起来是好事。</p>
+<p><strong>但用了的人后来跟工会代表说了这么一段话。</strong> SNJ-CGT 的 <strong>Delphine Banas</strong> 转述：</p>
+<blockquote><p>「<strong>那些用了 AI 的人开始对这个工具产生依赖，觉得自己不再有用了，专业能力正在流失。</strong> 最后，很多人不用了。」</p></blockquote>
+<p><strong>到 2026 年夏天前，集团公布了重组方案，目标写得很直白：提高生产率，尤其是削减工资总额。</strong></p>
+<p>自愿那一页翻过去了 —— AI 被直接嵌进生产流程的每一环，不再只改通讯员的稿，连自己记者写的稿也改。</p>
+<hr>
+<p>★ 看到这儿，先在自己的账上找一件事：<strong>你们单位上一次"提效"，省下来的是哪一栏的钱？</strong></p>
+<p>是工资？是外包费？是差旅？还是<strong>只是把人手上的空隙填满了，一分钱没省</strong>？</p>
+<p>★ 这一节先记住这一个问题，后面要用。</p>
+<hr>
+<h2>那个月他确实省了钱</h2>
+<p>同一个月，法国《Le Point》周刊也动了同一把刀。</p>
+<p><strong>2025 年 4 月 23 日</strong>，管理层公布了一份裁员保护计划：<strong>58 个岗位</strong>（32 个正式编制、26 个自由撰稿人，全社编制 200 人）。</p>
+<p>而其中有一个部门是<strong>被整个拆掉的</strong>：</p>
+<blockquote><p><strong>编辑与校对部：18 个校对，全部裁撤。</strong></p></blockquote>
+<p>替代方案是招 <strong>3 个「AI 专家校对监督」</strong>，跟 AI 工具配合着管编辑质量。</p>
+<p><strong>而到夏天结束，这 3 个岗只填满了 2 个。</strong></p>
+<hr>
+<p>★★ 这个变化可以算得很清楚，因为它是一个<strong>结构性</strong>的数字：</p>
+<table>
+<thead><tr><th></th><th>过去</th><th>现在</th></tr></thead>
+<tbody>
+<tr><td>干"看最后一遍"这件事的人</td><td><strong>18 个</strong></td><td><strong>2 个</strong> + 一套工具</td></tr>
+</tbody></table>
+<p><strong>从 18 到 2。</strong> 这一栏的工资，确实降了。</p>
+<p>★ 而且这是<strong>唯一一栏会立刻变小</strong>的 —— 你今天签字，下个月工资表就少一截。<strong>所以它总是第一个被砍。</strong></p>
+<p>★ 但它也是<strong>唯一一栏，砍掉以后不能用钱买回来</strong>。原因下面会说。</p>
+<hr>
+<p>★★ 那你自己的账上，"18 到 2"是哪一项？</p>
+<p><strong>你砍掉的那一层，是立刻见效的工资，还是只是"看起来能砍"的东西？</strong></p>
+<p>这两者的区别，一年后才知道。</p>
+<hr>
+<h2>现在算另外三栏</h2>
+<p>工资那一栏降了。但同一笔生意里还有三栏，它们不在同一张表上。</p>
+<h3>第一栏 · 工具费 —— 它看得见，而且在涨</h3>
+<p>我们之前算过 Channel 4 的账：合成主播放进晚间黄金档，<strong>AI 主播一年 £10,000–20,000，真人 £40,000–150,000</strong>，<strong>便宜 4 到 7 倍</strong>。这一栏是真省。</p>
+<p>但另一笔在这里：<strong>只变架构、模型任务工具都不变</strong>的实验里，每多加一层协作，<strong>token 花掉 1.4–4.7 倍、等待涨到 2.6–5.8 倍</strong>，增益「<strong>通常很小、很少显著</strong>」。</p>
+<p>⇒ <strong>工具确实便宜，但"多叠一层"很贵。</strong> 而"多叠一层"恰恰是上了 AI 之后最容易忍不住做的事。</p>
+<h3>第二栏 · 核对费 —— 它被省掉了，但它不是开销，是保险</h3>
+<p>这是最容易被漏掉的一栏，也是最贵的一栏。</p>
+<p><strong>"看最后一遍"这件事，在账上从来不叫"成本"，它叫"没必要的人"。</strong> 因为它平时不产生任何东西 —— 你省掉它，当天报表立刻变好看。</p>
+<p>★ 但它不是开销。<strong>它是保险。</strong></p>
+<p>而你只有在出事那天，才知道自己省掉的是什么。下面这件真事就是账单。</p>
+<h3>第三栏 · 出事那天</h3>
+<p><strong>2026 年 2 月 13 日</strong>，科技媒体 Ars Technica 发了一篇稿子，引了一位工程师 <strong>Scott Shambaugh</strong> 的原话。</p>
+<p><strong>Shambaugh 自己站出来说：我没说过这些话。</strong></p>
+<p>撤稿。主编发编辑说明，承认稿中包含「<strong>由 AI 工具生成的伪造引语，并归给了一个没说过这话的人</strong>」，称这是「<strong>我们标准上的一次严重失误</strong>」。</p>
+<p>三月初，署名作者之一、资深 AI 记者 <strong>Benj Edwards</strong> 被解雇。</p>
+<p>★ 而他没有让 AI 写稿。他是想用一个 AI 工具<strong>提取逐字原文</strong>，工具没跑通，转去问 ChatGPT —— 拿到的是「<strong>转述版，而不是原话</strong>」。</p>
+<blockquote><p><strong>他想把引语核得更准。而 AI 给他的是"意思对了、词不对"。而引用只认"词对"。</strong></p></blockquote>
+<p>★★★ 所以这三栏的关系是：</p>
+<blockquote><p><strong>第一栏（工具）省的是钱。</strong></p><p><strong>第二栏（核对）省的是"看起来没必要的人" —— 但它是保险。</strong></p><p><strong>第三栏（出事）不是开销，是</strong>结算<strong>：省掉的保险费，在这一天一次性还回去。</strong></p></blockquote>
+<p>★ 而 Cleveland.com 那家报社的编辑早就知道会坏在哪里 —— 他们说，<strong>引语是 AI 最可能搞坏的东西</strong>，所以记者和改写专员两头都核。</p>
+<p><strong>他们没省这一栏。</strong> 这就是差别。</p>
+<hr>
+<h2>所以「AI 能降成本吗」</h2>
+<p>能。分三句说完：</p>
+<p><strong>一、能降的那一栏，通常是工资，而且是立刻见效的。</strong> 所以你一定会先砍它 —— 不砍它砍谁？其它栏要么砍不动，要么砍了看不见。</p>
+<p><strong>二、不能降的那一栏，是"出错时的价"。</strong> 它不是不花，是<strong>推迟到出事那天，一次性结清</strong>。而那一天，你往往不记得这笔钱是三个月前省下来的。</p>
+<p><strong>三、真正会变化的那一栏，是"人剩下来干什么"。</strong> Cleveland 那个案例里，记者省下来的时间<strong>去了现场</strong> —— 这是唯一一种让成本变成资产的花法。同样省下一天，去做更多同质的稿子，那只是把省下的钱交回去。</p>
+<hr>
+<h2>那这笔账该怎么算</h2>
+<p>给你一个能用的算法。不复杂，四个格：</p>
+<table>
+<thead><tr><th>格</th><th>问什么</th><th>小心什么</th></tr></thead>
+<tbody>
+<tr><td><strong>① 省下的是哪一栏</strong></td><td>工资／外包／材料／时间</td><td>⛔ <strong>"时间"不是钱</strong> —— 时间不换成别的东西，就等于没省</td></tr>
+<tr><td><strong>② 省下的这栏，能不能买回来</strong></td><td>能（额度、外包、临时工）／不能（手艺、经验、关系）</td><td>★ <strong>买不回来的那栏，砍之前要想三次</strong></td></tr>
+<tr><td><strong>③ 省掉的那件事，平时有没有"不产出"的价值</strong></td><td>核对、复盘、二审、带人</td><td>★ <strong>这些在账上永远像"没必要"</strong> —— 它们只在出事时显形</td></tr>
+<tr><td><strong>④ 省下来的时间去了哪</strong></td><td>去了更值钱的活／被塞进更多同质活</td><td>★ <strong>这一格决定你是提效还是白干</strong></td></tr>
+</tbody></table>
+<p>★ 这张表最狠的是第②格。<strong>AI 额度你随时能买更多，但一个"已经会看错"的人，你要等他长十年。</strong></p>
+<hr>
+<h2>那你手上该做点什么</h2>
+<p><strong>① 如果这轮"提效"落到你头上。</strong></p>
+<p>⛔ 别只报"我用了 AI"。那在你老板那儿等于"你更快了"，等于下一轮还能更快。</p>
+<p>✅ 报另外半句：<strong>省下的时间我拿去做了什么</strong>。哪怕只写一句"这周多见了两个客户""这版方案多想了一轮"。<strong>不写这句，你省下的时间就会被默认划给别人。</strong></p>
+<p><strong>② 如果你是那个要砍成本的人。</strong></p>
+<p>砍之前先做一件事：<strong>把"砍了会不会三年后没人会"这一栏，加进你的表。</strong></p>
+<p>Cleveland 那位主编 Quinn 想把"核对岗"交给刚毕业的记者，理由是"让他们学会什么是一个好故事"。<strong>动机是好的，但那个岗教不了这个</strong> —— 核对能练"眼"，练不了"手"。</p>
+<p>⇒ <strong>砍掉一层之前问一句：删掉之后，谁还能练出"看出不对"？</strong> 答案若是"没人"，你砍的不是成本，是<strong>三年后的人</strong>。</p>
+<p><strong>③ 如果你只是自己用 AI 干活。</strong></p>
+<p>给自己划一条线：<strong>凡是"错一个字性质就变了"的东西（引语、数字、日期、条款、金额），不许经过 AI 的手 —— 哪怕只是让它帮你复制一遍。</strong></p>
+<hr>
+<h2>那钱在哪</h2>
+<p><strong>一、"买不回来的那栏"值钱了。</strong> 因为所有人都在砍它 —— 而它砍完不能重买。<strong>判断力、老关系、见过的事故，都属于这一栏。</strong></p>
+<p><strong>二、"替人验"是一门正经生意。</strong> 产出越多，客户"验不了"的东西越多。这活门槛很怪：<strong>不需要你会做，只需要你看得出。</strong></p>
+<p><strong>三、"把省下的时间变成资产"这件事本身，可以卖。</strong> 大多数单位把省下的时间又填回去了 —— <strong>谁能帮它把时间换成别的东西（现场、一手、判断），谁就有定价权。</strong></p>
+<hr>
+<h2>我不确定的地方</h2>
+<p><strong>一、我没有"省下的工资 vs 工具花的钱"的对比数据</strong> —— 那要两家的内部账，公开报道里没有。而且 Ebra 与 Le Point <strong>只是两家法国机构</strong>，⛔ 不能推成"全世界报社都这么算账"。<strong>我知道的只是结构性事实：18 个岗变 2 个加一套工具。</strong></p>
+<p><strong>二、Mediapart 的判断是「AI 被当作裁员的借口」，我引用它，但那是调查方的判断，不是法院结论。</strong> 而管理层自己写的目标是"削减工资总额"，这一点是原话。</p>
+<p><strong>四、"核对是保险"是我的比喻，不是会计定义。</strong> 它想说的是：这类工序平时不产出、只在出事时显形 —— 所以最容易被当成没必要。</p>
+<p><strong>四、Ars 那件事的因果我不是亲历者。</strong> 依据是 Futurism（2026-03-02）转述 Ars 主编说明与 Edwards 本人公开说明，撤稿由 404 Media 首报。<strong>我无法核实他当时的实际操作。</strong></p>
+<p><strong>五、Channel 4 那组数是 2025 年 10 月的旧案，报道未给统计口径。</strong> 拿它算你自己的账之前，先确认它跟你的岗位对不对得上。</p>
+<hr>
+<h2>一句话</h2>
+<blockquote><p><strong>工资是唯一一栏会立刻变小的，所以它总是第一个被砍。</strong></p><p><strong>它也是唯一一栏，砍掉以后不能用钱买回来 —— 因为那个人要长十年。</strong></p><p><strong>AI 能降成本，从来不假。假的是你以为省下的那笔钱，留在了你的账上。</strong></p></blockquote>
+<hr>
+<p><em>来源：Ebra 集团 2023 年自愿使用 GPT-4 与 2026 年重组 —— Mediapart（2026-10-06）调查，引 SNJ-CGT 工会代表 Delphine Banas；Le Point 58 个岗位（含 18 个校对全裁、改设 3 个监督岗只填满 2 个）—— 2025-04-23 计划公布，二手转述；Ars Technica 撤稿与解雇 —— Futurism（2026-03-02），撤稿由 404 Media 首报；Channel 4 成本与多智能体实验 —— 本站 2026-11-12《省下来的钱没有消失，它只是换了个抽屉》。全部二手，未见任一方内部账目。</em></p>
+<p><em>联翩实验室 ｜ 写下来的，都是我读过的和做过的。</em></p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>

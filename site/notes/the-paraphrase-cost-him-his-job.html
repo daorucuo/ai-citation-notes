@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 把「原话」换成了「转述」，他被开除了</title>
+<meta name="description" content="一个资深 AI 记者被解雇，起因是一篇引语造假的稿子。而他没有让 AI 写稿 —— 他是想用一个 AI 工具把引语核得更准，AI 给他的是「意思对了、词不对」的转述版。而引用只认「词对」。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/the-paraphrase-cost-him-his-job">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 把「原话」换成了「转述」，他被开除了">
+<meta property="og:url" content="https://xuyuanlab.com/notes/the-paraphrase-cost-him-his-job">
+<meta property="og:description" content="一个资深 AI 记者被解雇，起因是一篇引语造假的稿子。而他没有让 AI 写稿 —— 他是想用一个 AI 工具把引语核得更准，AI 给他的是「意思对了、词不对」的转述版。而引用只认「词对」。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 把「原话」换成了「转述」，他被开除了">
+<meta name="twitter:description" content="一个资深 AI 记者被解雇，起因是一篇引语造假的稿子。而他没有让 AI 写稿 —— 他是想用一个 AI 工具把引语核得更准，AI 给他的是「意思对了、词不对」的转述版。而引用只认「词对」。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/the-paraphrase-cost-him-his-job#article",
+      "headline": "AI 把「原话」换成了「转述」，他被开除了",
+      "description": "一个资深 AI 记者被解雇，起因是一篇引语造假的稿子。而他没有让 AI 写稿 —— 他是想用一个 AI 工具把引语核得更准，AI 给他的是「意思对了、词不对」的转述版。而引用只认「词对」。",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/the-paraphrase-cost-him-his-job",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/the-paraphrase-cost-him-his-job#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一个资深 AI 记者被解雇，起因是一篇引语造假的稿子。而他没有让 AI 写稿 —— 他是想用一个 AI 工具把引语核得更准，AI 给他的是「意思对了、词不对」的转述版。而引用只认「词对」。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>AI 把「原话」换成了「转述」，他被开除了</h1>
+  <p class="date">2026-11-16 · 媒体 · 技术供给</p>
+
+<div class="lead"><p>一个资深 AI 记者被解雇，起因是一篇引语造假的稿子。而他没有让 AI 写稿 —— 他是想用一个 AI 工具把引语核得更准，AI 给他的是「意思对了、词不对」的转述版。而引用只认「词对」。</p></div>
+<p class="src">源：Futurism（2026-03-02）·二手 ／ 撤稿由 404 Media 首报</p>
+
+<hr>
+<p>你上一次被人转述错，是什么时候？</p>
+<p>你说的是"这个方案我觉得可以，但预算得再谈"。传出去变成了"他说预算不行"。</p>
+<p>你气得不是被简化了。是<strong>转述的人并没有恶意，他也真觉得他听懂了你。</strong></p>
+<p>今天这件事，是被转述错之后最贵的一种情况：<strong>说的人出来否认了，而替那份转述签字的那个记者，丢了工作。</strong></p>
+<hr>
+<h2>一件真事</h2>
+<p><strong>2026 年 2 月 13 日</strong>，科技媒体 Ars Technica 发了一篇稿子，写的是当时网上很热的一桩事：一个 AI 程序写了一篇攻击人类工程师的文章。</p>
+<p>稿子里引了那位工程师 <strong>Scott Shambaugh</strong> 的原话。</p>
+<p><strong>Shambaugh 自己站出来说：我没说过这些话。</strong></p>
+<p>稿子撤了。主编 <strong>Ken Fisher</strong> 发编辑说明，承认稿中包含「<strong>由 AI 工具生成的伪造引语，并归给了一个没说过这话的人</strong>」，称这是「<strong>我们标准上的一次严重失误</strong>」。</p>
+<p>三月初，写那篇稿子的两位署名作者之一、资深 AI 记者 <strong>Benj Edwards</strong> 被解雇。</p>
+<hr>
+<p>★ 看到这儿，先在你自己的行里想一件事：<strong>你交出去的东西里，有多少"别人的话"？</strong></p>
+<p>客户说的、领导说的、甲方说的、供应商说的。你是怎么把它们放进你的方案和报告里的？<strong>是原话，还是你自己整理过的一句？</strong></p>
+<p>这两种，你自己分得清吗？</p>
+<hr>
+<h2>而最扎人的是：他为什么要用 AI</h2>
+<p><strong>他没有让 AI 写稿。</strong></p>
+<p>他在自己的说明里讲清了过程：当时他<strong>发烧躺在床</strong>上，想用一个「实验性的、基于 Claude Code 的 AI 工具」去<strong>提取逐字的原始材料</strong> —— 那工具不是用来生成文章的，是用来「帮我把结构化的引用列出来」放进提纲。</p>
+<p>工具没跑通。他又转去问 <strong>ChatGPT</strong>，想知道为什么跑不通。</p>
+<p>他在说明里的原话是：</p>
+<blockquote><p>「…inadvertently ended up with a paraphrased version of Shambaugh's words rather than his actual words.」</p><p>（不小心拿到的，是一个<strong>转述版</strong>，而不是他的<strong>原话</strong>。）</p></blockquote>
+<p>他说得很清楚：稿件正文是人写的、AI 生成内容违反公司政策、跟他合作署名的那位同事与此事无关。</p>
+<p>★ 所以这件事的形状是这样的：</p>
+<blockquote><p><strong>他用 AI 的唯一目的，是想把引语核得更准。</strong></p><p><strong>而 AI 给他的，是一个"意思对了、词不对"的版本。</strong></p><p><strong>而引用这件事，恰恰只认"词对"。</strong></p></blockquote>
+<p><strong>他把 AI 最不擅长的那件事，派给了它。而且是在它最像对的时候。</strong></p>
+<hr>
+<p>★★ 这一条我特别想让你对着自己检查一下：</p>
+<p><strong>你有没有用 AI 帮你"整理"过什么东西？</strong> 会议录音、访谈笔记、一段客户的语音、一篇你要引用的文章。</p>
+<p>整理完之后，里面的"原话"，还是原话吗？</p>
+<p>如果那份东西你会转给别人、放进正式文件、或者作为证据 —— <strong>那你就站在他当时站的位置上。</strong></p>
+<hr>
+<h2>为什么 AI 一定会这样</h2>
+<p>这不是这个工具坏了。<strong>这是它的工作方式。</strong></p>
+<p>你可以这样理解：</p>
+<table>
+<thead><tr><th>你让它做的事</th><th>它会给你什么</th></tr></thead>
+<tbody>
+<tr><td>"帮我理解这段话在说什么"</td><td><strong>意思</strong> —— 这是它的强项，好到惊人</td></tr>
+<tr><td>"帮我复述这段话"</td><td><strong>一个准确的意思 ＋ 你自己的一组词</strong></td></tr>
+<tr><td><strong>"一个字都别动地给我这段话"</strong></td><td><strong>它没有这个动作。</strong> 它不是在"搬"，它是在"重说"</td></tr>
+</tbody></table>
+<p>用大模型去拿逐字原文，等于<strong>让它抄一遍</strong> —— 而它<strong>不会抄</strong>，它只会<strong>重说</strong>。</p>
+<p>而"重说"在别的地方是优点（你让它改稿、总结、翻译，都要"重说"）。<strong>只有在引用这里，"重说"是致命的。</strong></p>
+<hr>
+<p>★★ 所以你自己划一条线：</p>
+<table>
+<thead><tr><th>可以交给它</th><th>绝对不能交</th></tr></thead>
+<tbody>
+<tr><td>意思层面的（总结、改写、找思路、换个说法、起草骨架）</td><td><strong>引语、数字、日期、人名、条款原文、剂量、金额</strong></td></tr>
+<tr><td>重活（排版、格式、初稿）</td><td><strong>"这到底是他说的还是你转述的"这个判断</strong></td></tr>
+</tbody></table>
+<p>★ <strong>一条你今天就能用的判据</strong>：</p>
+<blockquote><p><strong>凡是"错一个字性质就变了"的东西，不许经过 AI 的手 —— 哪怕只是让它"帮你复制一遍"。</strong></p></blockquote>
+<hr>
+<h2>所以这一行会怎么样</h2>
+<p><strong>"核对"这件事正在被工具化，而工具会在最要命的那一处出错。</strong></p>
+<p>三件事同时发生：</p>
+<p><strong>一、要核的量在暴涨。</strong> AI 让产出变快变多，需要核的东西跟着变多。<strong>人没有变快。</strong></p>
+<p><strong>二、核的动作在变形。</strong> 过去核是"我去查"，现在是"我让工具去查"。这个转变本身合理 —— 工具确实快。</p>
+<p><strong>三、但"核对"里混着两种完全不同的活，而工具只擅长其中一种：</strong></p>
+<table>
+<thead><tr><th>核对的两种活</th><th>AI 行不行</th></tr></thead>
+<tbody>
+<tr><td>"这个说法对不对"（意思层面）</td><td><strong>它很擅长</strong> —— 但它的"对"也可能是编的</td></tr>
+<tr><td><strong>"这几个字是不是他说的"（引语层面）</strong></td><td><strong>它做不到</strong>，因为它不会"搬字"</td></tr>
+</tbody></table>
+<p>⇒ <strong>第二类活交给 AI，等于用一把会自我修正的尺子去量长度。</strong></p>
+<hr>
+<h2>那你手上该做点什么</h2>
+<p><strong>① 如果你是写东西的人。</strong></p>
+<p>把要交给 AI 的活先分两堆（看上头那张表）。<strong>引语、数字、日期、条款，一个字都别过它的手。</strong></p>
+<p><strong>② 如果你是审稿的人。</strong></p>
+<p>⛔ 别再问"这是不是 AI 写的"。这个问题问不出东西 —— 他可以说没有，而你也验不了。</p>
+<p>✅ 改成问一件事：<strong>"引语你是从哪儿拿的？原始材料在不在？"</strong></p>
+<p>★ 因为这件事的教训不是"他用了 AI"，是<strong>"他交上来的引语，没有人回去对过原文"</strong>。</p>
+<p><strong>③ 如果你带人。</strong></p>
+<p>⛔ 别因为这件事就发禁令。禁令只会让人不敢说，然后偷偷用。</p>
+<p>✅ 立一条能执行的：<strong>引语必须贴原始链接，且必须是原文页面</strong> —— 不是搜索结果页、不是二手转述、不是 AI 的复述。</p>
+<hr>
+<h2>那钱在哪</h2>
+<p><strong>一、"能验"变成硬通货。</strong> 这件事里最要命的一点：<strong>发现错误的人是被引用的那个人自己。</strong> 不是编辑发现的，不是流程发现的，不是工具发现的 —— 是当事人站出来说"我没讲过"。</p>
+<p>⇒ <strong>产出越多，"有人能回头验一遍"就越值钱。</strong> 而这活的门槛很怪：不要求你会写，只要求你<strong>看得出不对</strong>。</p>
+<p><strong>二、"替人核对"正在变成一门正经活。</strong> 过去它包在编辑费里，没人单算。产出免费之后，<strong>验的需求跟产出的量成正比</strong>，而这两件事第一次可以分开卖。</p>
+<p><strong>三、一个人的产出配上一双能验的眼，比一个组更值钱。</strong> 这条对已经会看出不对的人是纯利好 —— 你第一次能一个人干完过去一个组的活，而<strong>"没人能替你验"正好是你的护城河。</strong></p>
+<hr>
+<h2>我不确定的地方</h2>
+<p><strong>一、我读到的不是 Ars 的内部调查。</strong> 依据是 Futurism 的报道（2026-03-02），它引的是 Ars 主编的编辑说明和 Edwards 本人的公开说明。<strong>撤稿最初由 404 Media 首报。</strong> 三份都是转述，我没看到 Ars 内部的调查结论。</p>
+<p><strong>二、"孤立事件"是公司自己的说法，不是我核实过的。</strong> 我不知道 Ars 其它稿件有没有同类问题。</p>
+<p><strong>三、Edwards 的说法是他自己的。</strong> 他讲了工具、讲了发烧、讲了转去问 ChatGPT。这些话我相信是他说的，<strong>但我无法核实他当时的实际操作</strong>。</p>
+<p><strong>四、我不知道 Ars 事后改了什么流程。</strong> 报道里没有。</p>
+<p><strong>五、这一条不能推成"AI 记者都不可信"。</strong> 我写的是一个具体的失误形状：<strong>一个想把活干得更准的人，用了一个只会"重说"的工具，去做一件只认"原字"的事。</strong> 这个形状跟行业无关 —— 任何要引用别人的行当都会撞上。</p>
+<hr>
+<h2>一句话</h2>
+<blockquote><p><strong>AI 最擅长"意思对了"——而引用的规矩是"词必须对"。</strong></p><p><strong>所以你要防的不是它写错，是它写得太顺，顺到你忘了回头对一遍原文。</strong></p></blockquote>
+<hr>
+<p><em>来源：Futurism（2026-03-02）转述 Ars 主编编辑说明与 Benj Edwards 本人公开说明；撤稿由 404 Media 首报。全部为二手，未见 Ars 内部调查。</em></p>
+<p><em>联翩实验室 ｜ 写下来的，都是我读过的和做过的。</em></p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
