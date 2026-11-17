@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 回答里提你一句，能卖钱了。但买家至今不知道多卖了多少货</title>
+<meta name="description" content="三件好事，三个精确到个位的数字，三件代价一个数都没有。而同一周国外已经发了 Gemini 4、李飞飞带着公司加入 AMD —— 我们扫的 300 条中文源，一条都没报。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/the-other-half-has-no-number">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 回答里提你一句，能卖钱了。但买家至今不知道多卖了多少货">
+<meta property="og:url" content="https://xuyuanlab.com/notes/the-other-half-has-no-number">
+<meta property="og:description" content="三件好事，三个精确到个位的数字，三件代价一个数都没有。而同一周国外已经发了 Gemini 4、李飞飞带着公司加入 AMD —— 我们扫的 300 条中文源，一条都没报。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 回答里提你一句，能卖钱了。但买家至今不知道多卖了多少货">
+<meta name="twitter:description" content="三件好事，三个精确到个位的数字，三件代价一个数都没有。而同一周国外已经发了 Gemini 4、李飞飞带着公司加入 AMD —— 我们扫的 300 条中文源，一条都没报。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/the-other-half-has-no-number#article",
+      "headline": "AI 回答里提你一句，能卖钱了。但买家至今不知道多卖了多少货",
+      "description": "三件好事，三个精确到个位的数字，三件代价一个数都没有。而同一周国外已经发了 Gemini 4、李飞飞带着公司加入 AMD —— 我们扫的 300 条中文源，一条都没报。",
+      "datePublished": "2026-11-17",
+      "dateModified": "2026-11-17",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/the-other-half-has-no-number",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/the-other-half-has-no-number#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "三件好事，三个精确到个位的数字，三件代价一个数都没有。而同一周国外已经发了 Gemini 4、李飞飞带着公司加入 AMD —— 我们扫的 300 条中文源，一条都没报。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>AI 回答里提你一句，能卖钱了。但买家至今不知道多卖了多少货</h1>
+  <p class="date">2026-11-17 · 技术 · AI 落地</p>
+
+<div class="lead"><p>三件好事，三个精确到个位的数字，三件代价一个数都没有。而同一周，国外已经发布了 Gemini 4、李飞飞带着她的公司加入了 AMD —— 我们扫的 300 条中文源，这些事一条都没报。能算的那一半被算到了个位，不能算的那一半连个大概都没有。</p></div>
+<p class="src">源：Digiday 2026-11-16（二手，未读原文）／钛媒体 2026-11-16（二手，未读原文）／壹览商业实测·钛媒体转载（二手，未读原文）／X 上 57 个账号 236 条原文（一手，实读十几条）</p>
+
+<hr>
+<p><strong>这篇文章只干一件事：教你怎么在别人给你一个漂亮数字的时候，问出那个没人算的数。</strong></p>
+<p>今天扫了 <strong>302 条</strong>，去重后 300 条，<strong>真正读进去的 5 条</strong>，其中三条经得起追问。</p>
+<p>为什么只有三条——因为大部分料是重复的、转述的、或者一句标题里塞五件事的。<strong>真正有具体数字、有明确出处、能往下追一层的，一天就这么几条。</strong></p>
+<p>下面三条，每条给你四样：</p>
+<p><strong>它到底说了什么</strong>（说人话，不甩术语）；<strong>这件事的另一半有没有数</strong>；<strong>一句你可以直接拿去用的话</strong>；<strong>这句话在什么情况下会失灵</strong>。</p>
+<p>最后那两样是顺带的——<strong>料够硬，话自然就有了。反过来不成立。</strong></p>
+<hr>
+<h2>第一部分 · 核心文章</h2>
+<h3>一 · AI 回答里提你一句，现在能卖钱了</h3>
+<p>先说清楚这是什么事。</p>
+<p>你平时用不用 AI 助手——就是那个能跟你对话、能帮你写东西、能替你查资料的东西。现在很多人不去百度搜了，直接问它。</p>
+<p>问它「这附近哪家装修公司靠谱」，它会给你一个回答，回答里会提到几个名字。<strong>提到谁、排第几，这就是新的「搜索结果第一页」。</strong></p>
+<p>以前这个位置是免费的——你内容做得好，它自然提你。</p>
+<p>现在有人把它做成了生意。一家美国出版集团（Bustle Digital Group）在帮宝适、Influenster 这类品牌做这件事：<strong>让你的名字出现在 AI 的回答里，而且往前排。</strong></p>
+<p>他们给的数字很硬，三个：<strong>30 天，品牌被 AI 提到的可见度提升 30%；排名从第 709 位提到第 12 位；三家品牌付了钱。</strong></p>
+<h4>但这条最有价值的是另一句</h4>
+<p><strong>这家公司自己承认：影响力这一层，没有干净地接到交易这一层。</strong></p>
+<p>翻成普通话：<strong>排名上去了，但客户到底有没有因为这个多卖货，这根线还没接上。</strong></p>
+<p>一家公司把一件事做成了生意，又自己承认它还没接到最终结果上——<strong>这种话只有在原文里才有，转述通常会把它剪掉。</strong></p>
+<h4>一句可以拿去用的话</h4>
+<blockquote><p><strong>「现在 AI 回答里提到你，已经能花钱买了。但买到的只是名次，还没买到生意——这个行业自己都还没算出转化率。」</strong></p></blockquote>
+<h4>跟你有啥关系</h4>
+<p>如果你是<strong>做品牌、做市场、做宣传</strong>的：明年预算会上大概率会有人提这个。<strong>你现在知道它买的是什么、不买什么</strong>，比到时候听人推销强。</p>
+<p>如果你是<strong>单位里管官网、管公众号</strong>的：问一句「我们单位在 AI 回答里被提到过吗、提到的是不是好话」——这个问题现在几乎没人问，但很快会有人问。</p>
+<h4>这句话什么时候会失灵</h4>
+<p><strong>如果对方卖的是「保证让你进 AI 的前三个回答」这种硬承诺</strong>，上面那句就没杀伤力了——因为他已经替你把"接到不接到生意"这个问题绕过去了。</p>
+<p>那时候该换一句更狠的：<strong>「你们过去十二个月的客户，有哪一家能拿出因为 AI 引用而多出来的订单？」</strong> 要样本、不要说法。<strong>拿不出来的，他卖的就还是名次。</strong></p>
+<p>〔来源：Digiday，2026-11-16。<strong>二手</strong>，未读原文，三个数字均出自转载摘要。〕</p>
+<hr>
+<h3>二 · 一百多万的抗癌药降到 28 万，但降价的起点没人说</h3>
+<p>有一种抗癌药叫 CAR-T。简单说：<strong>从病人身上取出免疫细胞，改造之后再输回去，让它自己去杀癌细胞。</strong> 一针，过去 <strong>129 万</strong>。</p>
+<p>这次国家医保谈判，它降到了 <strong>28.86 万</strong>，第一次进了医保目录。同一批还新增了 <strong>51 款</strong>新药。</p>
+<p>标题大概都会写「降了 100 万」。</p>
+<h4>但同一条新闻里还有一句，很短</h4>
+<p><strong>中间谈崩过两次，没人提。</strong></p>
+<p>这句话改变了一件事的重量：</p>
+<p><strong>这个 28.86 万，不一定是从 129 万砍下来的。</strong> 它可能是从一个更早的、更低的报价开始，经过两次没谈成，最后才落到这个数。</p>
+<p>⇒ <strong>公布出来的是终点，被删掉的是它从哪出发。</strong></p>
+<p>这也是为什么我说"有料"比"有观点"重要——<strong>这一句不是我推出来的，是稿子自己写的，只是它被埋在了第二十几段。</strong></p>
+<h4>一句可以拿去用的话</h4>
+<blockquote><p><strong>「看到『从多少降到多少』，先问一句：那个『多少』是哪一轮的报价。第一次报的和最后一次被拒的，是两个完全不同的分母。」</strong></p></blockquote>
+<p>这句话不止能用在药价上。<strong>采购、招商、谈判、补贴，全都一样。</strong></p>
+<h4>跟你有啥关系</h4>
+<p>如果你在<strong>任何要做谈判、要做汇报、要写「我们争取到了多少」</strong>的位置上，这是一把能立刻用的尺子。</p>
+<p>反过来也成立：<strong>你报给上级的「降了多少」，最好自己先想清楚分母是什么。</strong> 因为迟早有人会问。</p>
+<h4>这句话什么时候会失灵</h4>
+<p><strong>如果 X 本来就是第一次报价、根本没经过几轮谈判</strong>，问「X 是哪一轮的」就问空了——反而显得你不懂行。</p>
+<p>判别方法：<strong>看中间隔了多久、中间有没有「再次」「续谈」「二次」这类词。</strong> 有，才问。没有，就别问。</p>
+<p>〔来源：钛媒体，2026-11-16，转药企公告与医保局发布会。<strong>二手</strong>，未读原文；「两次失败」原话与范围未核。〕</p>
+<hr>
+<h3>三 · 一个工具省了 30 天，但新手栽在一张不存在的图</h3>
+<p>第三件事，是今天最贴身的一件。</p>
+<p>有人实测了一个电商用的 AI 工具——<strong>你告诉它你要开什么店，它帮你把开店要准备的东西做出来。</strong></p>
+<p>结果分成两半：</p>
+<p><strong>老手用它，3 小时做完了原本 30 天的活。</strong></p>
+<p><strong>新手用它，栽在一张图上。</strong> 工具生成了一张商品图——<strong>那张图里的商品，现实生活里根本不存在。</strong> 而流程没有停，接着往下走了。</p>
+<h4>两件事不矛盾，同一天发生，同一个工具</h4>
+<p>工具把「做」的成本压到了极低，同时把「看」的责任<strong>原样留给了一个人</strong>。</p>
+<p>熟练工能省 30 天，是因为<strong>他知道哪一张图不能信</strong>。新手省不了——他得花刚从别处省下来的时间，去发现那张图。</p>
+<p>⇒ <strong>省下来的时间是记在账上的，栽进去的那张图没记在账上。</strong></p>
+<h4>一句可以拿去用的话</h4>
+<blockquote><p><strong>「用 AI 提效，真正要问的不是能省多少时间，是它错了的时候，谁在哪个环节看得见。」</strong></p></blockquote>
+<h4>跟你有啥关系</h4>
+<p>如果你单位正在推「用 AI 提效」，这句话能直接拿去用。</p>
+<p><strong>因为大多数单位只算了省下来的时间，没算发现错误要花的时间。</strong> 而那笔时间，是不进报表的。</p>
+<h4>这句话什么时候会失灵</h4>
+<p><strong>如果这个环节本来就有人在复核</strong>（比如财务、法务、出版前的三审三校），那"谁看得见错误"这个问题已经被回答了——你再问，对方会说「我们本来就有流程」。</p>
+<p>那时候要换一个问法：<strong>「原来的复核流程，是按人出错的节奏设计的，还是按机器出错的节奏设计的？」</strong> 人一个月错一次，机器可能一分钟错一次。<strong>流程没变，节奏变了 —— 这才是真问题。</strong></p>
+<p>〔来源：壹览商业实测，钛媒体转载，2026-11-16。<strong>二手</strong>，未读原文，实测细节未读。〕</p>
+<hr>
+<h2>有一条是我自己拼出来的，得说清楚</h2>
+<blockquote><p><strong>同一周里，一拨人在做「进去的生意」，一拨人在做「进不去才值钱」的生意。</strong></p></blockquote>
+<p>一边：内容变成可以按名次卖的东西（就是第一条）。</p>
+<p>另一边：内容的出路是<strong>别人抄不走、AI 也批量复刻不了</strong>的原创深度采访（这是一份高管问卷问出来的趋势判断）。</p>
+<p><strong>一边在卖「被 AI 提到」，一边在说「被 AI 拿走了就不值钱了」。</strong></p>
+<h3>⚠️ 但这个对立是我搭的，不是任何一家说的</h3>
+<p>那个「进不去才值钱」的观点，是<strong>一份问卷问出来的意向</strong>；而「被 AI 提到能卖钱」，是<strong>一家公司已经在收费的产品</strong>。</p>
+<p><strong>一个是想法，一个是已经发生的事。</strong> 我把它们对到一起，才生出了「路线之争」这个说法——<strong>原报告里没有这个说法。</strong></p>
+<p>⇒ 它是<strong>我的假设</strong>，不是发现。要验它，得看那三家品牌在被 AI 引用之后，原创采访的投入有没有缩。</p>
+<p><strong>这一条我今天验不了。记着，等有数再说。</strong></p>
+<hr>
+<h2>第二部分 · 其他值得知道的</h2>
+<p><strong>先说一件事，它比下面每一条都重要。</strong></p>
+<p>今天我们看了 <strong>300 条中文源</strong>，挑出来的三条在上面。同一时间，我们直接读了国外 57 个账号的 <strong>236 条原文</strong>。</p>
+<p>然后数了一下，300 条中文里，关于下面这几件事的——</p>
+<p><strong>Gemini：0 条。李飞飞和 World Labs：0 条。OpenAI、Anthropic：0 条。</strong></p>
+<p>不是发生得少，是<strong>中文世界今天一条都没报。</strong></p>
+<p>下面八条，是中文源里看不到的那些。<strong>你在我这儿读完就够了，不用去哪儿找原文</strong>——原文我们也只读得懂一半，但该说的我替你说完。</p>
+<hr>
+<h3>一 · Gemini 4 已经发布了，而且分了两个版本</h3>
+<p>Google 上周连发了 <strong>7 个</strong>开发者东西，最重的是 Gemini 4——<strong>不是一代一个型号，是两个：</strong></p>
+<ul><li><strong>Hydrogen</strong>：日常写代码、做交互应用、跑"工具型"AI</li><li><strong>Carbon</strong>：硬架构设计、调试、科学证明、安全审计。<strong>介绍价：输入 2 美元／输出 10 美元每百万字</strong>（到 11 月 30 日）</li></ul>
+<p>同批发出的还有决策 API、给 AI 助手用的自托管沙箱、机器人模型 2.5、多模态知识基准。</p>
+<p><strong>跟你啥关系</strong>：你们单位要是正在选模型、或在问"要不要换"，<strong>这就是你还没听到的那一代</strong>。年底做技术预算的，值得知道它已经在售了。</p>
+<h3>二 · 李飞飞带着她的公司，加入了 AMD</h3>
+<p>李飞飞——就是那个被叫作「AI 教母」的人——带着她创办两年多的 <strong>World Labs</strong> 整个团队，加入了芯片公司 <strong>AMD</strong>。AMD 的 CEO 苏姿丰（Lisa Su）亲自到旧金山，双方都发了「正式欢迎」。</p>
+<p><strong>跟你啥关系</strong>：World Labs 做的是<strong>空间智能</strong>（让 AI 理解三维世界），AMD 做的是<strong>算力</strong>。这两家合成一家，说明「模型能力」和「芯片」这两层，正在往一起并。</p>
+<p>对我们这行的意思是：<strong>以后谈"用谁的模型"，可能同时在谈"用谁的芯片"。</strong></p>
+<h3>三 · 一份具体的实验室成绩单：把密码学证明从几年压到几周</h3>
+<p>Google 拿 Gemini 4 Carbon 做了几件具体的事，不是口号：</p>
+<ul><li>它驱动的证明系统，<strong>用几周而不是几年</strong>，证明了 Signal（那个加密聊天软件）的加密代码是安全的</li><li>它从实验记录本和原始数据里，<strong>看出湿实验的操作错误和数据异常</strong></li><li>它找到的相关蛋白序列，是原来的 <strong>40 倍</strong></li></ul>
+<p><strong>跟你啥关系</strong>：这几件都不是「AI 会写文案」那个层次。<strong>如果你们单位有大量"要人一项项核对"的技术活，这条说明那个环节正在被拿走。</strong></p>
+<h3>四 · Anthropic 上市，会让 5300 名员工里约 4250 人变成百万富翁</h3>
+<p>按金融平台 Hill 的测算：Anthropic 如果上市，5300 名员工里大约 <strong>4250 人</strong>会成为百万富翁（美元），其中约 <strong>50 人</strong>身家超过 1 亿美元。</p>
+<p>测算假设的估值是 <strong>1.5 万亿</strong>，比它现在约 1 万亿的估值还高。</p>
+<p><strong>跟你啥关系</strong>：这是「AI 的钱到底落在谁口袋里」最具体的一个数。<strong>不是几个创始人，是四千多个员工。</strong></p>
+<h3>五 · 一个 15 人的小团队，签 PDF 一年要交 8100 美元</h3>
+<p>Vercel 的 CEO 讲了一句具体的：DocuSign 对一个 <strong>15 人团队</strong>，光是为了签 PDF，一年要收 <strong>8100 美元</strong>。</p>
+<p>他没吐槽完就去做了一个开源替代品：一键部署到你自己的账号，<strong>每个座位 0 美元</strong>，还能自己换标、留完整审计记录、文档不出你自己的云。</p>
+<p><strong>跟你啥关系</strong>：<strong>SaaS 到底在挤谁，这种一手吐槽比任何行业报告都直接。</strong> 你单位如果也在这类"按人头收钱"的软件上花着钱，可以拿这个数去比一比。</p>
+<h3>六 · OpenAI 把最前沿的模型免费开放给 20 万名科学家</h3>
+<p>面向全球最多 <strong>20 万</strong>科研人员，<strong>免费</strong>用它的前沿模型，还给培训和支持。<strong>11 月 23 日开放申请</strong>。并且默认<strong>不用这个项目里的数据训练模型</strong>。</p>
+<p>另外一份针对 1800 多名科研人员的项目研究说：用了之后，<strong>产出接近翻倍</strong>。</p>
+<p><strong>跟你啥关系</strong>：如果你或你认识的人在高校、研究所、医院做研究，这是一条<strong>能直接去申请的东西</strong>，不是新闻。</p>
+<h3>七 · AI 已经能读病历了，而且是美国几家大医疗集团在用</h3>
+<p>OpenAI 的医疗版升级了：更强的"能操作软件"的 AI、更准的临床回答、<strong>20 多个医疗专用插件</strong>。已经接入的有 Abridge、Ambience，以及 <strong>信诺（Cigna）、CVS Health</strong> 这类大机构。</p>
+<p><strong>跟你啥关系</strong>：这条跟我们第二条（药价）是同一件事的两头——<strong>一头在压价，一头在把判断交给机器。</strong> 医保、医院、医药口的人，值得先知道它已经落地到什么程度。</p>
+<h3>八 · 一个反潮流的判断：别堆一堆小 AI，用一个大的</h3>
+<p>一位长期研究 AI 与管理的人说：Anthropic 那份材料<strong>既对，也是在控诉很多公司正在建的"AI 系统"</strong>——</p>
+<p><strong>与其让不同团队各做一个专门的小 AI（一堆子代理），常常不如让一个 AI 全包，效果更好、还更便宜。</strong></p>
+<p><strong>跟你啥关系</strong>：现在很多单位推 AI 的方式，是"每个部门各搞一个"。这条是反着来的。<strong>如果你正在批这种预算，先问一句：合起来一个是不是更划算。</strong></p>
+<hr>
+<h2>今天没看到什么</h2>
+<p><strong>设计和房地产，今天一个源都没有。</strong></p>
+<p>这两个行当今天的观察<strong>不存在</strong>。不是我判断「没事发生」，是<strong>没看</strong>。这两句话差别很大。</p>
+<p><strong>295 条只读了标题。</strong> 今天挑出来的五条，全在剩下那 66 条里。</p>
+<p><strong>上面三条核心文章，仍然全是二手。</strong></p>
+<p>所有数字都出自中国的转载摘要，一条原文都没读到。</p>
+<p>但今天和前几天不一样了：<strong>我们第一次拿到了一手原文</strong> —— X 上 57 个账号、161 条，带链接和时间戳。</p>
+<p><strong>问题变成了：拿到了，但读不进去。</strong> 取数只截到约 50 字，够当线索，不够写判断。</p>
+<p>⇒ 下一步不是"去外网找"，是<strong>把已经拿到的那 161 条读完整</strong>。</p>
+<hr>
+<h2>一句话</h2>
+<blockquote><p><strong>下次有人给你一个漂亮数字，先问：这件事的另一半，有没有数。</strong></p></blockquote>
+<p>今天这三件，问下去，答案都是「没有」。</p>
+<p><strong>这就是今天。</strong></p>
+<hr>
+<h2>三把尺子 —— 这张存下来</h2>
+<p>以后再看到这三个句式，先问一刀：</p>
+<p><strong>① 看到「从多少降到多少」</strong> → 问：那个「多少」是哪一轮的报价？ ⚠️ 失灵：它本来就是第一次报价时，别问。</p>
+<p><strong>② 看到「用 AI 提效，省了多少时间」</strong> → 问：它错了的时候，谁在哪个环节看得见？ ⚠️ 失灵：对方本来就有复核流程时，改问「流程是按人出错的节奏设计的，还是按机器出错的节奏设计的？」</p>
+<p><strong>③ 看到「AI 提到你了 / 排名涨了」</strong> → 问：名次接到成交了吗？拿样本，别听说法。 ⚠️ 失灵：对方只卖"保证进前三"这种硬承诺时，要他那十二个月里多出来的订单。</p>
+<p><strong>三句都用不上，说明对方给的是一句废话。</strong></p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>

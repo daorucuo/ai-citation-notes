@@ -15,6 +15,11 @@ DRAFT = Path("/Users/xuyuan/WorkBuddy/素材库/materials/草稿箱")
 
 # slug, 源文件, 标题, 描述(命题), 分类标签
 PAGES = [
+    ("the-other-half-has-no-number",
+     "草稿_AI回答里提你一句能卖钱了_20261117.md",
+     "AI 回答里提你一句，能卖钱了。但买家至今不知道多卖了多少货",
+     "三件好事，三个精确到个位的数字，三件代价一个数都没有。而同一周国外已经发了 Gemini 4、李飞飞带着公司加入 AMD —— 我们扫的 300 条中文源，一条都没报。",
+     "技术 · AI 落地"),
     ("no-one-can-verify-the-ai-proofreader",
      "草稿_裁掉15个校对之后没人能证明AI校得对_20261110.md",
      "裁掉 15 个校对之后，没人能证明 AI 校得对",
