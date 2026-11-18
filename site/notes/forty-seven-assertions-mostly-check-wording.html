@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我数了一个 AI 技能的 47 条考卷：89% 只问你「提没提到」</title>
+<meta name="description" content="一个 61k★ 仓库里的 A/B 测试技能，自带 8 条用例、47 条断言。逐条分类后发现：只有 5 条（11%）碰「算得对不对」，其余 89% 在查「有没有提到某个概念」。而 8 条用例里唯一算术可验的那条，作者答案是对的。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/forty-seven-assertions-mostly-check-wording">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我数了一个 AI 技能的 47 条考卷：89% 只问你「提没提到」">
+<meta property="og:url" content="https://xuyuanlab.com/notes/forty-seven-assertions-mostly-check-wording">
+<meta property="og:description" content="一个 61k★ 仓库里的 A/B 测试技能，自带 8 条用例、47 条断言。逐条分类后发现：只有 5 条（11%）碰「算得对不对」，其余 89% 在查「有没有提到某个概念」。而 8 条用例里唯一算术可验的那条，作者答案是对的。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="我数了一个 AI 技能的 47 条考卷：89% 只问你「提没提到」">
+<meta name="twitter:description" content="一个 61k★ 仓库里的 A/B 测试技能，自带 8 条用例、47 条断言。逐条分类后发现：只有 5 条（11%）碰「算得对不对」，其余 89% 在查「有没有提到某个概念」。而 8 条用例里唯一算术可验的那条，作者答案是对的。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/forty-seven-assertions-mostly-check-wording#article",
+      "headline": "我数了一个 AI 技能的 47 条考卷：89% 只问你「提没提到」",
+      "description": "一个 61k★ 仓库里的 A/B 测试技能，自带 8 条用例、47 条断言。逐条分类后发现：只有 5 条（11%）碰「算得对不对」，其余 89% 在查「有没有提到某个概念」。而 8 条用例里唯一算术可验的那条，作者答案是对的。",
+      "datePublished": "2026-11-18",
+      "dateModified": "2026-11-18",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/forty-seven-assertions-mostly-check-wording",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/forty-seven-assertions-mostly-check-wording#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一个 61k★ 仓库里的 A/B 测试技能，自带 8 条用例、47 条断言。逐条分类后发现：只有 5 条（11%）碰「算得对不对」，其余 89% 在查「有没有提到某个概念」。而 8 条用例里唯一算术可验的那条，作者答案是对的。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>我数了一个 AI 技能的 47 条考卷：89% 只问你「提没提到」</h1>
+  <p class="date">2026-11-18 · 技术 · 技能测评</p>
+
+<div class="lead"><p>一个 61k★ 仓库里的 A/B 测试技能，自带 8 条用例、47 条断言。我逐条分类后发现：只有 5 条（11%）碰"算得对不对"，其余 89% 在查"有没有提到某个概念"。8 条用例里唯一算术可验的那条，作者答案是——对的。</p></div>
+<p class="src">源：GitHub <code>coreyhaines31/marketingskills</code> / <code>skills/ab-testing</code>（SKILL.md 12.9 KB ＋ evals.json 9.0 KB，实读）；p 值独立复算</p>
+
+<hr>
+<p><strong>这篇只干一件事：把「这个技能到底靠不靠谱」从"我觉得还行"，换成几个能核的数。</strong></p>
+<p>测的是 <code>coreyhaines31/marketingskills</code> 里的 <strong><code>ab-testing</code></strong>（A/B 测试技能，61k★ 的仓库，53 个技能之一）。</p>
+<p>它自带考卷：<strong>8 条用例，47 条断言。</strong> 我做了一件很简单的事——<strong>把 47 条断言一条条分类，看它们到底在查什么。</strong></p>
+<hr>
+<h2>先说结论：三个数</h2>
+<p><strong>① 47 条断言里，只有 5 条（11%）碰"算得对不对"。剩下 89% 在查"你有没有提到某个概念"。</strong></p>
+<p><strong>② 8 条用例里，只有 1 条（#7）的答案是算术可验的。</strong></p>
+<p><strong>③ 但作者自己的答案是对的</strong> —— 我独立复算了一遍，他写 p ≈ 0.117，实算是 <strong>0.1171</strong>。</p>
+<p>第三条是好消息。<strong>前两条是问题。</strong></p>
+<hr>
+<h2>一 · 我怎么数的</h2>
+<p>技能的结构是这样的：</p>
+<p>``<code> ab-testing/ SKILL.md          ← 技能本体，12.9 KB evals/evals.json  ← 自带考卷：prompt ＋ expected_output ＋ assertions references/       ← 参考资料 </code>``</p>
+<p>它每条用例长这样：</p>
+<p>``<code> prompt      ：用户会怎么问 expected    ：应该怎么答 assertions  ：一组可判「是／否」的断言（4 到 8 条） </code>``</p>
+<p><strong>这套设计本身是好的</strong> —— 别人家的技能往往只给一份说明书，没法验。它至少给了尺子。</p>
+<p>问题出在<strong>尺子上刻的是什么</strong>。</p>
+<p>我把 47 条断言按句式分成四类：</p>
+<ul><li><strong>提到型</strong>：<code>Mentions…</code> ／ <code>Addresses…</code> ／ <code>Explains…</code></li><li><strong>计算型</strong>：涉及 p 值、转化数、显著性</li><li><strong>禁止型</strong>：<code>Does not…</code>（别做某事）</li><li><strong>其他</strong></li></ul>
+<p>结果：</p>
+<p>``<code> 提到型 27 条 ／ 计算型 5 条 ／ 禁止型 5 条 ／ 其他 10 条 </code>``</p>
+<p><strong>⇒ 27 : 5。</strong></p>
+<hr>
+<h2>二 · 这个比例意味着什么</h2>
+<p>它意味着：<strong>一个把关键词背全、但数字算错的回答，能过掉这 47 条里的绝大部分。</strong></p>
+<p>举个最直白的例子。用例 #2 的提示是：</p>
+<blockquote><p>「我们想测 4 个不同的 CTA 按钮颜色，在定价页上。这个想法好吗？」</p></blockquote>
+<p>它的 7 条断言里，<strong>6 条是「提到型」</strong>：</p>
+<ul><li>能不能听懂口语化提问</li><li>有没有识别成 A/B/n（多变量）</li><li>有没有警告：4 个变体需要的流量更多</li><li>有没有引用样本量要求</li><li>有没有质疑"只改按钮颜色"是不是高影响位置</li><li>有没有建议更高影响的测试对象</li></ul>
+<p><strong>这六条全对，结论照样可以是错的。</strong> 你只要把这六个词说全，考卷就给你打勾。</p>
+<hr>
+<h2>三 · 唯一一条真能算的，我算了两遍</h2>
+<p>用例 #7 是全部 8 条里<strong>唯一给出完整数字</strong>的：</p>
+<blockquote><p>「定价页跑了 4 周。对照 <strong>2.1%</strong> 转化，变体 <strong>2.4%</strong>。每组 <strong>12,000</strong> 访客。显著吗？能上线吗？」</p></blockquote>
+<p>作者的预期答案是：<strong>252/12,000 vs 288/12,000，双尾合并比例 z 检验 p ≈ 0.117，不满足 α = 0.05。</strong></p>
+<p>我自己独立算了一遍：</p>
+<p>``<code> 对照 2.10%  vs  变体 2.40% 绝对差 0.30 个百分点 ｜ 相对提升 14.3% z = 1.5669 双尾 p = 0.1171     ← 作者写 0.117 α = 0.05 判定：不显著 </code>``</p>
+<p><strong>对上了。</strong> 这位作者在唯一能验的地方没糊弄。</p>
+<p><strong>但请注意：8 条用例里，这样能验的只有 1 条。</strong> 另外 7 条，我除了判断"有没有提到"，没有别的办法判对错。</p>
+<hr>
+<h2>四 · 加减对照：把技能拿掉，会差多少</h2>
+<p>断言只能告诉你"它要求什么"，不能告诉你"它有没有用"。</p>
+<p>所以我做了第二个测法——<strong>同一个问题，问两遍：一遍带着技能，一遍不带。</strong></p>
+<h3>不带技能（我凭常识答）</h3>
+<blockquote><p>2.1% 到 2.4%，提升了 14%，是个不错的提升。12,000 的样本量还行。<strong>建议再跑一段时间确认</strong>，或者用显著性计算器算一下。</p></blockquote>
+<p>对 5 条断言：<strong>0 条过。</strong></p>
+<p>最要命的是最后那句——<strong>"再跑一段时间确认"，本身就是它要防的那个错。</strong> 4 周是预先定好的时长，跑完了还接着看，就是 peeking。</p>
+<h3>带技能（按 SKILL.md 的姿势答）</h3>
+<blockquote><p>252/12,000 对 288/12,000，双尾 z 检验 <strong>p ≈ 0.117</strong>，不满足 α = 0.05，<strong>不能说显著</strong>。</p><p>0.3 个百分点、相对 +14.3%，这是<strong>点估计</strong>，不是"有可靠正效应"的证据。</p><p>业务上值不值另算——统计不显著不等于不值钱，但也别拿它当"赢了"。</p><p>4 周是预先定的，<strong>到期就停</strong>。真要中途看，得改成序贯检验，事前定边界。</p><p>现在去切人群，只能当探索，不能当结论。</p></blockquote>
+<p>对 5 条断言：<strong>5 条全过。</strong></p>
+<h3>0/5 → 5/5。差得很干净。</h3>
+<p><strong>但这个差，我不敢直接说成"技能有用"。</strong></p>
+<hr>
+<h2>五 · 三个我必须说清的问题</h2>
+<h3>① 判卷的人是我，做题的人也是我</h3>
+<p>这等于既出题又判卷，<strong>甚至是自己判自己。</strong></p>
+<p>这件事今天早上刚在另一篇材料里见过：一项研究发现，<strong>同一批材料换个"reader"来判，准确率差了 65.6 分。</strong></p>
+<p><strong>所以上面那个 0/5 → 5/5，是我的判断，不是客观读数。</strong></p>
+<p>真要测得站得住，至少得两个人各判一遍，<strong>顺便把两个人的差异也报出来</strong>——差异大的部分，就是这个技能的判据本身不清楚的地方。</p>
+<h3>② 那 5 条"计算型"里，只有 1 条真的可算</h3>
+<p>其余 4 条散在别的用例里，但那些用例<strong>没给完整数字</strong>，所以只能判"有没有提到 p 值"，判不了"p 值算得对不对"。</p>
+<h3>③ 最关键的：这个技能的增量，取决于你原本会不会算</h3>
+<p>一个本来就会算双尾 z 检验的人，不带技能也答得对。</p>
+<p><strong>所以它真正的价值不是"教会你"，是"挡住你不会的时候那个错"。</strong></p>
+<p>这一句直接决定了"谁该用"：</p>
+<ul><li>✅ <strong>该用</strong>：经常被问"这个结果能不能上线"、但没学过实验设计的——运营、市场、产品</li><li>⛔ <strong>不必用</strong>：做过实验设计的人。它对你只是个提醒，不是能力</li></ul>
+<hr>
+<h2>六 · 如果要我给这个技能补考卷，我会补三条</h2>
+<p>它现有的 47 条断言，<strong>一条都没有"算错就报红"</strong>。我建议加：</p>
+<p><strong>① 数对不上就红</strong> 给一组转化数，答案里出现的 p 值与独立复算的差超过 0.005 ⇒ FAIL。</p>
+<p><strong>② 拿掉技能也要问一遍</strong> 同一题问两次（带技能／不带技能）。如果两次都过 ⇒ 这个技能对这一题零增量，<strong>记 0 分，不记满分</strong>。</p>
+<p><strong>③ 双人判，报分歧</strong> 两个人各判一遍，一致率低于某个线 ⇒ 说明断语写得太含糊，<strong>先改断言再谈能力。</strong></p>
+<p>第三条最贵，也最该做。<strong>因为它防的不是技能，是"我们自己的判断"</strong>。</p>
+<hr>
+<h2>七 · 所以这个技能到底行不行</h2>
+<p><strong>我的判断是：能用，但别指望它替你判断。</strong></p>
+<p>它挡住的那类错（peeking、把点估计当证据、切人群当结论）<strong>是真实存在的、而且很常见</strong>。这部分它做得对。</p>
+<p>但它自带的考卷<strong>只保证你"说到了"，不保证你"算对了"</strong>。</p>
+<p>⇒ <strong>拿它当"提醒清单"可以，拿它当"验收标准"不行。</strong></p>
+<hr>
+<h2>一句成色</h2>
+<p>我读了 <code>SKILL.md</code>（12.9 KB）和 <code>evals.json</code>（9.0 KB），<strong>没有跑它的代码</strong>——它是一个提示词技能，没有可执行的程序，只有说明书和考卷。</p>
+<p><code>p = 0.1171</code> 是我用 Python 独立算的，不是抄它的。47 条断言的分类是我按句式手工归的，<strong>分类边界我自己定的，换个人可能归出不同的比例。</strong></p>
+<hr>
+<h2>我给自己记的三句</h2>
+<p><strong>① 测一个技能，先数它的考卷在查什么。</strong> 「提到型」占多数 ⇒ 它验的是记性，不是能力。</p>
+<p><strong>② 能算的用例有几个？</strong> 1/8 意味着另外 7 条你怎么答都能对。</p>
+<p><strong>③ 把技能拿掉再问一遍。</strong> 拿掉也过 ⇒ 这个技能对这一题零增量，⛔ 不许记满分。</p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
