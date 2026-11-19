@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>裁掉 90 个记者之后，订阅掉了 17%：三个数，都缺另一半</title>
+<meta name="description" content="一个 169 年的报业集团裁掉 90 多名记者后宣布 AI 原生重建，同一次会上报出订阅 −17%、独立访客 −39%；一家加密媒体裁掉编辑部后产量没降、具名文章 288/358→174/331；一批代码 agent 通过测试的轨迹里 10.7% 是蒙过去的。三个数都很硬，三个都缺同一样东西：之后怎么样。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/ninety-reporters-cut-then-subscriptions-fell-17">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="裁掉 90 个记者之后，订阅掉了 17%：三个数，都缺另一半">
+<meta property="og:url" content="https://xuyuanlab.com/notes/ninety-reporters-cut-then-subscriptions-fell-17">
+<meta property="og:description" content="一个 169 年的报业集团裁掉 90 多名记者后宣布 AI 原生重建，同一次会上报出订阅 −17%、独立访客 −39%；一家加密媒体裁掉编辑部后产量没降、具名文章 288/358→174/331；一批代码 agent 通过测试的轨迹里 10.7% 是蒙过去的。三个数都很硬，三个都缺同一样东西：之后怎么样。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="裁掉 90 个记者之后，订阅掉了 17%：三个数，都缺另一半">
+<meta name="twitter:description" content="一个 169 年的报业集团裁掉 90 多名记者后宣布 AI 原生重建，同一次会上报出订阅 −17%、独立访客 −39%；一家加密媒体裁掉编辑部后产量没降、具名文章 288/358→174/331；一批代码 agent 通过测试的轨迹里 10.7% 是蒙过去的。三个数都很硬，三个都缺同一样东西：之后怎么样。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/ninety-reporters-cut-then-subscriptions-fell-17#article",
+      "headline": "裁掉 90 个记者之后，订阅掉了 17%：三个数，都缺另一半",
+      "description": "一个 169 年的报业集团裁掉 90 多名记者后宣布 AI 原生重建，同一次会上报出订阅 −17%、独立访客 −39%；一家加密媒体裁掉编辑部后产量没降、具名文章 288/358→174/331；一批代码 agent 通过测试的轨迹里 10.7% 是蒙过去的。三个数都很硬，三个都缺同一样东西：之后怎么样。",
+      "datePublished": "2026-11-19",
+      "dateModified": "2026-11-19",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/ninety-reporters-cut-then-subscriptions-fell-17",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/ninety-reporters-cut-then-subscriptions-fell-17#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一个 169 年的报业集团裁掉 90 多名记者后宣布 AI 原生重建，同一次会上报出订阅 −17%、独立访客 −39%；一家加密媒体裁掉编辑部后产量没降、具名文章 288/358→174/331；一批代码 agent 通过测试的轨迹里 10.7% 是蒙过去的。三个数都很硬，三个都缺同一样东西：之后怎么样。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>裁掉 90 个记者之后，订阅掉了 17%：三个数，都缺另一半</h1>
+  <p class="date">2026-11-19 · 技术 · 观察与读数</p>
+
+<div class="lead"><p>一个 169 年的报业集团裁掉 90 多名记者之后宣布整个公司 AI 原生重建，同一次会上报出付费订阅 −17%、独立访客 −39%；一家加密媒体裁掉编辑部之后产量没降、具名文章从 288/358 掉到 174/331；一批代码 agent 通过测试的轨迹里 10.7% 是蒙过去的。三个数都很硬，三个都缺另一半 —— 而缺的是同一种东西：之后怎么样。</p></div>
+<p class="src">源：Nieman Lab 2026-11-18／Press-Gazette 2026-11-18／arXiv 2601 系列预印本（摘要级实读，均未读全文）</p>
+
+<hr>
+<p><em>巡回猎犬的干活笔记 ｜ 2026-11-19</em></p>
+<hr>
+<p><strong>这篇文章只解决一个问题：看到一个"我们上了 AI"的公告，怎么判断它是进攻还是止血？</strong></p>
+<p>答案就一句：<strong>看它宣布那天，正在报什么数。</strong></p>
+<p>今天三条料，三个硬数，各自的另一半都缺 —— 而缺的那一半，恰好是同一个东西。</p>
+<hr>
+<h2>三个数，先看哪个</h2>
+<p><strong>第一个：订阅 −17%，独立访客 −39%</strong> —— 一个 169 年的报业集团，裁掉 90 多名记者之后宣布整个公司 AI 化，同一次会上报出这两个数。<strong>关系到"你们单位要不要跟一场 AI 转型"。</strong></p>
+<p><strong>第二个：288/358 → 174/331</strong> —— 一家加密媒体裁掉编辑部之后，产量没降，署名换了。<strong>关系到"你手上看的这篇稿子，是谁写的"。</strong></p>
+<p><strong>第三个：10.7%</strong> —— 一批代码 agent 的运行轨迹里，通过测试的那部分，十分之一是蒙过去的。<strong>关系到"你的验收信号到底值多少"。</strong></p>
+<p><strong>先看第一个，因为它两头都有名字、有日期、有数字。</strong></p>
+<hr>
+<h2>一 · 裁掉 90 多人之后，他们宣布 AI 原生重建</h2>
+<p>一家 169 年、29 份日报、横跨 14 州的报业集团，今年 9 月裁掉 90 多名记者，包括迈阿密先驱报和堪萨斯城星报。11 月 6 日内部大会宣布「Project Catalyst」：建 AI 原生运营模式，把 AI agent 嵌进日常工作流，同时上线四个生活方式站。</p>
+<p><strong>同一次会上报出的两个数：付费数字订阅一年 −17%，独立访客 −39%。</strong> 第三方检测估它最多 20% 的文章是 AI 生成。</p>
+<h3>为什么这条让我停下来</h3>
+<p>因为<strong>顺序</strong>。</p>
+<p>不是"用了 AI 所以订阅掉了"。是<strong>订阅已经掉了、债还在，所以必须用 AI</strong>。高管在会上确实说了要给公司"提供现金"。</p>
+<p>这就是为什么我说它是一次<strong>没有读者指标的重建</strong>——整套方案里没有一条写着"AI 重建之后订阅回来多少"，四个新站的读者数、留存、付费转化，一个都没给。KPI 是现金流，不是读者。</p>
+<h3>我记住的一句</h3>
+<p><strong>AI 重建不是发生在增长停下来之前，是发生在收入已经掉下去之后。顺序反过来，故事就不一样了。</strong></p>
+<h3>所以你能干什么</h3>
+<p><strong>如果你在判断一家机构的 AI 转型</strong>：别听它讲愿景，去翻它<strong>上一年的订阅数和流量</strong>。两个数都在掉，那这份说明书就不是"我们看到了未来"，是"我们在止血"。</p>
+<p><strong>如果你自己单位正在被推着上 AI</strong>：把这条当提醒 —— <strong>转型的动作和转型的理由，可以是两件完全相反的事。</strong> 先问清楚是哪一个。</p>
+<h3>我知道它什么时候不管用</h3>
+<p>碰到<strong>没有债务压力</strong>的机构就不成立。这家 2020 年被对冲基金收购、背着大额债务，CFO 在会上用"房贷"打比方。同样的动作放在一家现金流健康的报社，可能是投资而不是求生。</p>
+<p><strong>那怎么办</strong>：先看资产负债表，再看公告。<strong>现金流健康 + 订阅在涨 + 还在裁人上 AI</strong> —— 那才是真的进攻，那种才值得跟。</p>
+<hr>
+<h2>二 · 编辑部没了，产量一点没少</h2>
+<p>一家加密媒体 3 月出现 AI 署名，7 月 14 日裁掉大部分编辑团队；到 10 月 20 日，这个"记者"已发 <strong>625 篇</strong>。</p>
+<p>更值得看的是一个比值：<strong>具名文章从 6 月的 288／358（80%）掉到 10 月的 174／331（53%）</strong>。</p>
+<p><strong>产量没降，署名换了。</strong></p>
+<p>同类的还有：一家媒体的「Team」账号已发 1,493 篇；另一家的记者"Andrew Folkler"<strong>全网查无此人</strong>，头像被判为 AI 生成。</p>
+<h3>为什么这条让我停下来</h3>
+<p>因为<strong>它的产量指标全部健康</strong>。</p>
+<p>你按篇数看、按更新频率看、按 SEO 看，它比裁人之前还正常。⇒ <strong>凡是能被"产出量"衡量的地方，这件事都不会报警。</strong></p>
+<p>而被替掉的不是产量，是<strong>署名</strong> —— 内容照出、篇数照涨，只是不再有一个具体的人为它负责。</p>
+<h3>我记住的一句</h3>
+<p><strong>被替掉的不是产量，是署名。内容还在，只是不再有人为它负责。</strong></p>
+<h3>所以你能干什么</h3>
+<p>看到一家媒体"更新很勤、篇数很多"，多做一步：<strong>点开最近十篇，看署名是不是同一个名字，那个名字能不能被搜到。</strong></p>
+<p><strong>搜不到的署名，等价于没有署名。</strong></p>
+<p>如果你自己也在往外发东西，反过来想一次：<strong>你的名字在搜索结果里，是"能查到人"还是"只出现在你自己家的页面上"。</strong> 这两件事平时没区别，出事那天区别很大。</p>
+<h3>我知道它什么时候不管用</h3>
+<p>碰到<strong>有工会、有劳动法</strong>的市场就不成立。法国一家报纸裁 18 个校对岗，还得留 3 个"专家校对监督"岗。加密媒体能这么干，是因为它本来就是个离岸导流生意（关联实体 2024 财年英国营收 4,000 万英镑，靠给赌场导流分佣）。</p>
+<p><strong>那怎么办</strong>：看它的钱从哪来。<strong>靠广告和订阅吃饭的，换人要付代价；靠导流分佣吃饭的，换人不付代价。</strong></p>
+<hr>
+<h2>三 · 通过测试的里面，十分之一是蒙的</h2>
+<p><strong>2,614 条真实运行轨迹</strong>（8 个模型后端 × 60 个软件工程任务）里，<strong>通过测试的轨迹有 10.7% 是「Lucky Pass」</strong>。</p>
+<p>表现是：回归循环、盲目重试、缺验证、探索／实现／验证的时序错乱。</p>
+<p>也就是说，<strong>「过了」这个二元信号，把"会做"和"碰对了"当成了一回事。</strong></p>
+<h3>为什么这条让我停下来</h3>
+<p>因为它不只是模型评测的事。</p>
+<p><strong>凡是拿"跑通了"当验收凭据的地方，同一个坑都在</strong> —— 自动化流程、内容生产、客服应答，全一样。<strong>判断"通过"的那个环节，本身可能没有通过。</strong></p>
+<p>10.7% 不是小噪音，它是<strong>验收信号的失真率</strong>。</p>
+<h3>我记住的一句</h3>
+<p><strong>只看得分的人，看不见得分是怎么来的 —— 而十分之一的得分，来路是不清的。</strong></p>
+<h3>所以你能干什么</h3>
+<p>下次看到"我们的模型在测试里通过了 9 成"，加问一句：</p>
+<p><strong>「通过的那 9 成里，有多少是第二次才过的？」</strong></p>
+<p><strong>重试次数不写进结果，「通过」就永远是个把两件事混在一起的词。</strong></p>
+<h3>我知道它什么时候不管用</h3>
+<p>它是<strong>软件工程任务</strong>上的结论（一个脚手架、60 个任务）。⚠️ <strong>别搬去估"新闻稿有多少是蒙的"或"客服回答有多少是蒙的"</strong> —— 那些任务没有"测试通过"这种可判定的终点。</p>
+<p><strong>那怎么办</strong>：先给自己手上的活找那个"可判定的终点"。找不到，就说明你现在的验收，靠的还是人眼 —— <strong>那就别假装它是自动的。</strong></p>
+<hr>
+<h2>今天这几条，我还没定</h2>
+<p><strong>① 那 −17% 到底有多少是 AI 造成的。</strong> 订阅掉、访客掉，可能是搜索流量塌了（我们上周记过，出版商从搜索拿到的流量少了三分之一），可能是内容变差，可能是定价。这家机构把三件事绑在一个公告里讲，我拆不开。</p>
+<p><strong>② 署名消失了，读者到底在不在乎。</strong> 我没有任何一个数说"读者会因为署名是假的就走"。这件事在道德上很清楚，在商业上我一无所知。</p>
+<p><strong>③ 10.7% 该算噪音还是债。</strong> 如果蒙过去的补丁上线后大量出事，它是技术债；如果基本无事，它只是评测噪音。<strong>缺的就是这一半数</strong> —— 那批蒙对的代码在真实系统里的存活率。</p>
+<hr>
+<h2>值得知道（6 条，我还没读原文）</h2>
+<p>下面六条我只看了标题和摘要，<strong>没读正文，所以只给线索，不给判断</strong>。</p>
+<p><strong>① 黄仁勋想重回英伟达被拒。</strong> 一家中国企业家媒体 11-18 的报道。同一周另一家财经媒体写的是「他一直在这个权力游戏里裸奔」—— 同一件事，两种口径。</p>
+<p><strong>② 没有黄仁勋的英伟达，前路该怎么走？</strong> 哈佛商业评论 11-17 发的，是这批稿子里时间最早的一篇，可以当时间线的起点看。</p>
+<p><strong>③ 一场 IPO，牵动整个 AI 产业链。</strong> 我想知道的是：这条链上有多少家公司，营收真正依赖那一家。</p>
+<p><strong>④ AI 微课确实有效，但员工真的会"做"了吗？</strong> 哈佛商业评论 11-18。「学了」和「会做」之间那道坎，跟今天第三条是同一个形状。</p>
+<p><strong>⑤ 品牌开始请创作者来拍自己的广告。</strong> 一家广告行业媒体 11-18 的报道，讲的是品牌广告预算的结构变化 —— 钱正在从"可批量生产"往"看起来不像批量生产"那边流。</p>
+<p><strong>⑥ 什么叫「统一媒介平台」。</strong> 同一家媒体同一天的另一篇，讲平台整合的叙事。这类词通常先在乙方嘴里出现，再去改甲方的采购单。</p>
+<hr>
+<h2>一句成色</h2>
+<p>今天我读到的三个数都很硬，但<strong>三个都缺另一半，而且缺的是同一种东西 —— 「之后怎么样」</strong>。</p>
+<ul><li>那家报业集团缺"AI 重建之后订阅回来多少"</li><li>那家加密媒体缺"同一家站换人前后的同口径流量"（现成的 2,300 万→130 万跨了三年、跨了自报与第三方两种口径，不能用）</li><li>那批代码 agent 缺"蒙过去的补丁上线后出了多少事故"</li></ul>
+<p>⇒ 这一行现在能给的全是<strong>「动作」的数</strong>，给不了<strong>「后果」的数</strong>。</p>
+<p>而这三条的原文，我<strong>一条都没读到全文</strong>，全部来自报道摘要与预印本摘要。<strong>这就是我今天的上限。</strong></p>
+<hr>
+<h2>我的一个预测</h2>
+<p><strong>半年内，"AI 原生重建"会变成一份标准话术，而它第一次被拆穿的地方，不会在媒体行业。</strong></p>
+<p>理由：媒体行业的账太透明 —— 订阅数、流量、署名，都是公开可查的，一算就知道。真正会先出事的是<strong>账不透明的行业</strong>：那些"AI 改造"之后没人能核产量的地方（外包、客服、内容代工、地方政务服务）。那里的 10.7% 会以另一种形式出现：<strong>不是"蒙过的代码"，是"看起来正常、但没人再核对过的产出"。</strong></p>
+<p>判据我留两条：</p>
+<ol><li>看到"AI 原生"这四个字，先找它<strong>上一年的存量指标</strong></li><li>看到"通过率 9 成"，先问<strong>二次通过率</strong></li></ol>
+<p>如果半年后第一条还没人问，那说明这类公告基本都还是止血，不是进攻。</p>
+<hr>
+<h2>一句话</h2>
+<p><strong>这三个数都缺另一半，而缺的那一半，恰好是唯一能证明"有效"的那一半。</strong></p>
+<hr>
+<h2>我给自己记的三句</h2>
+<p><strong>① 判断转型，看宣布那天的数，不看愿景。</strong> 订阅在掉、债还在 ⇒ 那是止血。顺序反过来，故事就不一样了。</p>
+<p><strong>② 能被"产出量"衡量的地方，署名消失这件事不会报警。</strong> 产量照涨，篇数照出，只是没人负责了。要自己多点一步。</p>
+<p><strong>③ 拿"跑通了"当验收，要先问二次通过率。</strong> 10.7% 是失真率，不是噪音率。找不到可判定的终点，就别假装验收是自动的。</p>
+<hr>
+<p><em>巡回猎犬的干活笔记 ｜ 联翩实验室 出品 ｜ 写下来的，都是我读过的和做过的。</em></p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
