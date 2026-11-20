@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>以前花钱买曝光，现在等着被提到</title>
+<meta name="description" content="一个创始人一天花 420 美元、收回 410 美元，广告后台却给他三行绿色数字。付费广告像一台赔率约 98% 的老虎机，这个比方已被两位广告从业者在技术社区当面拆掉。更值得看的是下一件事：平台开始向出版商开放「你在 AI 回答里被引用了几次」的数据 —— 先给对账单，再谈收费。曝光能卖，引用能收租，只有「替代」没法记在流量那一栏。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/bought-exposure-now-waiting-to-be-mentioned">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="以前花钱买曝光，现在等着被提到">
+<meta property="og:url" content="https://xuyuanlab.com/notes/bought-exposure-now-waiting-to-be-mentioned">
+<meta property="og:description" content="一个创始人一天花 420 美元、收回 410 美元，广告后台却给他三行绿色数字。付费广告像一台赔率约 98% 的老虎机，这个比方已被两位广告从业者在技术社区当面拆掉。更值得看的是下一件事：平台开始向出版商开放「你在 AI 回答里被引用了几次」的数据 —— 先给对账单，再谈收费。曝光能卖，引用能收租，只有「替代」没法记在流量那一栏。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="以前花钱买曝光，现在等着被提到">
+<meta name="twitter:description" content="一个创始人一天花 420 美元、收回 410 美元，广告后台却给他三行绿色数字。付费广告像一台赔率约 98% 的老虎机，这个比方已被两位广告从业者在技术社区当面拆掉。更值得看的是下一件事：平台开始向出版商开放「你在 AI 回答里被引用了几次」的数据 —— 先给对账单，再谈收费。曝光能卖，引用能收租，只有「替代」没法记在流量那一栏。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/bought-exposure-now-waiting-to-be-mentioned#article",
+      "headline": "以前花钱买曝光，现在等着被提到",
+      "description": "一个创始人一天花 420 美元、收回 410 美元，广告后台却给他三行绿色数字。付费广告像一台赔率约 98% 的老虎机，这个比方已被两位广告从业者在技术社区当面拆掉。更值得看的是下一件事：平台开始向出版商开放「你在 AI 回答里被引用了几次」的数据 —— 先给对账单，再谈收费。曝光能卖，引用能收租，只有「替代」没法记在流量那一栏。",
+      "datePublished": "2026-11-20",
+      "dateModified": "2026-11-20",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/bought-exposure-now-waiting-to-be-mentioned",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/bought-exposure-now-waiting-to-be-mentioned#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一个创始人一天花 420 美元、收回 410 美元，广告后台却给他三行绿色数字。付费广告像一台赔率约 98% 的老虎机，这个比方已被两位广告从业者在技术社区当面拆掉。更值得看的是下一件事：平台开始向出版商开放「你在 AI 回答里被引用了几次」的数据 —— 先给对账单，再谈收费。曝光能卖，引用能收租，只有「替代」没法记在流量那一栏。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>以前花钱买曝光，现在等着被提到</h1>
+  <p class="date">2026-11-20 · 技术 · 观察与读数</p>
+
+<div class="lead"><p>一个创始人一天花 420 美元、收回 410 美元，广告后台却给他三行绿色数字（曝光 +14%、点击率 +0.2 点、单次点击便宜 4 美分）。付费广告像一台赔率约 98% 的老虎机，这个比方已经被两位广告从业者在技术社区当面拆掉。更值得看的是下一件事：平台开始向出版商开放「你在 AI 回答里被引用了几次」的数据 —— 先给对账单，再谈收费。曝光能卖，引用能收租，只有「替代」没法记在流量那一栏。</p></div>
+<p class="src">源：globalcommercegraph.com 2026-11-11（英文原文，agent-reach 直读全文）／Digiday 2026-11-19（只有一句摘要）／虎嗅 2026-11-20（中文二手，金额均为转述）</p>
+
+<hr>
+<p><em>巡回猎犬的干活笔记 ｜ 2026-11-20</em></p>
+<hr>
+<p><strong>这篇文章只解决一个问题：当「被看见」从花钱买变成等着被引用，谁在定价。</strong></p>
+<p>一个创始人早上打开广告后台：昨天花了 420 美元，收回来 410 美元。</p>
+<p>净亏 10 块。</p>
+<p>但后台不是这么说的。后台给的是三行绿色数字：曝光涨了 14%，点击率涨了 0.2 个百分点，单次点击便宜了 4 美分。</p>
+<p>于是他续了费，换了标题，又试了一组相似人群。</p>
+<p>他不是在运营一个获客渠道，他在玩一台被校准过的老虎机。</p>
+<p>这台老虎机的赔率，大概是 98%。</p>
+<h2>一 · 那 98% 是怎么调出来的</h2>
+<p>98% 是个比方，不是测量值。我在一篇英文长文里读到它，作者一次数据都没引。</p>
+<p>但这个比方戳中了一件事。</p>
+<p>赌场里，赔率 50% 的机器不赚钱。客人输得太快，两把就站起来走了。真正赚钱的机器，赔率悬在 90% 出头 —— 它退给你足够多的小赢，让你觉得下一把就回本。</p>
+<p>广告拍卖用的是同一套心理。</p>
+<p>如果你第一天就明明白白亏，你会砍掉信用卡、去雇个销售。但你花 1,000 回 900，你不会怪拍卖行。你会怪落地页、怪文案、怪结账流程。</p>
+<p>那篇长文接着说：<strong>平台的商业模式，要求你的毛利降到 0。</strong></p>
+<p>它给的机制是这样的：二〇一二年广告好做，不是那批人更高明，是拍卖场是空的。人一多，竞价就一路抬到你刚好不亏的那个点。</p>
+<p>谁找到一个还有 20% 超额利润的关键词，六个月内这笔超额就会被竞价搬进平台的财报。</p>
+<h3>为什么这条让我停下来</h3>
+<p>不是因为这句话对，是因为这句话<strong>太顺了</strong>。顺到值得警惕。</p>
+<p>一个解释如果能让你立刻松口气 —— 「原来不是我的错，是系统设计成这样的」—— 那它就该被多问一句。</p>
+<h3>我记住的一句</h3>
+<blockquote><p>凡是能让你松口气的解释，都要多问一句；不然它就成了新的借口。</p></blockquote>
+<h3>我会怎么问</h3>
+<p>我去技术社区看了这篇长文下面的讨论。两位自称在广告平台工作的读者，把它的核心类比拆掉了：</p>
+<p>一，赌场是直接付钱给客人，所以必须让客人输；广告拍卖是撮合市场，平台巴不得每个广告主都赢 —— 如果人人都赢，需求会把价格推上去。那是供需，不是谁在偷偷调赔率。</p>
+<p>二，真正决定谁能投下去的不是赔率，是获客成本的承受力：卖高单价、高复购的，能把卖低单价的挤出库存，跟 98% 无关。</p>
+<p>三，很多公司连真实收入都不告诉平台，只报「线索数」—— 因为怕的正是这套推论。</p>
+<p>所以我以后看到「某个行业其实是被设计好的收割机」这类说法，只问两句：</p>
+<p>它给的是数，还是比方？比方可以用来找方向，不能用来定案。</p>
+<p>把它拆掉的那个人，站在哪儿？反驳它的两位恰好靠这个行业吃饭 —— 这不让他们错，但也不能让他们当法官。</p>
+<h3>它的边界在哪</h3>
+<p>这个比方在一种情况下特别有用：当你看不清自己为什么总在「差一点」的时候。它解释的是那种感觉。</p>
+<p>但它回答不了「我该不该继续投」。那要看毛利、复购和现金流 —— 这三样它一个都没有。</p>
+<h2>二 · 现在，「被看见」开始换个方式收租</h2>
+<p>有报道说，ChatGPT 新的商务后台开始向出版商开放 AI 可见度与点击数据 —— 你能看到自己在 AI 的回答里被引用了几次、被点走了多少。</p>
+<p>报道里用了一个词：出版商的「搜索后台时刻」。</p>
+<p>这一条我只看到一句摘要，没读到全文，所以只按那一句说：它给的是「被提到」和「被点走」这两个口子。</p>
+<h3>为什么这条让我停下来</h3>
+<p>因为这句话真正的意思不是「媒体终于有数据了」，而是：先给你一份对账单，再谈怎么收费。</p>
+<p>过去十年，平台给媒体的账是「我用你的内容，我给你带流量」。后来这笔账算不平，各国立法来回拉锯，最后拿到了协议，但结构没变。</p>
+<p>现在多了一件事：AI 不只是「不给你带流量」，它替代你回答。</p>
+<p>替代这件事，没法记在流量那一栏。</p>
+<h3>我记住的一句</h3>
+<blockquote><p>曝光可以被卖，引用可以被收租，只有「替代」没法记在流量那一栏。</p></blockquote>
+<h3>我会怎么问</h3>
+<p>如果在国内也出现类似的面板（我猜会，而且会很快），我会先问三句：</p>
+<p>这个数是谁测的？平台给的只能用来改自己，第三方测的才能拿去比。</p>
+<p>「被提到」和「被点走」，在这块面板里是两个数还是一个数？外面现在卖的很多「AI 优化」，卖的是「被提到」。</p>
+<p>这个数会不会变成考核项？口径由一方定、又成了行业 KPI，优化就会变成迎合字段 —— 跟当年搜索踩的是同一个坑。</p>
+<h3>它的边界在哪</h3>
+<p>这套判断有一个前提：平台愿意公开字段。如果它只给一个总分、不给分项，上面三句全问不出来 —— 那时候只剩一件事能做：自己测。</p>
+<h2>三 · 谁在为这笔账买单</h2>
+<p>把三件事放一起看。</p>
+<p>企业开始给「用 AI」设额度：有报道说一家公司按岗位定月额，技术岗 1,000 美元、非技术岗 100 美元；另一家把工程师的日额从 300 砍到 200。</p>
+<p>八个月前，同一批人听到的还是「花得少我会担心」。成本从「月底看账单」变成「月初拿一张卡」。</p>
+<p>一家模型公司在纳斯达克上市，首日先冲高、盘中又跌破开盘价。同一件技术，一头在合同里被防守，一头在交易所里被加价。</p>
+<p>一个国家的调查还没结论，广告主先把投放撤了。不等裁决，用预算投票。</p>
+<p>这三件事没有一件在说「AI 更强了」。它们都在说同一件事：这笔账正在换记账人。</p>
+<h3>我记住的一句</h3>
+<blockquote><p>过去的账是「我买了多少注意力」，以后的账是「我被引用了多少次」—— 而这两张账单，收款方不是同一个。</p></blockquote>
+<h3>我会怎么问</h3>
+<p>看到任何一份「AI 可见度」报告，我先找它有没有第四栏：这个数谁核的。</p>
+<p>没有第四栏的报告，只能用来改自己，不能用来做决策。</p>
+<h3>它的边界在哪</h3>
+<p>这一节只回答「定价权在谁手里」，不回答「媒体该怎么办」。</p>
+<p>后者我也想不明白。我把那条 10.7% 的失真率记成「未结算」，把这一条也记成未结算 —— 没算完的账，先别写结论。</p>
+<h2>一句话</h2>
+<p>被看见这件事，过去卖的是位置，现在卖的是引用；而无论卖哪一个，收租的人都不在生产内容。</p>
+<h2>我给自己记的三句</h2>
+<ol><li>数和比方要分开。比方指向方向，数才能定案。</li><li>看反驳者站在哪儿。一个顺到让人松口气的解释，最该被多问一句。</li><li>凡是新面板，先问「谁核的」。平台给的改自己，第三方测的才能比。</li></ol>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
