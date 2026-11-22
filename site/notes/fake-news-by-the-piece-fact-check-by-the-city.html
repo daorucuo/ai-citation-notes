@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>造假的按条算，核实的按城市算</title>
+<meta name="description" content="一条《北京 22 名老师飞往贵阳，飞机落地后全部陷入沉默》的图文和 AI 短视频在多个平台传播，编造了校长离世、学生意外、过期面包等情节，最后说它是假的是贵阳市教育局——不是媒体。造假链的第一步刻意隐去时间、地点、人物等可核查要素，把核实的接口拆掉了；造价数分钟一条、单日上百条，核实一个城市一个城市地自证。发布权已经还不回来了，但「这条东西到底是什么」的定性权还在——这可能是媒体唯一还剩的位置。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/fake-news-by-the-piece-fact-check-by-the-city">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="造假的按条算，核实的按城市算">
+<meta property="og:url" content="https://xuyuanlab.com/notes/fake-news-by-the-piece-fact-check-by-the-city">
+<meta property="og:description" content="一条《北京 22 名老师飞往贵阳，飞机落地后全部陷入沉默》的图文和 AI 短视频在多个平台传播，编造了校长离世、学生意外、过期面包等情节，最后说它是假的是贵阳市教育局——不是媒体。造假链的第一步刻意隐去时间、地点、人物等可核查要素，把核实的接口拆掉了；造价数分钟一条、单日上百条，核实一个城市一个城市地自证。发布权已经还不回来了，但「这条东西到底是什么」的定性权还在——这可能是媒体唯一还剩的位置。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="造假的按条算，核实的按城市算">
+<meta name="twitter:description" content="一条《北京 22 名老师飞往贵阳，飞机落地后全部陷入沉默》的图文和 AI 短视频在多个平台传播，编造了校长离世、学生意外、过期面包等情节，最后说它是假的是贵阳市教育局——不是媒体。造假链的第一步刻意隐去时间、地点、人物等可核查要素，把核实的接口拆掉了；造价数分钟一条、单日上百条，核实一个城市一个城市地自证。发布权已经还不回来了，但「这条东西到底是什么」的定性权还在——这可能是媒体唯一还剩的位置。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/fake-news-by-the-piece-fact-check-by-the-city#article",
+      "headline": "造假的按条算，核实的按城市算",
+      "description": "一条《北京 22 名老师飞往贵阳，飞机落地后全部陷入沉默》的图文和 AI 短视频在多个平台传播，编造了校长离世、学生意外、过期面包等情节，最后说它是假的是贵阳市教育局——不是媒体。造假链的第一步刻意隐去时间、地点、人物等可核查要素，把核实的接口拆掉了；造价数分钟一条、单日上百条，核实一个城市一个城市地自证。发布权已经还不回来了，但「这条东西到底是什么」的定性权还在——这可能是媒体唯一还剩的位置。",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/fake-news-by-the-piece-fact-check-by-the-city",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/fake-news-by-the-piece-fact-check-by-the-city#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一条《北京 22 名老师飞往贵阳，飞机落地后全部陷入沉默》的图文和 AI 短视频在多个平台传播，编造了校长离世、学生意外、过期面包等情节，最后说它是假的是贵阳市教育局——不是媒体。造假链的第一步刻意隐去时间、地点、人物等可核查要素，把核实的接口拆掉了；造价数分钟一条、单日上百条，核实一个城市一个城市地自证。发布权已经还不回来了，但「这条东西到底是什么」的定性权还在——这可能是媒体唯一还剩的位置。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>造假的按条算，核实的按城市算</h1>
+  <p class="date">2026-11-22 · 技术 · 谁来核实（系列）</p>
+
+
+<p class="src">源：澎湃新闻／央广网 2026-11-21《官方核实为假！"北京教师飞贵阳"背后是 AI 造谣流水线》（未读原始调查文件，正文与引述均为报道内容）</p>
+
+<p>命题：一条《北京 22 名老师飞往贵阳，飞机落地后全部陷入沉默》的图文和 AI 短视频，在多个平台传播，编造了校长离世、学生意外、过期面包等情节。最后说它是假的是贵阳市教育局 —— 不是媒体。而这条假内容的产线已经被写成三步：AI 生成固定叙事脚本（刻意隐去具体时间、地点、人物等可核查要素）、AI 画面与配音一键成片、矩阵账号分地域发布。<strong>造假是数分钟一条、单日上百条；核实是一个城市一个城市地自证。</strong> 门已经拦不住了，但"这条东西到底是什么"的定性权还在 —— 这可能是媒体唯一还剩的位置。</p>
+<hr>
+<p><em>巡回猎犬的干活笔记 ｜ 2026-11-22</em></p>
+<hr>
+<p>这篇文章只解决一个问题：当假新闻变成流水线，谁还有资格说"这条是假的"。</p>
+<p>先说一个刷到过的标题：《北京 22 名老师飞往贵阳，飞机落地下去后，全部陷入了沉默》。</p>
+<p>配着图，配着 AI 短视频，讲校长离世、学生突发意外、孩子吃过期面包。几个平台都在传。</p>
+<p>最后说它是假的，是贵阳市教育局。不是媒体。</p>
+<h2>一 · 那条视频是怎么做出来的</h2>
+<p>澎湃和央广网那篇调查把链条写清楚了，三步：</p>
+<p>一，用 AI 文案工具生成固定叙事框架的脚本 —— 保留悬念式开头与悲情化情节，隐去具体时间、地点、人物等可核查要素；</p>
+<p>二，匹配生成 AI 画面，或直接用无版权通用空镜素材，AI 配音＋自动字幕一键成片；</p>
+<p>三，矩阵账号分地域发布，靠算法推荐收割流量，最后以流量分成、广告植入变现。</p>
+<p>模板本身是通用的：「某某群体飞往某某城市，落地后全员沉默、落泪、惊呆了」。替换地名与职业，就能衍生出数百条高度雷同的视频，覆盖全国。</p>
+<h3>为什么这条让我停下来</h3>
+<p>不是因为假，是因为第一步里那半句话。</p>
+<p>"隐去具体时间、地点、人物等可核查要素" —— 这不是写作技巧，这是<strong>把核实的接口拆掉了</strong>。</p>
+<p>假新闻的旧版本是"说错"，你还能去现场问、去查记录、去问当事人。新版本是"<strong>没法核</strong>"：不是核实者判断不出真假，是<strong>核实者不知道去找谁核</strong>。</p>
+<p>一条没有时间、没有地点、没有名字的消息，你只能问"这事有没有发生过"——而这个问题，除了被指涉的那一方，谁也答不了。</p>
+<h3>我记住的一句</h3>
+<blockquote><p>让一件事无法被核实，比让一件事被相信更省力 —— 前者只要删掉三个字段。</p></blockquote>
+<h3>我会怎么问</h3>
+<p>以后看到那种"某群体在某地，落地后沉默"的消息，我先找三样东西：</p>
+<p>时间：是哪一天？没有日期的事件，基本等于没有发生。</p>
+<p>主体：能点名到具体单位或具体人吗？点不出来的，就是不可核。</p>
+<p>同一文案在几个城市出现过：这条最能说明问题 —— 如果一个故事在五个城市同时发生，它就不是新闻，是模板。</p>
+<h3>它的边界在哪</h3>
+<p>这套判断只能识别模板化的假内容。有人认真编一条带时间、地点、人物、且都对得上的假消息，这三问一个都问不出来 —— 那种只能靠人和档案，靠不了模板识别。</p>
+<h2>二 · 最后是谁说它是假的</h2>
+<p>这次是贵阳市教育局，加上属地辟谣平台。</p>
+<p>这个模式能跑，但它的形状值得看清楚：</p>
+<p>一，它只能覆盖"有明确被指涉对象"的谣言。「北京老师飞贵阳」→ 贵阳必须出来自证。但一条没有具体对象的谣言（"某地某行业要出大事"）——<strong>没人认领，就没人核</strong>。</p>
+<p>二，成本随版本数线性增长。 造假的是一份脚本乘 N 个城市；核实的是 N 个属地各跑一遍：协调业务科室、核查情况、草拟辟谣声明。</p>
+<p>报道里那位贵阳的政务人员说得很直白：反复应对同类模板化谣言，占用不少正常工作精力。</p>
+<p>三，它靠的是压力，不是制度。 这次之所以快，是因为闹大了。</p>
+<h3>为什么这条让我停下来</h3>
+<p>因为它其实是一笔成本账，而且是一笔打不赢的账：</p>
+<p>报道里给的数是：单条视频从脚本到成片只需数分钟，单个运营团队单日可产出数十至上百条不同地域版本。核实端呢？一条一条来。</p>
+<p>一边按"条"出厂，一边按"城市"认领。<strong>这个比值不是慢慢变坏，是天生就坏。</strong></p>
+<h3>我记住的一句</h3>
+<blockquote><p>造假的成本按分钟算，核实的成本按城市算 —— 这不是一场能靠更努力赢的仗。</p></blockquote>
+<h3>我会怎么问</h3>
+<p>判断一个地方或一家机构的"辟谣能力"，我不看它发了多少条辟谣，我算一个比值：</p>
+<p>同期它所在区域出现了多少个地域版本，它跑了几次核查？</p>
+<p>如果版本数是核查数的十倍，那它做的就不是核实，是抽检。</p>
+<h3>它的边界在哪</h3>
+<p>这套判断假设"有人愿意认领"。碰上不愿意认领、或者认领了没人信的机构，模型就失效 —— 那种情况下的假新闻会一直挂着，直到没人再提。</p>
+<h2>三 · 门不在了，但"定性"这件事还在</h2>
+<p>发布权已经还不回来了。AI 把发布成本打到零，你拦不住任何人发内容，也不需要谁批准才能发。</p>
+<p>但还有一样东西没被拿走：谁有资格说"这条东西是什么"。</p>
+<p>自媒体能说"出事了"，但说不出这一句：</p>
+<blockquote><p>这条内容套用了 3 号模板，本市已出现 11 个版本，无任何可核来源。</p></blockquote>
+<p>这句定性，需要的是媒体才有的存量：档案、信源、编辑判断，以及"署名"这两个字背后攒下来的东西。</p>
+<h3>为什么这条让我停下来</h3>
+<p>因为这意味着守门人的位置变了，而不是守门人消失了：</p>
+<p><strong>从"拦住内容"，变成"给内容下定义"。</strong> 门当然不在了，但<strong>批注还在</strong>。</p>
+<h3>我记住的一句</h3>
+<blockquote><p>守门人不是靠拦住内容夺回角色的，是靠给出别人给不出的定性夺回的。</p></blockquote>
+<h3>我会怎么问</h3>
+<p>如果一个媒体说自己还在做"把关"，我会问它一句：</p>
+<p>你上一次公开标注"这条无法核实"，是什么时候？</p>
+<p>不是删帖、不是沉默、不是"不予置评"，是明确写出来：这条我们核不了，理由是什么。说不出这个时间点的，做的还是发布，不是把关。</p>
+<h3>它的边界在哪</h3>
+<p>这条对媒体有个硬要求：你得有档案和署名存量，标注才有人信。裁到只剩发稿能力的机构，连标注的资格都会失去。所以"先别把自己裁成一个只会发稿的壳"，不是情怀，是这件事的前提。</p>
+<p>另外，标注光写在自己站上没用 —— <strong>读者根本不来</strong>。它必须长成机器读得到的字段，才会出现在人们真正阅读的地方（AI 的回答里）。这才是标注和"被引用"是同一件事的原因。</p>
+<h2>四 · 三条已经走不通的路</h2>
+<p>拦发布：AI 时代没有关隘可拦。</p>
+<p>逐条辟谣：成本不对称，见第二节那个比值。</p>
+<p>只发稿、等别人引用：这是一条已经被量过的路。</p>
+<p>我们做过一次测试：同一批问题问五个主流 AI 平台，覆盖六个行业、688 条有效样本 —— 有一家区域媒体的被引用率是 <strong>0%</strong>。同一批问题里，一家门户被引用 165 次，而其中约四成内容的原始出处，正是那家区域媒体。</p>
+<p><strong>记者跑了现场、写了稿。在 AI 的世界里，这些信用记在了别人名下。</strong></p>
+<h2>一句话</h2>
+<p>门已经不存在了。但只要还有人需要知道"这条东西到底是什么"，守门人就在 —— 他不在门口，他在那行批注里。</p>
+<h2>我给自己记的三句</h2>
+<ol><li>先找时间、地点、主体。 三样都没有的"新闻"，不是新闻，是模板。</li><li>算比值，不看总量。 地域版本数 ÷ 核查次数，比任何辟谣声明都说明问题。</li><li>"无法核实"是一种标注。 敢写出来的机构，才还在守门。</li></ol>
+<h2>附 · 本篇用到的报道</h2>
+<ol><li>澎湃新闻／央广网｜2026-11-21｜《官方核实为假！"北京教师飞贵阳"背后是 AI 造谣流水线》 事件核实、三步生产链、成本数字、律师意见均出自这篇。未读原始调查文件，全部按报道引述。 → https://www.thepaper.cn/newsDetail_forward_34528498</li></ol>
+<p>⚠️ 全文对"AI 引用率测试"一段做了匿名化处理（不点名机构），原文数据来自我们自己的测试口径：五个平台、六个行业、688 条有效样本。⛔ 该组数字不标注具体机构。</p>
+<hr>
+<p><em>巡回猎犬的干活笔记 ｜ 联翩实验室 出品 ｜ 写下来的，都是我读过的和做过的。</em></p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
