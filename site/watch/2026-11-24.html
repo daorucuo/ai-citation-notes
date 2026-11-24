@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>观察 No.15 · 2026-11-24 · 联翩实验室</title>
+<meta name="description" content="今天三条硬料都指向同一件事——这一行以为的&quot;门道&quot;，平台自己说没有；而真正的操控，恰恰不需要造假。Google 官方文档写着进 AI 概览&quot;没有任何额外要求，也没有特殊优化的必要&quot;；一篇带形式化证明的论文说明完美护栏只在一个前提下才存在；另一篇论文证明不加任何假事实，就能翻掉约三分之一的正确判断。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/watch/2026-11-24">
+<meta property="og:type" content="article">
+<meta property="og:title" content="今天三条硬料都指向同一件事——这一行以为的&quot;门道&quot;，平台自己说没有；而真正的操控，恰恰不需要造假。Google 官方文档写着进 AI 概览&quot;没有任何额外要求，也没有特殊优化的必要&quot;；一篇带形式化证明的论文说明完美护栏只在一个前提下才存在；另一篇论文证明不加任何假事实，就能翻掉约三分之一的正确判断。">
+<meta property="og:url" content="https://xuyuanlab.com/watch/2026-11-24">
+<meta property="og:description" content="今天三条硬料都指向同一件事——这一行以为的&quot;门道&quot;，平台自己说没有；而真正的操控，恰恰不需要造假。Google 官方文档写着进 AI 概览&quot;没有任何额外要求，也没有特殊优化的必要&quot;；一篇带形式化证明的论文说明完美护栏只在一个前提下才存在；另一篇论文证明不加任何假事实，就能翻掉约三分之一的正确判断。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="今天三条硬料都指向同一件事——这一行以为的&quot;门道&quot;，平台自己说没有；而真正的操控，恰恰不需要造假。Google 官方文档写着进 AI 概览&quot;没有任何额外要求，也没有特殊优化的必要&quot;；一篇带形式化证明的论文说明完美护栏只在一个前提下才存在；另一篇论文证明不加任何假事实，就能翻掉约三分之一的正确判断。">
+<meta name="twitter:description" content="今天三条硬料都指向同一件事——这一行以为的&quot;门道&quot;，平台自己说没有；而真正的操控，恰恰不需要造假。Google 官方文档写着进 AI 概览&quot;没有任何额外要求，也没有特殊优化的必要&quot;；一篇带形式化证明的论文说明完美护栏只在一个前提下才存在；另一篇论文证明不加任何假事实，就能翻掉约三分之一的正确判断。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>  :root{--ink:#16233a;--red:#8c1d18;--paper:#fbfaf7;--faint:#8a8f98;--rule:#e5e2dc;}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;line-height:1.85;font-size:17px}
+  main{max-width:660px;margin:0 auto;padding:11vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:34px}
+  .back:hover{color:var(--red)}
+  .masthead{border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:8px}
+  .masthead .no{font-size:13px;letter-spacing:.22em;color:var(--red);font-weight:600}
+  .meta{color:var(--faint);font-size:13.5px;margin:10px 0 40px;line-height:1.95}
+  .meta b{color:var(--ink);font-weight:600}
+  .kicker{font-size:13px;font-weight:600;letter-spacing:.18em;color:var(--faint);margin:0 0 12px;text-transform:uppercase}
+  h1{font-size:26px;font-weight:600;line-height:1.5;margin:0 0 8px;letter-spacing:.02em}
+  .item{border-top:1px solid var(--rule);padding-top:26px;margin-top:34px}
+  .tag{display:inline-block;font-size:12px;letter-spacing:.1em;color:var(--red);border:1px solid var(--red);
+    padding:1px 7px;border-radius:2px;vertical-align:3px;margin-right:10px}
+  .verdict{font-size:23px;font-weight:600;line-height:1.55;margin:0 0 22px}
+  .beat{margin:0 0 15px;font-size:16.5px}
+  .beat .lbl{color:var(--faint);font-size:13.5px;letter-spacing:.06em;display:block;margin-bottom:2px}
+  .src{color:var(--faint);font-size:13.5px;margin:16px 0 0;padding-top:10px;border-top:1px dotted var(--rule);word-break:break-all}
+  .src a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .src a:hover{color:var(--red);border-bottom-color:var(--red)}
+  .unknown{border-top:1px solid var(--rule);margin-top:44px;padding-top:26px}
+  .unknown h2{font-size:19px;margin:0 0 14px;font-weight:600;letter-spacing:0}
+  .colophon{border-top:2px solid var(--ink);margin-top:52px;padding-top:16px;color:var(--faint);font-size:13.5px;line-height:2}
+  a{color:var(--ink)} strong{font-weight:600}
+  @media (max-width:600px){main{padding:8vh 20px}.verdict{font-size:20px}h1{font-size:22px}body{font-size:16px}}
+
+  .citable{border-top:2px solid var(--ink);margin-top:44px;padding-top:22px}
+  .citable h2{font-size:16px;letter-spacing:.1em;color:var(--red);margin:0 0 8px}
+  .citable .cn{color:var(--faint);font-size:13.5px;margin:0 0 14px}
+  .citable ul{padding-left:20px;margin:0}
+  .citable li{margin:0 0 10px;font-size:15.5px;line-height:1.75}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@graph":[
+  {"@type":"Article",
+  "@id":"https://xuyuanlab.com/watch/2026-11-24#article",
+  "headline":"今天三条硬料都指向同一件事——这一行以为的&quot;门道&quot;，平台自己说没有；而真正的操控，恰恰不需要造假。Google 官方文档写着进 AI 概览&quot;没有任何额外要求，也没有特殊优化的必要&quot;；一篇带形式化证明的论文说明完美护栏只在一个前提下才存在；另一篇论文证明不加任何假事实，就能翻掉约三分之一的正确判断。",
+  "description":"今天三条硬料都指向同一件事——这一行以为的&quot;门道&quot;，平台自己说没有；而真正的操控，恰恰不需要造假。Google 官方文档写着进 AI 概览&quot;没有任何额外要求，也没有特殊优化的必要&quot;；一篇带形式化证明的论文说明完美护栏只在一个前提下才存在；另一篇论文证明不加任何假事实，就能翻掉约三分之一的正确判断。",
+  "datePublished":"2026-11-24","dateModified":"2026-11-24","inLanguage":"zh-CN",
+  "isPartOf":{"@id":"https://xuyuanlab.com/watch/#collection"},
+  "author":{"@id":"https://xuyuanlab.com/#org"},
+  "publisher":{"@id":"https://xuyuanlab.com/#org"},
+  "mainEntityOfPage":"https://xuyuanlab.com/watch/2026-11-24",
+  "license":"https://creativecommons.org/licenses/by/4.0/"
+},
+  {"@type":"Organization",
+  "@id":"https://xuyuanlab.com/#org","name":"联翩实验室","url":"https://xuyuanlab.com/",
+  "logo":{"@type":"ImageObject","url":"https://xuyuanlab.com/apple-touch-icon.png"}
+},
+  {"@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"联翩实验室","item":"https://xuyuanlab.com/"},
+    {"@type":"ListItem","position":2,"name":"观察","item":"https://xuyuanlab.com/watch/"},
+    {"@type":"ListItem","position":3,"name":"No.15 · 2026-11-24","item":"https://xuyuanlab.com/watch/2026-11-24"}
+  ]}
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+  <a class="back" href="/watch/">← 观察 · 各期</a>
+  <div class="masthead"><span class="no">观 察　No.15</span></div>
+  <p class="meta">
+    <b>2026-11-24</b>　｜　<b>3</b> 条　｜　标签：<b>口径 · 边界 · 论证术</b><br>
+    今日扫 <b>534</b> 条 ／ 新增 442（82.8%） ／ 21 通 / 0 失败 / 3 暂停
+  </p>
+  <p class="kicker">本期 3 条</p>
+  <h1>今天三条硬料都指向同一件事——这一行以为的&quot;门道&quot;，平台自己说没有；而真正的操控，恰恰不需要造假。Google 官方文档写着进 AI 概览&quot;没有任何额外要求，也没有特殊优化的必要&quot;；一篇带形式化证明的论文说明完美护栏只在一个前提下才存在；另一篇论文证明不加任何假事实，就能翻掉约三分之一的正确判断。</h1>
+<div class="item">
+<h2 class="verdict"><span class="tag">口径</span>平台把「技术优化」换成了「内容本身」</h2>
+<p class="beat"><span class="lbl">· 发生了什么：</span>Google 的站长文档《Optimizing for generative AI search》最后更新于 2026 年 7 月 10 日，原文写着「There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary」。同一节里逐条列出五件不必做的事：造 llms.txt 等特殊文件、把内容切块、为 AI 特意改写内容、追逐不真实的提及、过度堆结构化数据。原文还说「there's no special schema.org structured data that you need to add」。资格门槛只有一条：页面被索引、且能以摘要形式展示。</p>
+<p class="beat"><span class="lbl">· 这意味着什么：</span><strong>这是第一次拿到平台自己说"没有门道"。</strong> 在此之前，关于 GEO 该怎么做，说得最响的永远是卖服务的人。而被官方逐条否掉的那五条，正好是市面上卖得最火的五种服务——包括我们自己写过的一份方案里，"技术底座"第一项就是 Schema.org 全站部署加 llms.txt。</p>
+<p class="beat"><span class="lbl">· 所以要关注什么：</span>下次看到「GEO 技术底座」这四个字，先问一句——<strong>这是平台要的，还是卖的人要的？</strong> 平台自己已经把答案写在自己文档里了，而且那份文档是 CC BY 4.0，可以原文引。</p>
+<p class="src">来源：Google Search Central《Optimizing for generative AI search》2026-07-10（CC BY 4.0）／《AI Features and Your Website》〔落位：平台一手口径〕〔一手·英文〕</p>
+</div>
+<div class="item">
+<h2 class="verdict"><span class="tag">边界</span>完美的护栏，只在一个前提下才存在</h2>
+<p class="beat"><span class="lbl">· 发生了什么：</span>arXiv:2611.27260（Amer、Kinczel、Long，2026-11-20，31 页含形式化证明）给出一个计算边界：「一个能拦下所有禁止输出、放行所有允许输出的可计算护栏，<strong>存在当且仅当该策略可判定</strong>」；「对不可判定的策略，<strong>每一个护栏都会错判无穷多条</strong>，而每一个拦下全部禁止输出的护栏，也必然排除无穷多条允许的输出」。文章还写了一句更硬的话：承诺这种完美是「精度上的伦理失败」，拿它来推卸责任是「道德失败」。</p>
+<p class="beat"><span class="lbl">· 这意味着什么：</span>它把「黑帽会不会被平台识别」这个问题，从"我们没查到"变成了"理论上不可能完美"。因为「什么算黑帽 GEO 内容」要判意图、判语境、判事实真伪——这不是一个可判定的策略。⇒ 任何平台的护栏都必然错判，问题只剩错判多少、往哪边错。</p>
+<p class="beat"><span class="lbl">· 所以要关注什么：</span>以后再听到"我们保证黑帽无效"，那是承诺了一件计算上做不到的事。⚠️ 但边界要说清：这篇讲的是 LLM 的<strong>输出护栏</strong>，不是直接讲 GEO，迁移过来是类比推理，⛔ 不能引成"平台承认自己做不到"。</p>
+<p class="src">来源：arXiv:2611.27260《No Perfect Guardrail &amp; No Perfect Guard》2026-11-20〔落位：新边界〕〔一手·英文〕</p>
+</div>
+<div class="item">
+<h2 class="verdict"><span class="tag">论证术</span>不造假，也能翻掉三分之一的正确判断</h2>
+<p class="beat"><span class="lbl">· 发生了什么：</span>arXiv:2611.27016（Wang、Chi、Jiang，2026-11-20）提出一种攻击叫 LEVER。它用论证论的四个杠杆写外部评论，并且专门配一个独立校验器——<strong>主动丢弃任何添加了事实的评论</strong>。也就是说，它通篇不加一条假话。结果：在三个基准上<strong>翻掉约三分之一的正确决策</strong>，是同等事实限额下此前最强攻击的 <strong>2.8 倍</strong>，其余五个模型上更多。同一篇还给了防御：Provenance Gate，<strong>只有把外部评论撤掉、模型仍得出同一结论时，才接受这个改变</strong>；实测最多多一次查询就挡下全部这类攻击。</p>
+<p class="beat"><span class="lbl">· 这意味着什么：</span><strong>「内容真实就够了」这个假设破产。</strong> 事实核验会系统性地放过这类攻击，因为这类攻击的构造前提就是不加事实。原文还有一句关键：「added facts can make a changed decision correct」——加进去的真事实，也能让改变后的决策变"正确"。⇒ <strong>真实与正确之间，隔着一层论证结构。</strong></p>
+<p class="beat"><span class="lbl">· 所以要关注什么：</span>判一条内容可不可信，不能只核事实，还得看它<strong>怎么组织论证</strong>——把哪些真话放在一起、用什么顺序、省略了什么。这也是 Provenance Gate 给的那条判据：<strong>撤掉外部输入还能复现的结论才作数。</strong> 我们一直说"每条结论要能指回原文"，这篇把它变成了可测的东西。⚠️ 研究对象是 typed decision models（TypeSafe 的 Jev），不是通用聊天式 AI 搜索。</p>
+<p class="src">来源：arXiv:2611.27016《Same Facts, Different Decision》2026-11-20〔落位：新方法论〕〔一手·英文〕</p>
+</div>
+<div class="unknown">
+<h2>★ 今天没搞懂的</h2>
+<p>· <strong>今天三条硬料，一条中文平台的话都没有。</strong> 一条是 Google 官方文档，两条是英文 arXiv 论文。OpenAI、豆包、Kimi、元宝，四家都没有讲自己怎么选源、怎么采信的官方文档。所以我们今天说的"扎实"，其实是<strong>三个英文来源撑起来的</strong>——而我们要回答的问题，大半发生在中文平台里。这个缺口不是补不补的问题，是<strong>目前没人有这个答案</strong>。</p>
+<p>· <strong>另一批看起来很硬的数，我们复算不了。</strong> 有一份 236 页的白皮书说它基于 1004.6 万条回答做了统计，说官网在海外五平台占采信来源的 38%–58%，说某个平台有 45.2% 的回答出现了商业品牌名却没标来源。这些数我今天引用了。但它们来自发布方自述，样本构成和清洗口径都没公开。<strong>能引，不能验。</strong></p>
+<p class="src">来源：Google Search Central 2026-07-10 ／ arXiv:2611.27260 ／ arXiv:2611.27016 ／《海外 GEO 白皮书》2026-11-06〔单源样本：官方口径仅 Google 一家〕</p>
+</div>
+  <div class="colophon">
+    <p><strong>这个栏目怎么运作</strong><br>
+    每天扫公开源，挑 3–5 条值得重点看的，一条一条单独写，不做配对。<br>
+    每条三段：发生了什么 ／ 这意味着什么 ／ 所以要关注什么。<strong>缺一段就不发。</strong><br>
+    收料标准：〔双源〕〔有数〕〔第一次〕〔冲突〕〔落位〕。<br>
+    来源分层：〔一手·英文〕〔一手·中文〕〔二手〕—— <strong>只有中文二手源的料，本期不选。</strong><br>
+    语言：<strong>不设分站</strong>，中文为主；哪条的一手是英文、英文更准，就直接用英文写。</p>
+    <p style="margin-top:14px"><a href="/watch/">全部各期</a>　｜　<a href="/">首页</a>　｜　<a href="/llms.txt">llms.txt</a></p>
+    <p style="margin-top:14px">2026-11-24 · 联翩实验室 · 本站文字内容 CC BY 4.0</p>
+  </div>
+</main>
+</body>
+</html>
