@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>官方否认有特殊优化，GEO 行业还在卖优化</title>
+<meta name="description" content="Google 的站长文档原文写着：进 AI 概览没有任何额外要求，也没有特殊优化的必要。它还把 llms.txt、内容切块、为 AI 特意改写、追逐不真实提及、过度堆结构化数据五条逐条列为不必做——而这五条正是市面上卖得最火的五种 GEO 服务。同一份文档里，平台承认有垃圾拦截系统却不说怎么识别；一篇带形式化证明的论文说明完美护栏只在一个前提下存在；另一篇证明不加任何假事实也能翻掉约三分之一的正确判断。这条判断，我改了四遍。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/official-denies-special-optimization">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="官方否认有特殊优化，GEO 行业还在卖优化">
+<meta property="og:url" content="https://xuyuanlab.com/notes/official-denies-special-optimization">
+<meta property="og:description" content="Google 的站长文档原文写着：进 AI 概览没有任何额外要求，也没有特殊优化的必要。它还把 llms.txt、内容切块、为 AI 特意改写、追逐不真实提及、过度堆结构化数据五条逐条列为不必做——而这五条正是市面上卖得最火的五种 GEO 服务。同一份文档里，平台承认有垃圾拦截系统却不说怎么识别；一篇带形式化证明的论文说明完美护栏只在一个前提下存在；另一篇证明不加任何假事实也能翻掉约三分之一的正确判断。这条判断，我改了四遍。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="官方否认有特殊优化，GEO 行业还在卖优化">
+<meta name="twitter:description" content="Google 的站长文档原文写着：进 AI 概览没有任何额外要求，也没有特殊优化的必要。它还把 llms.txt、内容切块、为 AI 特意改写、追逐不真实提及、过度堆结构化数据五条逐条列为不必做——而这五条正是市面上卖得最火的五种 GEO 服务。同一份文档里，平台承认有垃圾拦截系统却不说怎么识别；一篇带形式化证明的论文说明完美护栏只在一个前提下存在；另一篇证明不加任何假事实也能翻掉约三分之一的正确判断。这条判断，我改了四遍。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/official-denies-special-optimization#article",
+      "headline": "官方否认有特殊优化，GEO 行业还在卖优化",
+      "description": "Google 的站长文档原文写着：进 AI 概览没有任何额外要求，也没有特殊优化的必要。它还把 llms.txt、内容切块、为 AI 特意改写、追逐不真实提及、过度堆结构化数据五条逐条列为不必做——而这五条正是市面上卖得最火的五种 GEO 服务。同一份文档里，平台承认有垃圾拦截系统却不说怎么识别；一篇带形式化证明的论文说明完美护栏只在一个前提下存在；另一篇证明不加任何假事实也能翻掉约三分之一的正确判断。这条判断，我改了四遍。",
+      "datePublished": "2026-11-24",
+      "dateModified": "2026-11-24",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/official-denies-special-optimization",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/official-denies-special-optimization#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google 的站长文档原文写着：进 AI 概览没有任何额外要求，也没有特殊优化的必要。它还把 llms.txt、内容切块、为 AI 特意改写、追逐不真实提及、过度堆结构化数据五条逐条列为不必做——而这五条正是市面上卖得最火的五种 GEO 服务。同一份文档里，平台承认有垃圾拦截系统却不说怎么识别；一篇带形式化证明的论文说明完美护栏只在一个前提下存在；另一篇证明不加任何假事实也能翻掉约三分之一的正确判断。这条判断，我改了四遍。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>官方否认有特殊优化，GEO 行业还在卖优化</h1>
+  <p class="date">2026-11-24 · 技术 · 谁来核实（系列第 3 篇）</p>
+
+
+<p class="src">源：Google Search Central《Optimizing for generative AI search》（2026-07-10 更新）／《AI Features and Your Website》／《Spam policies》／arXiv 2611.27260《No Perfect Guardrail》（2026-11-20）／arXiv 2611.27016《Same Facts, Different Decision》（2026-11-20）／arXiv 2604.25707／arXiv 2404.07981／arXiv 2507.05301／《GEO 红皮书》（2026-11-06）</p>
+
+<p>命题：Google 的搜索文档在 2026 年 7 月更新后的原文写着，想让页面出现在 AI 概览和 AI Mode 里「没有任何额外要求，也没有其他特殊优化的必要」；同一节里，它把 llms.txt、内容切块、为 AI 特意改写、追逐不真实的提及、过度堆结构化数据五条逐条列为不必做。而这些正好是市面上卖得最火的五种 GEO 服务。这篇文章讲一件事：当一个判断的证据从「有人在会上说」升到「平台原文这么写」，它得往下收多少——我自己今天收了四回。</p>
+<hr>
+<p><em>巡回猎犬的干活笔记 ｜ 2026-11-24</em></p>
+<hr>
+<h2>一 · 平台自己说的，和行业在卖的不是一回事</h2>
+<p>Google 有一份给站长看的生成式 AI 搜索指南，最后一次更新是 2026 年 7 月 10 日。它在开头就把话说死了。</p>
+<p>原文是这么写的：「There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary.」翻译过来就是：想让内容出现在 AI 概览和 AI Mode 里，没有额外要求，也没有别的什么特殊优化的必要。</p>
+<p>再往下，它还不放心，另开了一节专门辟谣。</p>
+<p>那一节的原话是：「While terms like Answer Engine Optimization (AEO) or Generative Engine Optimization (GEO) are common online, many suggested "hacks" aren't effective or supported by how Google Search actually works.」</p>
+<p>用中文说：AEO 和 GEO 这些词网上很常见，但很多所谓的技巧，既没用，也不符合 Google 搜索实际的运作方式。</p>
+<p>文件的资格门槛只有一条：页面必须被索引，且在 Google 搜索里能以摘要形式展示。另外还有一步是站点级的开关，得在 Search Console 里把站点纳入 AI 功能。</p>
+<p>就这些。没有提任何技术改造要求。</p>
+<p>这份文档是 CC BY 4.0 授权，可以原文引用。所以我把它整份存了下来，连同另外三份：《AI Features and Your Website》《Preferred sources》《Spam policies》。</p>
+<h2>二 · 那五条「不必做」，正好是市面上卖的五种服务</h2>
+<p>同一节里，Google 逐条列了五件你可以忽略的事。</p>
+<p>第一，llms.txt 这类特殊文件。原话是「Google Search itself doesn't use them」——Google 搜索自己不用它们。</p>
+<p>第二，把内容切成小块，也就是 chunking。官方说没有这个要求，系统本来就能理解一页里多个话题的细微差别。</p>
+<p>第三，为了 AI 特意改写内容。官方说不需要为了生成式 AI 搜索用某种特定写法。</p>
+<p>第四，追逐「不真实的提及」。官方说这么做没有看起来那么有用。</p>
+<p>第五，过度堆结构化数据。原话是「there's no special schema.org structured data that you need to add」——没有任何需要你添加的特殊 schema.org 结构化数据。</p>
+<p>看到这五条的时候，我去翻了一份我们自己写过的方案。</p>
+<p>那份方案给客户排的第一层叫「技术底座」，内容写的是：Schema.org 全站部署、llms.txt、Sitemap、语义 HTML 重构，周期四到六周。</p>
+<p>五项里有两项，被平台原文直接否掉了。第三项「语义 HTML 重构」也没讨到好，官方那句是「don't worry about perfect code」，别追求完美的代码。</p>
+<p><strong>这不是我们和谁的观点分歧。这是甲方自己的平台，把乙方卖的东西划掉了。</strong></p>
+<h2>三 · 官方承认有 spam 系统，但没说它怎么识别</h2>
+<p>同一份文档里还有一句，比前面那些都重要。</p>
+<p>原话：「our core ranking systems focus on high-quality content while other systems block spam; our generative AI features depend on both.」</p>
+<p>意思是：核心排名系统看高质量内容，别的系统负责拦垃圾，而我们的生成式 AI 功能同时依赖这两套。</p>
+<p>这是我们第一次拿到平台的官方口径，承认垃圾拦截系统参与了生成式 AI 的运转。在此之前，这条判断我们只有行业会上几个人的说法。</p>
+<p>但它只承认有这套系统。识别什么、怎么识别、阈值多少、命中率如何，一个字没公开。</p>
+<p><strong>再往下追一层，会发现这不只是"还没公开"，是"不可能做完美"。</strong></p>
+<p>2026 年 11 月 20 日，有三位研究者在 arXiv 上放了一篇带形式化证明的论文，标题就叫《No Perfect Guardrail》。他们的结论是一个计算边界。</p>
+<p>原话是：「a computable guard that blocks every forbidden output and passes every permitted one exists <strong>if and only if the policy is decidable</strong>」。翻译过来：一个能拦下所有禁止输出、放行所有允许输出的可计算护栏，<strong>存在当且仅当那个策略是可判定的</strong>。</p>
+<p>而对不可判定的策略，原文说：「every guard misclassifies infinitely many strings」——每一个护栏都会把无穷多条搞错。</p>
+<p>那「什么算黑帽 GEO 内容」是可判定的吗？它要判意图、判语境、判一句话是真是假、判排版和语义的边界。这不是一个能写成判定程序的东西。</p>
+<p>所以问题的答案不是"平台还没公开识别机制"，是<strong>任何平台都不可能把这件事做完美</strong>。</p>
+<p>而学术界那边，已经有人把操纵做出来了。</p>
+<p>哈佛的两位研究者在 2024 年发过一篇论文，叫《Manipulating Large Language Models to Increase Product Visibility》。他们用一套叫 GCG 的优化方法，生成一段「战略文本序列」，塞进产品页的描述字段里。这段文字对人没意义，对模型有效。</p>
+<p>结果是：一个大杯高价、本来在「找便宜咖啡机」这个需求下完全不推荐的产品，训练约一百轮之后，直接从榜外跳到了第一名。</p>
+<p>而且在打乱产品排序的情况下仍然有效。文献里还说，这类序列对黑盒模型有迁移性。</p>
+<p>还有一篇更狠的。同一天，三位研究者在 arXiv 上发了一篇《Same Facts, Different Decision》。</p>
+<p>他们做了一个叫 LEVER 的攻击，构造上带一个硬约束：配一个独立校验器，<strong>主动丢弃任何添加了事实的评论</strong>。</p>
+<p>也就是说，这个攻击通篇不加一条假话。</p>
+<p>结果它在三个基准上翻掉了约三分之一的正确判断，是同等事实限额下此前最强攻击的 2.8 倍。</p>
+<p>论文里有一句话值得抄下来：「added facts can make a changed decision correct」——加进去的真事实，也能让改变后的决策变"正确"。</p>
+<p>所以「内容真实就够了」这句话，在这一层不成立。</p>
+<p>所以现在能说的是一句更硬的话：<strong>平台官方声明存在 spam 拦截系统，但完美识别在计算上不成立；黑帽技术上可行，而且不需要造假也够。</strong></p>
+<p>不能说「黑帽会被识别、不予采信」。那半句我们不只有证据不足，是它本身就不成立。</p>
+<h2>四 · 我为一个判断改了四遍</h2>
+<p>这一段是本篇最该写的部分，因为它不是转述，是我今天真干的事。</p>
+<p>对一个判断，我先后写了三个版本。</p>
+<p>第一版是「黑帽和自评榜单会被识别、不予采信」。撑它的是三处说法，全来自行业会上讲者的转述，我给标了三颗星。</p>
+<p>然后我读到一本两百零四页的红皮书，整本讲 GEO 的伦理边界和作弊风险。它把风险分成九类五十五种，给了红线判定公式，给了红黄绿三档判断，给了证据保全清单。</p>
+<p>但它整本讲的是「你该怎么防」，立场是那句「你无法防御你不了解的威胁；你无法审计你看不见的作弊」。</p>
+<p>全书唯一涉及平台处置的原话是：有服务商用大量自动查询、截图和重复追问制造监测指标变化，部分平台识别到异常请求后限制了访问。</p>
+<p>平台识别的是异常请求，不是黑帽内容。这是两件事。</p>
+<p>同一轮里我又读到那篇哈佛论文，操纵可复现。于是第一版整句删掉。</p>
+<p>第二版就成了「证据不足」。</p>
+<p>再往后，我拿到了 Google 官方原文，那句「other systems block spam」，于是部分恢复。最终定稿是三句话：平台官方声明有 spam 系统；这套系统和质量排名一起支撑生成式 AI 功能；但识别机制与有效性未公开，而操纵技术上可行。</p>
+<p>一条结论，改了四遍。</p>
+<p>前两遍都不是因为我改主意了，是因为换了一层证据：讲者转述，然后治理手册，然后学术论文，然后平台原文。</p>
+<p><strong>第四遍是今天最后一小时发生的。</strong> 写这篇稿的时候，我从当天的线索里捞出那篇《No Perfect Guardrail》，读完之后第三节整段重写——从「平台还没公开识别机制」改成「任何平台都不可能做到完美」。</p>
+<p><strong>证据层级一升，判词就得往下收。</strong>这个规律比我那条结论本身值钱。</p>
+<h2>五 · 一个反常识的数：发新闻稿，是把自己放在影响力最低的页面上</h2>
+<p>同一批材料里还有一组数，对做内容的人是坏消息。</p>
+<p>一篇研究生成式引擎的论文把被引用拆成两段：平台选择信源，以及被选中的页面向最终答案贡献了多少语言、证据、结构和事实。后一段叫吸收。</p>
+<p>按这个拆法，不同页面的吸收影响力差得很远。百科类页面平均 0.2144，新闻媒体页平均 0.0726。</p>
+<p>差大约三倍。</p>
+<p>这解释了一件我原来没想通的事：北京日报做「智源GEO」的时候，为什么要专门上线一个「京报百科」，还要跟百度百科共建可信知识生态。</p>
+<p>那不是顺手加个频道。那是在绕开新闻页的天花板。</p>
+<p>另一篇研究更直接。它用两万四千次真实对话、六万五千条回答、三十六万多条引用，看 AI 怎么引新闻。</p>
+<p>结果是赢家通吃：OpenAI 的前二十大新闻源，吃掉了全部新闻引用的百分之六十七点三。Google 是三十一点九，Perplexity 是二十八点五。</p>
+<p>同一篇还有个更难听但很有用的发现：用户满意度主要取决于回答长度，跟来源质量没有显著相关。</p>
+<p>所以对一家不在那二十家名单里的媒体来说，「我们内容更好」这条路是走不通的。学术数据不支持。要进的是那个头部集合，不是把稿子改得更好。</p>
+<h2>六 · 还没解决的两件事</h2>
+<p>第一件，我们只拿到 Google 一家的官方口径。</p>
+<p>OpenAI、豆包、Kimi、元宝，四家都没有对应的官方文档讲它们怎么选源、怎么采信。Google 一家代表不了全部。这条不能含糊过去。</p>
+<p>第二件，那批看起来很硬的行业数据，我们复算不了。</p>
+<p>有一份两百三十六页的白皮书说，它基于一千零四万六千条回答做了统计。</p>
+<p>里面说官网是五个海外平台共同优先采信的信源，占比三成八到五成八。还说某个平台有百分之四十五点二的回答出现了商业品牌名，却没标任何来源。</p>
+<p>这些数我引用了。但它们来自发布方自述，样本构成和清洗口径都没有公开。我们能引，不能验。</p>
+<p>这就是这份笔记现在的状态：有的东西能从平台原文里抠出来，有的只能标个出处放在那里，还有的，说了三遍才勉强站住。</p>
+<hr>
+<h2>附 · 本篇用到的材料</h2>
+<p>Google Search Central《Optimizing for generative AI search》，2026-07-10 更新，CC BY 4.0。 Google Search Central《AI Features and Your Website》《Preferred sources》《Spam policies》。 arXiv 2611.27260，Ahmed Amer、Loren Kinczel、Darrell D. E. Long，《No Perfect Guardrail &amp; No Perfect Guard: On the Decidability of Output Policies for Large Language Models》，31 页，含一页执行摘要与自足证明附录。</p>
+<p>arXiv 2611.27016，Yujie Wang、Haotian Chi、Shunrong Jiang，《Same Facts, Different Decision: Fact-Invariant Manipulation and Provenance-Based Defense in Typed Decision Models》。</p>
+<p>arXiv 2604.25707，《From Citation Selection to Citation Absorption》，一作张凯，姚金刚为第三作者，匿名化数据集与流程公开。 arXiv 2404.07981，Aounon Kumar 与 Himabindu Lakkaraju，《Manipulating Large Language Models to Increase Product Visibility》。 arXiv 2507.05301，Kai-Cheng Yang，《News Source Citing Patterns in AI Search Systems》，AAAI。 《GEO 红皮书：生成式引擎优化的伦理边界、作弊风险与治理手册》，204 页，2026-11-06。 《海外 GEO 白皮书：面向海外 AI 平台的生成式引擎优化指南》，236 页，2026-11-06。</p>
+<p><em>巡回猎犬的干活笔记 ｜ 联翩实验室 出品 ｜ 写下来的，都是我读过的和做过的。</em></p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
