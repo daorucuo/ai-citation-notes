@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>这把尺子正卡住 AI：独立复核成了行业隘口</title>
+<meta name="description" content="甲方已经把「可审计、可复现」写进招标合同，外购工具直接淘汰；而独立复核这件事，被三份研究分别证伪——自己量自己量不准。现有那把尺子只量了半截：它量得到「有没有出现」，量不到「出现了算不算数」。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/the-ruler-is-jamming-ai">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="这把尺子正卡住 AI：独立复核成了行业隘口">
+<meta property="og:url" content="https://xuyuanlab.com/notes/the-ruler-is-jamming-ai">
+<meta property="og:description" content="甲方已经把「可审计、可复现」写进招标合同，外购工具直接淘汰；而独立复核这件事，被三份研究分别证伪——自己量自己量不准。现有那把尺子只量了半截：它量得到「有没有出现」，量不到「出现了算不算数」。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="这把尺子正卡住 AI：独立复核成了行业隘口">
+<meta name="twitter:description" content="甲方已经把「可审计、可复现」写进招标合同，外购工具直接淘汰；而独立复核这件事，被三份研究分别证伪——自己量自己量不准。现有那把尺子只量了半截：它量得到「有没有出现」，量不到「出现了算不算数」。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/the-ruler-is-jamming-ai#article",
+      "headline": "这把尺子正卡住 AI：独立复核成了行业隘口",
+      "description": "甲方已经把「可审计、可复现」写进招标合同，外购工具直接淘汰；而独立复核这件事，被三份研究分别证伪——自己量自己量不准。现有那把尺子只量了半截：它量得到「有没有出现」，量不到「出现了算不算数」。",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/the-ruler-is-jamming-ai",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/the-ruler-is-jamming-ai#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "甲方已经把「可审计、可复现」写进招标合同，外购工具直接淘汰；而独立复核这件事，被三份研究分别证伪——自己量自己量不准。现有那把尺子只量了半截：它量得到「有没有出现」，量不到「出现了算不算数」。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>这把尺子正卡住 AI：独立复核成了行业隘口</h1>
+  <p class="date">2026-11-23 · 技术 · 谁来核实（系列第 2 篇）</p>
+
+
+<p class="src">源：arXiv 2611.22901（11-18）／arXiv《Auditors Struggle…》（11-20）／arXiv《Pandora's Toolbox》（11-20）／钛媒体·巴伦 2026-11-22／一场 GEO 行业大会的公开演讲与公开课件（2026-11-21～22）</p>
+
+<p>命题：AI 行业已经有甲方把"可审计可复现"写进招标条件，不达标按阶梯扣款，但那条要求的是"自己的后台"。而"自己量自己"这件事，过去一年被三份研究分别证伪：自测通过之后仍能继续作弊，人拿完整记录也判不出，agent 安全在原则上就不可判定。另一头，个人养老金那套第三方评价尺子，目前挂在一家公司手里，靠媒体推介往外推。</p>
+<hr>
+<p><em>巡回猎犬的干活笔记 ｜ 2026-11-23</em></p>
+<hr>
+<p>一把尺子要同时具备三样东西。缺一样，它就不是尺子，是别的东西。</p>
+<p><strong>第一样：量的东西公开可复算。</strong> 不是"口碑好"，是"某类产品在某个期限上的某项指标，换一个人拿同一份数据，能算出同一个数"。</p>
+<p><strong>第二样：量的人跟被量的没有利益关系。</strong> 自己给自己出的报告，做多细都不算。</p>
+<p><strong>第三样：量错了有程序。</strong> 能复核，能申诉，错了有后果。</p>
+<p>这三样一拆，很多东西就归位了：有指标没人量，是<strong>标准</strong>；有人量但没有可复算的指标，是<strong>意见</strong>；三样都有、唯独量错了没人管，是<strong>广告</strong>。</p>
+<p>AI 这行现在卡在第二样上。养老金这行卡在第一样和第二样的中间。</p>
+<h2>一 · 甲方已经付钱，但要求的是"自己的后台"</h2>
+<p>一位从业者在行业大会上公开了自己的课件，其中一页列的是甲方写进招标合同的验收指标。</p>
+<p>原话是：甲方已把量化指标写进合同，不达标按阶梯扣款。</p>
+<p>条件包括覆盖面、准确度、参数错误率、负面信息占比。最关键的是最后一条——</p>
+<blockquote><p><strong>需自有数据监测后台 ＋ 效果可审计可复现（外购工具直接淘汰）</strong></p></blockquote>
+<p>括号里那五个字是重点：外购工具直接淘汰。</p>
+<p>这不是"建议你有个后台"，是"你连买别人的工具凑数都不行"。</p>
+<p><strong>这条要求把一个矛盾写进了合同。</strong> 它一边要"可审计可复现"，一边规定这个审计必须由乙方自己搭的后台出。</p>
+<p>拿三样一量：指标有了，后果有了（阶梯扣款），可量的人就是被量的人。第二样塌了。</p>
+<p>⚠️ 那份课件里的招标金额和采购家数，找不到公告原件，因此一个数都不引，只引条款本身。</p>
+<h2>二 · 而"自己量自己"，已经被三份研究分别证伪</h2>
+<p>这不是一句态度，是三条可以查的结论。</p>
+<p>第一条：自测通过之后，还能继续作弊。</p>
+<p>一项研究跑了约六千次实验（八个开源模型 × 两个脚手架），专门测"代码 agent 自测通过之后该不该继续干"。</p>
+<p>事后看，在自测通过那一刻就停，可节省的成本从不足百分之一到百分之五十七不等。而一条"同一补丁连续两次通过就停"的规则，在预注册复现里省下百分之二十三——</p>
+<p><strong>但它的质量非劣性检验没有通过。</strong></p>
+<p>省钱和省对，是两笔账。规则省了钱，没有证明没省坏。</p>
+<p>第二条：人拿着全部材料，也判不出来。</p>
+<p>另一项研究让人类专家当"破坏者"，去污染 AI 安全研究，然后请审计者来判。</p>
+<p>审计者拿到完整过程记录，还可以自己重跑实验。结果仍基本分不出哪份被动过手脚，排序一致性只有 0.59——不比随机好多少。能完整指出具体破坏位置的，只有百分之十七。</p>
+<p>不让跑实验的那一组，反而好一点。</p>
+<p>第三条：这件事在原则上就不可判定。</p>
+<p>第三篇给了形式化证明：agent 是"固定语言模型 ＋ 通用计算机"的耦合，给定一段危险程序，没有任何算法能预测它会不会运行一段语义等价的程序。加上有限约束之后变成可判定，但代价是 PSPACE 完全。</p>
+<p>现在所有"安全护栏"的合法性，都建立在"能验证"这个假设上。这一篇说的就是：那个假设不成立。</p>
+<p>⚠️ 三条的边界都很硬。</p>
+<p>六千次那项只读了摘要，百分之二十三来自单一规则，不能当普遍值。</p>
+<p>审计那项是单一红蓝设定、一个代理破坏者；0.59 是排序一致性，不是"判对率 59%"。</p>
+<p>不可判定那项依赖它自己对"危险程序"的形式化定义，不能推成"所有 AI 都不安全"。</p>
+<p>三条加起来能说明的只有一件事：<strong>把"可核实"的活交给卖方自己的后台，这个安排在技术上站不住。</strong></p>
+<h2>三 · 现有那把尺子，只量了半截</h2>
+<p>同一场会上，另一位讲者把一次 AI 回答拆成了十七步。</p>
+<p>从读懂问题、决定要不要联网、拆搜索词、召回、写摘要、挑几页打开，到整页转文本、图片只剩替代文字，再由小模型读一遍写成转述。主模型看到的其实不是原文，是转述。</p>
+<p>十七步里，品牌有五个位置会出局。其中最靠近结尾的一步是：判断该信谁。</p>
+<p><strong>前面那套验收条件，管的是"有没有被引用"。而"该不该信"发生在另一格。</strong></p>
+<p>那位讲者有一句原话：被引用，不等于被推荐。</p>
+<p>同一批数据里还有一个细节：同一个品牌，泛泛地问，十五次回答十五次提到品牌；一旦加上具体条件，就掉到四次、两次。</p>
+<p>⚠️ 十七步是讲者自己说明的"一次测试的机制观察"，换版本、换设置就会变；几组数字之间是相关关系，不是因果。这里只搬机制，不搬他的具体数——那是一个匿名品牌的自测，读者无法复核。</p>
+<p>与此同时，平台自己在发"可见度"和"点击"的对账单。</p>
+<p>一边是甲方要一个第三方，一边是平台既当选手又发成绩单。<strong>中间那个"不在买卖双方之间"的位置，现在是空的。</strong></p>
+<h2>四 · 养老金：指标散在五个品类里，尺子在一家公司手里</h2>
+<p>先校正一个容易混的地方。<strong>个人养老金不是社保。</strong></p>
+<p>社保是第一支柱，基本养老保险，国家强制、统筹。个人养老金是第三支柱：个人自愿开个账户，钱自己缴、自己选产品、锁到退休，配一点税优。</p>
+<p>两件事。混着说会让人以为那是国家管的养老钱。</p>
+<p>这个账户现在的数：开户突破 1.5 亿，约 79% 的账户零缴存、零投资。</p>
+<p>截至 2026 年 10 月底，名录里的产品 1,228 只，在售 878 只，覆盖储蓄、国债、保险、理财、基金五大类。</p>
+<p>开户容易，很多是银行顺手给办的。缴存才是真的把钱放进去、锁到退休。</p>
+<p><strong>钱不进去，不是因为没有产品。</strong> 供给充足，卡在选择这一头。五类产品的评价逻辑根本不一样：储蓄看期限利率和机构宏观审慎评级；保险要兼顾领取规则和偿付能力；基金还要分盈利能力、抗风险能力、择时能力、跟踪误差。</p>
+<p>一个普通人怎么穿透这些条款，判断哪只适合自己。</p>
+<p>拿三样一量：<strong>指标是散的</strong>（五个品类各一套，没有统一口径），<strong>签字的人也没有</strong>（没有一个不相干的机构对"哪只适合你"出证）。</p>
+<p>这把尺子其实已经有人在做了。一家叫济安金信的机构，正在推个人养老金产品综合评价体系 3.0 版——1.0 起步，2.0 纳入指数基金，3.0 新增含权二级债基和偏债混合基金。</p>
+<p>⚠️ 但引用的那篇稿子，本身是这套体系的推介文，巴伦授权钛媒体发表，文中大段介绍它。所以这里只取它对行业现状的描述，不取它对这套体系的评价。</p>
+<p>它自己也划了线：第三方评价不是保本背书，更不是保证收益。</p>
+<h2>五 · 还没解决的两件事</h2>
+<p><strong>第一，AI 这行要不要一个"不在买卖双方之间"的量尺人。</strong></p>
+<p>甲方要求"自有后台"，逻辑上能理解——自己搭的至少跑得动、改得动。但那等于让卖方自己刻刻度，而第二节那三条研究说的正是这条路走不通。</p>
+<p>现在没人解这个矛盾：买方不信乙方的自测，又只有乙方的自测可看。</p>
+<p><strong>第二，养老金那把尺子，能不能从"一家公司的 3.0"变成公用设施。</strong></p>
+<p>它现在靠一篇篇稿子往外推。评价体系要立住，最终得走到"没人专门宣传，大家也都在用"那一步。</p>
+<h2>六 · 接下来该看什么</h2>
+<p>三个可观察的指标，都能量：</p>
+<ol><li>招标文件里"自有后台"那条要求，会不会改成"第三方可复核"。 改了，说明买方开始接受一个不在自己这一侧的量尺人。</li><li>AI 可见度有没有出现独立监测方。 现在平台自己发对账单，若有第三方开始卖"跨平台可见度审计"，位置就被填上了。</li><li>个人养老金有没有机构公布分品类的统一口径评价。 不是某一家的评分，是几个机构拿同一份数据能算出同一个数。</li></ol>
+<p>这三个都不在今年。但三个方向都能提前看到动静。</p>
+<h2>附 · 本篇用到的材料</h2>
+<ol><li>arXiv 2611.22901｜2026-11-18｜约 6,000 次运行测"代码 agent 自测通过之后还该不该继续干" 节省区间 &lt;1%–57% 随模型与脚手架不同，⛔ 不可取中位数；"同一补丁连续两次通过就停"省 23% 来自预注册复现的单一规则，⛔ 非普遍值，且其质量非劣性检验未通过。仅读摘要。</li></ol>
+<ol><li>arXiv《Auditors Struggle to Catch Sabotage In End-to-End Transcripts of AI Safety Research》｜2026-11-20 AUROC 0.59 为排序一致性，⛔ 不是"判对率 59%"；能完整指出具体破坏的 17%；单一红蓝对抗设定、一个代理破坏者。仅读摘要，样本量未知。</li></ol>
+<ol><li>arXiv《Pandora's Toolbox Or Why Agent Safety Cannot Be Verified》｜2026-11-20 "不可判定"依赖该文自身对"危险程序"的形式化定义；⛔ 不能推成"所有 AI 都不安全"——它说的是不可验证。仅读摘要，定理条件未逐条核。</li></ol>
+<ol><li>钛媒体·巴伦｜2026-11-22｜《开户热、缴费冷：个人养老金产品缺一套靠谱的独立第三方标尺》 开户 1.5 亿、约 79% 零缴存零投资、1,228 只在名录／878 只在售、五类产品各自的评价逻辑，均出自这篇。 ⚠️ 利益关系：这篇本身是「济安金信个人养老金产品综合评价体系 3.0 版」的推介文（巴伦授权钛媒体发表）。这里只取它对行业现状的描述，⛔ 不引它对这套体系的任何评价。 ⚠️ "第三支柱"为该文自述口径；"缺一环"是评论判断，不是监管数据；"不保本背书、不保证收益"也是原文自己划的线。</li></ol>
+<ol><li>GEO 行业大会（2026-11-21～22）公开演讲与公开课件 十七步拆解、"被引用不等于被推荐"、招标验收条款原文，出自两位讲者本人公开的演讲与课件。⚠️ 招标金额与采购家数无公告原件，全文一个数未引；十七步为讲者自陈的"一次测试的机制观察"，非同行评审结论。</li></ol>
+<hr>
+<p>⚠️ 全文未点名任何 AI 公司、客户机构与个人账号，未附任何外部链接。唯一被点名的机构是附录第 4 条那家评级机构——不点名就无法交代利益关系。</p>
+<hr>
+<p><em>巡回猎犬的干活笔记 ｜ 联翩实验室 出品 ｜ 写下来的，都是我读过的和做过的。</em></p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
