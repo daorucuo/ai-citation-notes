@@ -22,7 +22,7 @@ LIMIT_INDEX = 20   # 观察栏上限（版面容量，不是数量目标）
 def readings(date):
     ymd = date.replace("-", "")
     cands = sorted(HARVEST.glob(f"收割机日常报告_{ymd}_*.json"))
-    r = {"scan": None, "new": None, "rate": None, "sources": None, "atoms": None}
+    r = {"scan": None, "new": None, "rate": None, "sources": None, "atoms": None, "stored": None}
     if cands:
         try:
             d = json.loads(cands[0].read_text(encoding="utf-8"))
@@ -42,6 +42,11 @@ def readings(date):
             #   读数恒为「未取」，而数据其实在报告里。**只映射真实字段，⛔ 一个数都不编。**
             #   ⚠️ 不把 `料仓.今日条目`(60) 塞进 atoms —— 那是**条目**不是**原子**（今天原子 6 条），
             #      塞进去会印成「立住 60 条原子」，是假数。
+            # ★★ 2026-11-25 修：`逐源.NewsNow.抓回` 不是「今日扫」——
+            #   它只是 NewsNow 一路的抓回，而且 11-24 与 11-25 **两天都是 534**（同一个数），
+            #   拿它当全天扫描量会在页面上印出一个假的「今日扫」。
+            #   唯一能对得上料仓实物的是 `料仓.今日条目`（11-24=445、11-25=801，与 `料仓/原始.jsonl` 实点一致）。
+            r["stored"] = (d.get("料仓") or {}).get("今日条目")
             if r["scan"] is None:
                 nn2 = ((d.get("逐源") or {}).get("NewsNow") or {})
                 r["scan"] = nn2.get("抓回")
@@ -56,7 +61,10 @@ def readings(date):
 
 def readings_html(r):
     bits = []
-    if r["scan"] is not None:
+    # ⛔ 2026-11-25：`scan` 那组数不可信（见 readings() 里的说明），**能对账的只有落仓**
+    if r.get("stored") is not None:
+        bits.append(f'今日落仓 <b>{r["stored"]}</b> 条')
+    elif r["scan"] is not None:
         bits.append(f'今日扫 <b>{r["scan"]}</b> 条')
         if r["new"] is not None:
             bits.append(f'新增 {r["new"]}（{r["rate"]}）')
