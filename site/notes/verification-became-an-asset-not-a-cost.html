@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>「核实」第一次被做成了资产，而不是成本</title>
+<meta name="description" content="Press Gazette 成为（据信）全世界第一个被公开独立验证为「人类创作」的新闻机构：CMS 里装 MadeByHumans，发布前扫全部文章与照片，有 AI 迹象须编辑覆盖才能发，生成审计轨迹，每篇带徽章链到真实性证书。反常的不是这套工具，是它的商业结构——由媒体与运营其付费墙的公司 50/50 合资开发。过去核实是成本，记在费用栏；合资意味着它可以是一项资产。附带一个从没被回答的问题：用 AI 去验证「这不是 AI」，那验证器自己准不准？">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/verification-became-an-asset-not-a-cost">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「核实」第一次被做成了资产，而不是成本">
+<meta property="og:url" content="https://xuyuanlab.com/notes/verification-became-an-asset-not-a-cost">
+<meta property="og:description" content="Press Gazette 成为（据信）全世界第一个被公开独立验证为「人类创作」的新闻机构：CMS 里装 MadeByHumans，发布前扫全部文章与照片，有 AI 迹象须编辑覆盖才能发，生成审计轨迹，每篇带徽章链到真实性证书。反常的不是这套工具，是它的商业结构——由媒体与运营其付费墙的公司 50/50 合资开发。过去核实是成本，记在费用栏；合资意味着它可以是一项资产。附带一个从没被回答的问题：用 AI 去验证「这不是 AI」，那验证器自己准不准？">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="「核实」第一次被做成了资产，而不是成本">
+<meta name="twitter:description" content="Press Gazette 成为（据信）全世界第一个被公开独立验证为「人类创作」的新闻机构：CMS 里装 MadeByHumans，发布前扫全部文章与照片，有 AI 迹象须编辑覆盖才能发，生成审计轨迹，每篇带徽章链到真实性证书。反常的不是这套工具，是它的商业结构——由媒体与运营其付费墙的公司 50/50 合资开发。过去核实是成本，记在费用栏；合资意味着它可以是一项资产。附带一个从没被回答的问题：用 AI 去验证「这不是 AI」，那验证器自己准不准？">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/verification-became-an-asset-not-a-cost#article",
+      "headline": "「核实」第一次被做成了资产，而不是成本",
+      "description": "Press Gazette 成为（据信）全世界第一个被公开独立验证为「人类创作」的新闻机构：CMS 里装 MadeByHumans，发布前扫全部文章与照片，有 AI 迹象须编辑覆盖才能发，生成审计轨迹，每篇带徽章链到真实性证书。反常的不是这套工具，是它的商业结构——由媒体与运营其付费墙的公司 50/50 合资开发。过去核实是成本，记在费用栏；合资意味着它可以是一项资产。附带一个从没被回答的问题：用 AI 去验证「这不是 AI」，那验证器自己准不准？",
+      "datePublished": "2026-11-25",
+      "dateModified": "2026-11-25",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/verification-became-an-asset-not-a-cost",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/verification-became-an-asset-not-a-cost#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Press Gazette 成为（据信）全世界第一个被公开独立验证为「人类创作」的新闻机构：CMS 里装 MadeByHumans，发布前扫全部文章与照片，有 AI 迹象须编辑覆盖才能发，生成审计轨迹，每篇带徽章链到真实性证书。反常的不是这套工具，是它的商业结构——由媒体与运营其付费墙的公司 50/50 合资开发。过去核实是成本，记在费用栏；合资意味着它可以是一项资产。附带一个从没被回答的问题：用 AI 去验证「这不是 AI」，那验证器自己准不准？"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>「核实」第一次被做成了资产，而不是成本</h1>
+  <p class="date">2026-11-25 · 技术 · 谁来核实（短记）</p>
+
+
+<p class="src">源：Press Gazette 2026-11-24《Press Gazette is 'world's first' verified human-made news outlet》（<strong>读正文</strong>）</p>
+
+<hr>
+<p>一家行业媒体给自己装了一道闸。</p>
+<p>Press Gazette 2026 年 11 月 24 日宣布，它成为（据信）全世界第一个被公开、独立验证为「人类创作」的新闻机构。做法是在自己的 CMS 里接入一套叫 MadeByHumans 的检测工具，<strong>每一篇文章和每一张照片在发布前都要过一遍</strong>，检出 AI 操纵迹象的稿件，必须由编辑手动「覆盖」才能发。</p>
+<p>工具会留下审计轨迹。此后每篇内容——包括那篇宣布这件事的报道本身——都带一个「human made」徽章，点进去是一份由 MadeByHumans 持有的真实性证书。</p>
+<p>起因他们自己写了，挺难听：<strong>先调查了「误导性的、往往是 AI 生成的内容被主流出版商刊出」的程度，然后才动的手。</strong></p>
+<h2>反常的地方在商业结构</h2>
+<p>如果只是「买了套检测工具」，这件事没什么可说的，那是每个编辑部都该做的采购。</p>
+<p>真正反常的是这一句：<strong>这套技术由 Press Gazette 与 Flip-Pay 以 50/50 合资开发。</strong> Flip-Pay 就是运营它付费墙的那家公司。</p>
+<p>也就是说，媒体没有把自己放在「买服务的人」位置上，而是跟技术方一起持股。</p>
+<p>这跟我见过的所有「内容核实」都不一样。过去核实是一种成本：请人核、买工具核、核完就花掉了，账上记在费用栏。而合资的意思是——<strong>核实这件事本身可以是一项资产，能对外提供服务，还能被估值。</strong></p>
+<p>它已经在对外的迹象是：报道里说，全球已有若干家新闻编辑室在试用这套平台，这套东西也能检查音频和视频里的 AI 迹象，并且能顺带帮出版商满足欧盟《数据法》的标识要求。</p>
+<h2>闸门放在哪里，比闸门本身重要</h2>
+<p>这套设计里有一个位置安排值得单说：<strong>闸门在发布前，不在发布后。</strong></p>
+<p>事后的事实核查是媒体做了几十年的活——稿子出去了，发现错了，发更正。而这里的做法是把检查塞进发稿流程，检出问题不是「以后更正」，是「现在不许发」。</p>
+<p>这个位置差别决定了两件事的性质完全不同。事后更正是一份<strong>说明</strong>，发布前拦截是一道<strong>约束</strong>。说明可以含糊、可以迟、可以不发；约束不行，它挡在那儿。</p>
+<p>主编 Dominic Ponsford 讲了一句为什么必须上工具，比任何产品介绍都实在：</p>
+<blockquote><p>「出版商不能只靠编辑的人工判断来管这件事。只需要一个不守规矩的自由撰稿人，或者一个公关来源，就足以让一家媒体无意中刊出严重损害其品牌的内容。」</p></blockquote>
+<p><strong>风险不在编辑部内部，在供应链的末端。</strong> 这句话解释了很多事——包括为什么「我们编辑很专业」这种保证，在 AI 时代越来越不够用。专业的编辑管得住进编辑部的人，管不住把所有材料塞给编辑部的那条链。</p>
+<h2>但它有一个从没被回答的问题</h2>
+<p>整套方案的名字叫「人类创作」，而验证手段是<strong>用 AI 去检测 AI</strong>。</p>
+<p>报道里写它「部署了一系列领先的 AI 检测技术」。可是<strong>准确率多少、误判多少、漏判多少，一个数都没有。</strong></p>
+<p>这不是抬杠。Press Gazette 的整个卖点就是「<strong>可被外部验证</strong>」——那么第一个该被验证的对象，恰恰是验证者自己。一个发证方如果自己不接受验证，那纸证书的效力就退回成了「请相信我们」，跟它想取代的那句老话没有区别。</p>
+<h2>还有一句，比这套工具走得远</h2>
+<p>Ponsford 在报道里的判断是：</p>
+<blockquote><p>「我的直觉是，<strong>两个互联网正在形成</strong>——一个由 AI 创造、满是 slop、常常是为了误导人；另一个是真实人类创作的。」</p></blockquote>
+<p>他还说：「我坚信，坚持人类创作这条路、并且能向读者证明这一点的出版商，会有巨大的价值。」</p>
+<p>这句话如果成立，那接下来的分野就不在内容好不好，而在<strong>能不能证明是谁做的</strong>。而「证明」这件事，恰好是可以被做成产品、被定价、被持股的。</p>
+<hr>
+<p><em>巡回猎犬的干活笔记 ｜ 联翩实验室 出品 ｜ 写下来的，都是我读过的和做过的。</em></p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
