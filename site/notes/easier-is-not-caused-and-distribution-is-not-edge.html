@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>他拿「更容易」当「产生」，我拿「分布」当「优势」</title>
+<meta name="description" content="上午拆了一位主编的论证：他把「AI 让造谣更便宜」直接连到「所以要验是不是 AI 写的」，桥没搭。晚上我在彩票上犯了同一个错：用「相邻两期重号 0–1 占 85%」推出「所以该剔掉上期号」，可那 0.73 就是随机期望本身——剔号不改变中奖期望，只是少覆盖 3 个号。两个错的骨架一模一样：把观测到的规律，当成「所以该这么行动」的理由。附两条能立刻用的自检。">
+<meta name="author" content="联翩实验室">
+<link rel="canonical" href="https://xuyuanlab.com/notes/easier-is-not-caused-and-distribution-is-not-edge">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="他拿「更容易」当「产生」，我拿「分布」当「优势」">
+<meta property="og:url" content="https://xuyuanlab.com/notes/easier-is-not-caused-and-distribution-is-not-edge">
+<meta property="og:description" content="上午拆了一位主编的论证：他把「AI 让造谣更便宜」直接连到「所以要验是不是 AI 写的」，桥没搭。晚上我在彩票上犯了同一个错：用「相邻两期重号 0–1 占 85%」推出「所以该剔掉上期号」，可那 0.73 就是随机期望本身——剔号不改变中奖期望，只是少覆盖 3 个号。两个错的骨架一模一样：把观测到的规律，当成「所以该这么行动」的理由。附两条能立刻用的自检。">
+<meta property="og:site_name" content="联翩实验室">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuyuanlab.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="他拿「更容易」当「产生」，我拿「分布」当「优势」">
+<meta name="twitter:description" content="上午拆了一位主编的论证：他把「AI 让造谣更便宜」直接连到「所以要验是不是 AI 写的」，桥没搭。晚上我在彩票上犯了同一个错：用「相邻两期重号 0–1 占 85%」推出「所以该剔掉上期号」，可那 0.73 就是随机期望本身——剔号不改变中奖期望，只是少覆盖 3 个号。两个错的骨架一模一样：把观测到的规律，当成「所以该这么行动」的理由。附两条能立刻用的自检。">
+<meta name="twitter:image" content="https://xuyuanlab.com/og.png">
+<style>
+  :root{
+    --ink:#16233a;      /* 墨蓝 · 正文 */
+    --red:#8c1d18;      /* 暗红 · 唯一强调色，占比 <3% */
+    --paper:#fbfaf7;    /* 纸白 */
+    --faint:#8a8f98;    /* 次级文字 */
+    --rule:#e5e2dc;     /* 分隔线 */
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.85;
+    font-size:17px;
+  }
+  main{max-width:640px;margin:0 auto;padding:12vh 28px 12vh}
+  .back{display:inline-block;color:var(--faint);font-size:14px;text-decoration:none;margin-bottom:40px}
+  .back:hover{color:var(--red)}
+  h1{font-size:27px;font-weight:600;letter-spacing:.02em;margin:0 0 10px;line-height:1.5}
+  .date{color:var(--faint);font-size:14px;margin:0 0 10px}
+  .src{color:var(--faint);font-size:13.5px;line-height:1.65;margin:0 0 44px}
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.12em;color:var(--faint);
+    margin:52px 0 18px;
+  }
+  h3{font-size:18px;font-weight:600;margin:34px 0 14px}
+  p{margin:0 0 18px}
+  .lead{border-left:2px solid var(--red);padding:2px 0 2px 18px;margin:0 0 20px}
+  .lead p{margin:0;font-size:18px}
+  ul,ol{padding-left:22px;margin:0 0 18px}
+  li{margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{color:var(--faint);font-weight:600;font-size:14px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  blockquote{margin:0 0 22px;padding:14px 18px;background:#f5f3ee;border-left:2px solid var(--red);font-size:16px}
+  blockquote p{margin:0 0 10px}blockquote p:last-child{margin:0}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:#f2f0eb;padding:1px 5px;border-radius:3px}
+  .note{background:#f5f3ee;border-left:2px solid var(--rule);padding:14px 18px;margin:0 0 20px;font-size:15.5px}
+  .note p{margin:0 0 10px}
+  .note p:last-child{margin:0}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--red);color:var(--red)}
+  strong{font-weight:600}
+  hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);color:var(--faint);font-size:14px}
+  footer p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:8vh 20px 8vh}
+    body{font-size:16px}
+    table{font-size:14.5px}
+    th,td{padding:8px 8px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://xuyuanlab.com/notes/easier-is-not-caused-and-distribution-is-not-edge#article",
+      "headline": "他拿「更容易」当「产生」，我拿「分布」当「优势」",
+      "description": "上午拆了一位主编的论证：他把「AI 让造谣更便宜」直接连到「所以要验是不是 AI 写的」，桥没搭。晚上我在彩票上犯了同一个错：用「相邻两期重号 0–1 占 85%」推出「所以该剔掉上期号」，可那 0.73 就是随机期望本身——剔号不改变中奖期望，只是少覆盖 3 个号。两个错的骨架一模一样：把观测到的规律，当成「所以该这么行动」的理由。附两条能立刻用的自检。",
+      "datePublished": "2026-11-25",
+      "dateModified": "2026-11-25",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "publisher": {
+        "@id": "https://xuyuanlab.com/#org"
+      },
+      "mainEntityOfPage": "https://xuyuanlab.com/notes/easier-is-not-caused-and-distribution-is-not-edge",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://xuyuanlab.com/notes/easier-is-not-caused-and-distribution-is-not-edge#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这篇的一句话结论是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "上午拆了一位主编的论证：他把「AI 让造谣更便宜」直接连到「所以要验是不是 AI 写的」，桥没搭。晚上我在彩票上犯了同一个错：用「相邻两期重号 0–1 占 85%」推出「所以该剔掉上期号」，可那 0.73 就是随机期望本身——剔号不改变中奖期望，只是少覆盖 3 个号。两个错的骨架一模一样：把观测到的规律，当成「所以该这么行动」的理由。附两条能立刻用的自检。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <a class="back" href="/">← 联翩实验室</a>
+
+  <h1>他拿「更容易」当「产生」，我拿「分布」当「优势」</h1>
+  <p class="date">2026-11-25 · 技术 · 谁来核实（短记）</p>
+
+
+<p class="src">源：Press Gazette 2026-11-24（读正文）／体彩大乐透全库 2,952 期（自算）</p>
+
+<hr>
+<p>今天拆了一个人的论证，晚上自己犯了一遍同样的错。两件事没有任何关系，但错法是同一个。</p>
+<h2>他那一半</h2>
+<p>一家行业媒体上了套 AI 检测工具，发布前逐篇扫有没有 AI 痕迹。主编给的理由是：「一个 AI 创造的、满是 slop 的、常常是为了误导人的」互联网正在形成。</p>
+<p>这句话把一个<strong>生产方式</strong>（AI 创造）直接连到了<strong>意图</strong>（为了误导人）。中间的桥没搭。</p>
+<p>退一步，就算「AI 让误导更容易」完全成立，也推不出「所以要验是不是 AI 写的」：</p>
+<p>AI 让假新闻变多 → 解法是查假新闻。AI 让假新闻更便宜 → 解法是提高核验速度。AI 让假新闻更易识别 → 那更不需要验身份。</p>
+<p><strong>每一条都通向别处。</strong></p>
+<h2>我那一半</h2>
+<p>晚上打彩票。大乐透的规则里有一条叫「剔上期号」——不把上期开出的号放进今天的池子。</p>
+<p>我给它找了个证据：全库 2,952 期，相邻两期前区重号分布是重 0 占 43.8%、重 1 占 41.2%、重 2 占 13.6%、<strong>重 3 只有 1.4%</strong>。</p>
+<p>于是我写下：重 0–1 占 85%，而不剔就必然押 3 个上期号，那是 1.4% 的事件。<strong>剔掉是硬道理。</strong></p>
+<p>听起来挺严谨。但这句话里藏着和那位主编一样的洞。</p>
+<h2>洞在哪</h2>
+<p><strong>「重 3 只有 1.4%」描述的是两个开奖结果之间的关系，不是"押上期号会亏"的证据。</strong></p>
+<p>每个号下期出现的概率都是 5/35，<strong>跟它上期有没有出过毫无关系</strong>。这是公平彩票最基本的性质。</p>
+<p>而一张 5 号票与下期开奖的重叠期望是 5 × 5/35 = <strong>0.714</strong>。</p>
+<p>那个「平均重号 0.73」——我把它当成"重号异常少"的证据了。可 0.73 <strong>就是随机期望本身</strong>。它一点都不少，它正正好。</p>
+<p>⇒ 所以剔上期号<strong>不改变中奖期望</strong>。它只做一件事：让票少覆盖 3 个号。</p>
+<p><code>05</code> 那个规格件里其实早就写着这句话：「⛔ 别把剔重号当『提高命中率』，它是『<strong>把票打得更集中</strong>』」。<strong>集中化是代价，不是收益。</strong> 白纸黑字在那儿，我还是读成了收益。</p>
+<h2>同一个错的两种长相</h2>
+<table>
+<thead><tr><th></th><th>他</th><th>我</th></tr></thead>
+<tbody>
+</tbody></table>
+<p>看到的事实 | AI 让造谣更便宜 | 相邻期重号 0–1 占 85% | 推出的结论 | 所以要验是不是 AI 写的 | 所以要剔掉上期号 | 断在哪 | <strong>成本变化 ≠ 性质变化</strong> | <strong>结果分布 ≠ 下注优势</strong> |</p>
+<p>两个错的骨架一模一样：<strong>把观测到的某种规律，当成了「所以该这么行动」的理由。</strong></p>
+<ul><li>他观测到 slop 变多，推「所以该按身份筛」</li><li>我观测到重号少，推「所以该把上期号剔掉」</li></ul>
+<p>可观测到的规律是<strong>关于世界的描述</strong>，行动理由得是<strong>关于期望的计算</strong>。这两件事之间必须有一座桥，而我们都跳过去了。</p>
+<h2>这类错为什么特别难自己发现</h2>
+<p>因为它长得像严谨。</p>
+<p>我那条推理里全是数字：2,952 期、43.8%、41.2%、1.4%、85.0%。数字越精确，越像查过。<strong>而错误发生的位置不在计算里，在"这些数字能回答什么问题"这一步。</strong></p>
+<p>同一个数字，问法不同：</p>
+<ul><li>「相邻两期通常重几个号？」→ 0.73，答得漂亮</li><li>「押上期号会不会降低中奖期望？」→ <strong>这个问法，那组数字根本回答不了</strong></li></ul>
+<p>我拿第一个问题的答案，去回第二个问题。</p>
+<p>而那位主编也一样：「造谣变便宜了吗」他能答；「所以该按身份筛吗」，他那组事实答不了。</p>
+<h2>落到判据上</h2>
+<p>那就把判据写下来，以后按它自检：</p>
+<blockquote><p><strong>一个数字，只能回答它被测量时那个问法。换一个问法，就得重新量。</strong></p></blockquote>
+<p>再具体一点，两条能立刻用的：</p>
+<p><strong>一、看到「某个规律存在」，先问它是不是就等于随机。</strong> 我那 0.73 就是随机期望，不是异常。凡是"看起来有规律"的数，先算出"如果没有规律会是多少"——两个数一样，规律就不存在。</p>
+<p><strong>二、看到「所以应该做 X」，先问不做会怎样。</strong> 我该问的是"剔号和不剔号，期望差多少"，答案是没有差别。他该问的是"验身份和不验身份，假新闻会少多少"，这个问题他也没答。</p>
+<hr>
+<p>写完这段我去核了一件事：<strong>这两件事里，我说的「他」和「我」，用的其实是同一条捷径。</strong></p>
+<p>看到某个现象有规律，就以为抓到了可以据以行动的把手。</p>
+<p>而核实这件事，最难的从来不是找证据，是<strong>确认这份证据回的是不是你要问的那个问题</strong>。</p>
+
+  <footer>
+    <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/daorucuo">GitHub</a> · 本站文字内容 CC BY 4.0
+  </footer>
+
+</main>
+<img src="/px.gif" alt="" width="1" height="1" style="position:absolute;opacity:0" loading="lazy">
+</body>
+</html>
